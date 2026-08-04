@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Benefits & Resources | Small Business Fleet Alliance</title>
+    <style>
+        :root {
+            --primary: #004b87;
+            --accent: #2563eb;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+        }
+        header { 
+            background: #ffffff; 
+            padding: 1rem 1.5rem; 
+            border-bottom: 1px solid #e2e8f0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo { font-weight: 700; font-size: 1.1rem; color: var(--primary); text-decoration: none; }
+        nav a { margin-left: 1rem; color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        
+        .hero { padding: 3rem 1.5rem; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 2rem; color: var(--primary); margin-bottom: 0.75rem; }
+        .hero p { color: var(--muted); font-size: 1.05rem; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        
+        .card { 
+            background: var(--card-bg); 
+            padding: 1.5rem; 
+            border-radius: 12px; 
+            border: 1px solid #e2e8f0; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+        .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.25rem; }
+        
+        .btn { 
+            display: inline-block; 
+            background: var(--primary); 
+            color: #ffffff; 
+            padding: 0.6rem 1.2rem; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            text-align: center;
+        }
+        .btn-outline { 
+            background: transparent; 
+            color: var(--primary); 
+            border: 1px solid var(--primary); 
+        }
+        
+        footer { 
+            text-align: center; 
+            padding: 2rem 1.5rem; 
+            color: var(--muted); 
+            font-size: 0.85rem; 
+            border-top: 1px solid #e2e8f0; 
+            margin-top: 3rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">SBFA</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="partner.html">Partners</a>
+            <a href="benefits.html" style="color: var(--primary); font-weight: 700;">Benefits</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Member Benefits & Resources</h1>
+        <p>Access exclusive savings, health plans, and operational tools designed for small business drivers and fleet operators.</p>
+    </section>
+
+    <main class="container">
+        <div class="grid">
+            
+            <!-- Healthcare & Telehealth -->
+            <div class="card">
+                <div>
+                    <h3>Healthcare & Telehealth</h3>
+                    <p>Affordable health coverage, 24/7 virtual doctor access, and wellness programs built for independent operators.</p>
+                </div>
+                <a href="partner.html" class="btn">View Health Partners</a>
+            </div>
+
+            <!-- Prescription Discounts -->
+            <div class="card">
+                <div>
+                    <h3>Prescription Savings</h3>
+                    <p>Save up to 80% on medications at over 65,000 pharmacies nationwide using instant member savings cards.</p>
+                </div>
+                <a href="partner.html" class="btn">Get Rx Discounts</a>
+            </div>
+
+            <!-- Fuel & Maintenance -->
+            <div class="card">
+                <div>
+                    <h3>Fuel & Maintenance Perks</h3>
+                    <p>Discounted fuel options, preventive maintenance savings, and commercial vehicle support to keep costs down.</p>
+                </div>
+                <a href="#" class="btn btn-outline">Coming Soon</a>
+            </div>
+
+            <!-- Business & Tax Resources -->
+            <div class="card">
+                <div>
+                    <h3>Business & Tax Tools</h3>
+                    <p>Tax prep discounts, mileage tracking, and self-employed bookkeeping resources tailored for logistics route owners.</p>
+                </div>
+                <a href="#" class="btn btn-outline">Explore Tools</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Small Business Fleet Alliance. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
