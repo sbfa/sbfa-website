@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the Founding 100 | Small Business Fleet Alliance</title>
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-light: #141c2b;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --white: #ffffff;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    .hero {
+      padding: 60px 20px 40px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 12px;
+    }
+
+    .hero-sub strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .section-intro {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 28px;
+      font-size: 1rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .benefit-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .benefit-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--orange);
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .rewards-box {
+      background: var(--navy-light);
+      border: 1px solid var(--orange);
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin: 40px 0;
+    }
+
+    .rewards-box h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .rewards-box > p {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .rewards-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .rewards-list li {
+      padding: 10px 0;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rewards-list li:last-child {
+      border-bottom: none;
+    }
+
+    .earnings {
+      background: rgba(249, 115, 22, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+
+    .earnings h4 {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      color: var(--orange);
+    }
+
+    .earnings p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 4px 0;
+    }
+
+    .form-section {
+      background: var(--navy-light);
+      border-radius: 16px;
+      padding: 32px 20px;
+      margin-top: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 1.5rem;
+    }
+
+    .form-section > p {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 40px 16px 30px;
+      }
+      .section {
+        padding: 40px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">🚛</div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>SMALL BUSINESS FLEET ALLIANCE</span>
+        </div>
+      </a>
+      <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">ONLY THE FIRST 100</div>
+    <h1>Join the <span>Founding 100</span></h1>
+    <p class="hero-sub">
+      Small Business Fleet Alliance is for independent operators — drivers, gig workers, and small fleet owners — who want group buying power instead of paying full retail alone.
+    </p>
+    <p class="hero-sub">
+      The Founding 100 join on an annual plan to build it from the ground up and lock in lifetime annual referral rewards.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Founding <span>100</span> Members</h2>
+    <p class="section-intro">
+      The first 100 members help set the foundation of the Alliance. As a thank-you for locking in your annual commitment, Founding Members receive:
+    </p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3>Lifetime Annual Residual</h3>
+        <p>Earn an annual residual on every driver you refer who joins on an annual plan and renews — for life. Keep referring and grow it over time.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Partner Bonuses</h3>
+        <p>Earn bonuses when you help bring in local business partners that strengthen the Alliance.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Early Access</h3>
+        <p>First access to new benefits, partner deals, and tools as they launch.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Founding Status</h3>
+        <p>Permanent recognition and locked-in lifetime rates for helping build the Alliance from the ground up.</p>
+      </div>
+    </div>
+
+    <div class="rewards-box">
+      <h2>Lifetime Annual Residual Rates</h2>
+      <p>Earned on every national annual plan referral. Available exclusively to the first 100 members.</p>
+
+      <ul class="rewards-list">
+        <li><strong>Gig Tier Annual Referral ($60/yr)</strong> — $20.00/year recurring residual per annual member</li>
+        <li><strong>Commercial Pro Annual Referral ($150/yr Founder Rate)</strong> — $50.00/year recurring residual per annual member</li>
+      </ul>
+
+      <div class="earnings">
+        <h4>Simple and Predictable</h4>
+        <p>Join on an Annual Plan to lock in your Founding status. When your referred members join on an Annual Plan and auto-renew, you earn your annual residual payout for life.</p>
+        <p style="margin-top:10px;">This double-annual incentive package is strictly limited to the <strong>first 100 members</strong>.</p>
+      </div>
+    </div>
+
+    <div class="rewards-box" style="border-color: var(--border);">
+      <h2>Founding Membership Options (at launch)</h2>
+      <p>Annual enrollment locks in your Founding 100 status and lifetime referral earning rights.</p>
+
+      <ul class="rewards-list">
+        <li>
+          <strong>Gig Tier — $60/year</strong> <span style="color:var(--orange); font-size:0.85rem; font-weight:600; margin-left:6px;">FOUNDING ANNUAL</span><br>
+          <span style="color:var(--text-muted);font-size:0.95rem;">For gig workers, delivery drivers, and lighter independent operators ($5/month equivalent).</span>
+        </li>
+        <li>
+          <strong>Commercial Pro — $150/year</strong> <span style="color:var(--orange); font-size:0.85rem; font-weight:600; margin-left:6px;">FOUNDING SPECIAL RATE</span><br>
+          <span style="color:var(--text-muted);font-size:0.95rem;">For box truck, Sprinter, cargo van, and small fleet operators. Save $50/year off the standard $200 rate ($12.50/month equivalent).</span>
+        </li>
+      </ul>
+
+      <div class="earnings">
+        <h4>Why the Annual Plan makes sense</h4>
+        <p>Gig Tier Annual ($60/yr) = about <strong>16¢ per day</strong></p>
+        <p>Commercial Pro Founding Special ($150/yr) = about <strong>41¢ per day</strong></p>
+        <p style="margin-top:10px;">Locking in annually gives you maximum savings, secures your Founding 100 status, and activates your lifetime referral earnings.</p>
+        <p style="margin-top:10px;"><strong>Tax note:</strong> Association membership dues are often deductible as a business expense for independent operators. Check with your tax person.</p>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:28px;">
+      <a href="partner.html" style="color:var(--orange);font-weight:600;">Looking to offer discounts or services to our members? Become a Service Partner →</a>
+    </p>
+  </section>
+
+  <section class="section" id="waitlist">
+    <div class="form-section">
+      <h2>Join the Founding 100 Waitlist</h2>
+      <p>This is a waitlist for launch. No payment is required to join the list.</p>
+      <p style="text-align:center;color:var(--text-muted);margin-bottom:24px;font-size:0.95rem;">
+        Benefits expand as the Alliance grows. We’re building this with integrity — real value, clear terms, no hype.
+      </p>
+
+      <iframe data-tally-src="https://tally.so/embed/ODKeZa?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="280" frameborder="0" marginheight="0" marginwidth="0" title="Founding 100 waitlist"></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+      <p class="form-note">You’re joining the waitlist. We’ll notify you as soon as the Alliance launches and membership opens.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>smallbusinessfleetalliance.com &nbsp;•&nbsp; gwillis@sbfaohio.com</p>
+    <p style="margin-top: 8px;">© 2026 Small Business Fleet Alliance</p>
+  </footer>
+
+</body>
+</html>
