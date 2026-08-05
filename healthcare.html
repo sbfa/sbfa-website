@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare &amp; Wellness Resources | Small Business Fleet Alliance</title>
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-light: #141c2b;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --white: #ffffff;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--orange);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .hero {
+      padding: 60px 20px 40px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 12px;
+    }
+
+    .section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 30px 0 20px;
+      color: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-top: 6px;
+    }
+
+    .badge-code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .code-box {
+      background: #0b1220;
+      border: 1px dashed var(--orange);
+      padding: 12px;
+      border-radius: 8px;
+      margin: 16px 0;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: var(--white);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 12px;
+    }
+
+    .code-box span {
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    .perks-list {
+      list-style: none;
+      color: var(--white);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .perks-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .perks-list li span {
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--orange);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: none;
+      }
+      .hero {
+        padding: 40px 16px 30px;
+      }
+      .section {
+        padding: 40px 16px;
+      }
+      .code-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚛</div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>SMALL BUSINESS FLEET ALLIANCE</span>
+        </div>
+      </a>
+      <nav>
+        <a href="benefits.html">Benefits</a>
+        <a href="healthcare.html" class="active">Healthcare</a>
+        <a href="travel.html">Travel Perks</a>
+        <a href="partner.html">Partners</a>
+      </nav>
+      <a href="join.html" class="btn btn-primary">Join Waitlist</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">MEMBER HEALTH &amp; WELLNESS</div>
+    <h1>Healthcare &amp; <span>Prescription Resources</span></h1>
+    <p class="hero-sub">
+      Affordable dental, vision, and prescription discount programs curated specifically for independent drivers and small fleet owners.
+    </p>
+  </section>
+
+  <section class="section">
+    
+    <h2 class="section-title">Prescription <span>Savings</span></h2>
+
+    <!-- LowerMyRx Card -->
+    <div class="card" style="border-color: var(--orange);">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">Group Code: MYCARD4031</span>
+          <h3>LowerMyRx Prescription Discount Card</h3>
+        </div>
+      </div>
+      
+      <p>
+        Save up to 80% on generic and brand-name medications at over 60,000 retail pharmacies nationwide, including Walgreens, CVS, Walmart, Rite Aid, and local independents.
+      </p>
+
+      <div class="code-box">
+        <div>RxBIN: <span>610219</span></div>
+        <div>RxPCN: <span>DRX</span></div>
+        <div>RxGRP: <span>MYCARD4031</span></div>
+      </div>
+
+      <ul class="perks-list">
+        <li><span>✓</span> 100% free to use with no monthly fees or sign-ups required</li>
+        <li><span>✓</span> Instant savings at pharmacy counters along your route nationwide</li>
+        <li><span>✓</span> Show the digital card on your phone or provide billing codes directly to the pharmacist</li>
+      </ul>
+
+      <a href="https://www.lowermyrx.com/card/?group=4031" target="_blank" rel="noopener" class="btn btn-primary">
+        Get Digital Rx Discount Card →
+      </a>
+    </div>
+
+    <h2 class="section-title">Dental &amp; <span>Vision Coverage</span></h2>
+
+    <!-- VSP Vision Care Card -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">Individual &amp; Family Plans</span>
+          <h3>VSP Vision Care</h3>
+        </div>
+      </div>
+
+      <p>
+        Direct access to individual vision insurance coverage starting at low monthly rates, ensuring route drivers maintain required vision standards for commercial driving recertifications.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> Low monthly plans ($13–$20/mo) with standard eye exam coverage</li>
+        <li><span>✓</span> Generous frame, lens, and contact lens allowances</li>
+        <li><span>✓</span> Nationwide network of independent doctors and retail chains</li>
+      </ul>
+
+      <a href="https://www.vsp.com/shop/individual-plans" target="_blank" rel="noopener" class="btn btn-secondary">
+        View VSP Vision Plans →
+      </a>
+    </div>
+
+    <!-- Delta Dental Card -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">Direct Enrollment</span>
+          <h3>Delta Dental</h3>
+        </div>
+      </div>
+
+      <p>
+        Individual and family dental insurance options covering routine cleanings, preventive care, and major dental services with America's largest dental network.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> 100% coverage on routine preventive cleanings and X-rays</li>
+        <li><span>✓</span> Savings on fillings, crowns, root canals, and emergency care</li>
+        <li><span>✓</span> Direct individual enrollment with no group coverage required</li>
+      </ul>
+
+      <a href="https://www.deltadental.com/us/en/individual-and-family.html" target="_blank" rel="noopener" class="btn btn-secondary">
+        View Delta Dental Plans →
+      </a>
+    </div>
+
+    <!-- More Partners Coming Soon -->
+    <div class="card" style="text-align: center; padding: 36px 24px; margin-top: 40px;">
+      <h3 style="margin-bottom: 8px;">More Healthcare Options Launching Soon</h3>
+      <p style="margin-bottom: 20px;">
+        We are actively reviewing and adding catastrophic health-share options, 24/7 telehealth programs, and major medical alternatives for our members.
+      </p>
+      <a href="join.html" class="btn btn-primary">Join the Founding 100 Waitlist</a>
+    </div>
+
+  </section>
+
+  <footer>
+    <nav>
+      <a href="benefits.html">Benefits</a> •
+      <a href="healthcare.html">Healthcare</a> •
+      <a href="travel.html">Travel Perks</a> •
+      <a href="partner.html">Become a Partner</a> •
+      <a href="join.html">Join Waitlist</a>
+    </nav>
+    <p>smallbusinessfleetalliance.com &nbsp;•&nbsp; gwillis@sbfaohio.com</p>
+    <p style="margin-top: 8px;">© 2026 Small Business Fleet Alliance</p>
+  </footer>
+
+</body>
+</html>
