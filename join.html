@@ -90,6 +90,7 @@
       transition: all 0.2s;
       border: none;
       cursor: pointer;
+      text-align: center;
     }
 
     .btn-primary {
@@ -269,6 +270,50 @@
       font-size: 0.95rem;
     }
 
+    /* Native Form Styling */
+    .form-container {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-group {
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--orange);
+    }
+
+    .form-group select option {
+      background: var(--navy);
+      color: var(--white);
+    }
+
     .form-note {
       text-align: center;
       font-size: 0.85rem;
@@ -303,7 +348,7 @@
 
   <header>
     <div class="header-inner">
-      <a href="/" class="logo">
+      <a href="index.html" class="logo">
         <div class="logo-icon">🚛</div>
         <div class="logo-text">
           <strong>SBFA</strong>
@@ -403,8 +448,37 @@
         Benefits expand as the Alliance grows. We’re building this with integrity — real value, clear terms, no hype.
       </p>
 
-      <iframe data-tally-src="https://tally.so/embed/ODKeZa?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="280" frameborder="0" marginheight="0" marginwidth="0" title="Founding 100 waitlist"></iframe>
-      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+      <!-- FormSubmit Powered Form -->
+      <form action="https://formsubmit.co/gwillis@sbfaohio.com" method="POST" class="form-container">
+        
+        <!-- FormSubmit Control Parameters -->
+        <input type="hidden" name="_autoresponse" value="Thanks for joining the Small Business Fleet Alliance Founding 100 waitlist! We have received your application and will notify you with launch details and early access steps soon.">
+        <input type="hidden" name="_subject" value="New SBFA Founding 100 Submission!">
+        <input type="hidden" name="_next" value="https://sbfaohio.com/thank-you.html">
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Gary Willis" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fleet_type">Vehicle / Fleet Type</label>
+          <select id="fleet_type" name="fleet_type" required>
+            <option value="" disabled selected>-- Select Vehicle Type --</option>
+            <option value="Gig / Passenger Car">Gig Driver / Passenger Car</option>
+            <option value="Cargo Van / Sprinter">Cargo Van / Sprinter</option>
+            <option value="Box Truck">Box Truck / Commercial Rig</option>
+            <option value="Small Fleet">Small Fleet Owner</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 8px; width: 100%;">Join Waitlist Now →</button>
+      </form>
 
       <p class="form-note">You’re joining the waitlist. We’ll notify you as soon as the Alliance launches and membership opens.</p>
     </div>
