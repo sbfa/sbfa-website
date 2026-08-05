@@ -139,11 +139,6 @@
       margin: 0 auto 12px;
     }
 
-    .hero-sub strong {
-      color: var(--white);
-      font-weight: 600;
-    }
-
     .section {
       padding: 50px 20px;
       max-width: 900px;
@@ -270,7 +265,6 @@
       font-size: 0.95rem;
     }
 
-    /* Native Form Styling */
     .form-container {
       max-width: 480px;
       margin: 0 auto;
@@ -448,13 +442,14 @@
         Benefits expand as the Alliance grows. We’re building this with integrity — real value, clear terms, no hype.
       </p>
 
-      <!-- FormSubmit Powered Form -->
+      <!-- FormSubmit Native Form -->
       <form action="https://formsubmit.co/gwillis@sbfaohio.com" method="POST" class="form-container">
         
         <!-- FormSubmit Control Parameters -->
-        <input type="hidden" name="_autoresponse" value="Thanks for joining the Small Business Fleet Alliance Founding 100 waitlist! We have received your application and will notify you with launch details and early access steps soon.">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_autoresponse" value="Thanks for your interest in joining the Small Business Fleet Alliance. Your waitlist application has been received. When membership opens up, you will be contacted directly with your early access steps.">
         <input type="hidden" name="_subject" value="New SBFA Founding 100 Submission!">
-        <input type="hidden" name="_next" value="https://sbfaohio.com/thank-you.html">
+        <input type="hidden" name="_next" value="https://smallbusinessfleetalliance.com/thank-you.html">
 
         <div class="form-group">
           <label for="name">Full Name</label>
@@ -477,6 +472,12 @@
           </select>
         </div>
 
+        <!-- Referral Field -->
+        <div class="form-group">
+          <label for="referred_by">Referred By (Optional)</label>
+          <input type="text" id="referred_by" name="referred_by" placeholder="Name or email of driver who referred you">
+        </div>
+
         <button type="submit" class="btn btn-primary" style="margin-top: 8px; width: 100%;">Join Waitlist Now →</button>
       </form>
 
@@ -488,6 +489,14 @@
     <p>smallbusinessfleetalliance.com &nbsp;•&nbsp; gwillis@sbfaohio.com</p>
     <p style="margin-top: 8px;">© 2026 Small Business Fleet Alliance</p>
   </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get('ref');
+    if (ref) {
+      document.getElementById('referred_by').value = ref;
+    }
+  </script>
 
 </body>
 </html>
