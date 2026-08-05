@@ -3,138 +3,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Member Benefits | Small Business Fleet Alliance (SBFA)</title>
+  <title>Member Benefits & Discounts | Small Business Fleet Alliance</title>
+  <meta name="description" content="Exclusive corporate lodging rates, fuel savings, vehicle maintenance discounts, and fleet perks for SBFA members.">
   <style>
     :root {
-      --primary: #0f2c59;
-      --primary-hover: #1e3a8a;
-      --accent: #d97706;
-      --bg-dark: #0b1329;
-      --bg-card: #111827;
-      --bg-card-hover: #1f2937;
-      --text-light: #f3f4f6;
-      --text-muted: #9ca3af;
-      --border: #374151;
-      --badge-bg: #1e3a8a;
-      --badge-text: #93c5fd;
+      --bg-dark: #0b1220;
+      --bg-card: #121a2b;
+      --bg-section: #0f172a;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --orange-light: #fb923c;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --white: #ffffff;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
       line-height: 1.6;
-      padding-bottom: 60px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    header {
-      background-color: #030712;
-      border-bottom: 1px solid var(--border);
-      padding: 20px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #ffffff;
+    a {
+      color: inherit;
       text-decoration: none;
-      letter-spacing: 0.5px;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 2.25rem;
-      margin-bottom: 12px;
-      color: #ffffff;
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
     }
 
     .container {
-      max-width: 1200px;
+      width: 100%;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
+    /* Header */
+    header {
+      background: rgba(11, 18, 32, 0.98);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .logo-text strong {
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      color: var(--white);
+    }
+
+    .logo-text span {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange-dark);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 50px 16px 40px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: #fb923c;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(249, 115, 22, 0.4);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin: 0 0 14px;
+      color: var(--white);
+    }
+
+    .hero h1 .accent {
+      color: var(--orange);
+    }
+
+    .hero-tagline {
+      font-size: clamp(0.98rem, 2.2vw, 1.15rem);
+      color: #94a3b8;
+      margin: 0 auto;
+      max-width: 680px;
+      line-height: 1.5;
+    }
+
+    /* Sections */
+    section {
+      padding: 50px 0;
+    }
+
     .section-title {
-      font-size: 1.5rem;
-      margin: 40px 0 20px 0;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--border);
-      color: #ffffff;
+      font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--white);
+      text-align: left;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .section-intro {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+
+    /* Grid Layout */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
       gap: 20px;
+      margin-bottom: 40px;
     }
 
     .card {
-      background-color: var(--bg-card);
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 12px;
       padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s, border-color 0.2s;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
     .card:hover {
+      border-color: rgba(249, 115, 22, 0.45);
       transform: translateY(-2px);
-      border-color: #4b5563;
-      background-color: var(--bg-card-hover);
     }
 
     .card-featured {
-      border: 2px solid var(--accent);
-      background-color: #172033;
+      border: 2px solid var(--orange);
+      background: #152035;
     }
 
     .card-badge {
       display: inline-block;
-      background-color: var(--badge-bg);
-      color: var(--badge-text);
-      font-size: 0.75rem;
-      font-weight: 600;
+      background: rgba(249, 115, 22, 0.2);
+      color: var(--orange-light);
+      font-size: 0.72rem;
+      font-weight: 700;
       padding: 4px 8px;
       border-radius: 4px;
       margin-bottom: 12px;
@@ -143,61 +232,114 @@
     }
 
     .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--white);
     }
 
     .card p {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      line-height: 1.5;
       margin-bottom: 20px;
       flex-grow: 1;
     }
 
     .btn {
-      display: inline-block;
-      text-align: center;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background-color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 11px 20px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      border: none;
       cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      width: 100%;
     }
 
     .btn-primary {
-      background-color: var(--accent);
-      color: #ffffff;
+      background: var(--orange);
+      color: var(--white);
     }
 
     .btn-primary:hover {
-      background-color: #b45309;
+      background: var(--orange-dark);
     }
 
     .btn-secondary {
-      background-color: #1f2937;
-      color: #ffffff;
-      border: 1px solid #374151;
+      background: transparent;
+      color: var(--white);
+      border: 1px solid #334155;
     }
 
     .btn-secondary:hover {
-      background-color: #374151;
+      border-color: var(--orange);
+      color: var(--orange-light);
     }
 
+    /* Footer */
     footer {
-      text-align: center;
-      margin-top: 60px;
-      padding-top: 20px;
+      background: #070b14;
+      padding: 36px 0 28px;
       border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .footer-logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--white);
+    }
+
+    .footer-logo span {
+      color: var(--orange);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange-light);
+    }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 8px;
     }
 
     @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.75rem;
+      .hero {
+        padding: 35px 12px 30px;
+      }
+      .container {
+        padding: 0 14px;
       }
       .grid {
         grid-template-columns: 1fr;
@@ -207,180 +349,268 @@
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <a href="index.html" class="logo">SBFA <span>Alliance</span></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="benefits.html" style="color: #ffffff; font-weight: 600;">Benefits</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8h11v8H3V8z" fill="#0b1220"/>
+            <path d="M14 10h4l3 3v3h-7v-6z" fill="#0b1220"/>
+            <circle cx="6.5" cy="17.5" r="1.8" fill="#f97316"/>
+            <circle cx="17.5" cy="17.5" r="1.8" fill="#f97316"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>Small Business Fleet Alliance</span>
+        </div>
+      </a>
+      <a href="join.html" class="nav-cta">Join Today</a>
+    </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>SBFA Member Benefits & Perks</h1>
-    <p>Exclusive corporate lodging rates, vehicle maintenance savings, and national fleet discounts built specifically for independent drivers and fleet operators.</p>
+    <div class="container">
+      <div class="hero-badge">SBFA ALLIANCE PERKS</div>
+      <h1>
+        MEMBER BENEFITS &amp; <span class="accent">DISCOUNTS</span>
+      </h1>
+      <p class="hero-tagline">
+        Exclusive corporate rates on lodging, fuel, tire maintenance, rental vehicles, and business protection tools.
+      </p>
+    </div>
   </section>
 
   <main class="container">
 
-    <!-- SECTION 1: TRAVEL & LODGING -->
-    <h2 class="section-title">🏨 Travel &amp; Lodging Discounts</h2>
-    <div class="grid">
+    <!-- SECTION 1: FUEL & MAINTENANCE -->
+    <section>
+      <h2 class="section-title">⚓ Fuel &amp; <span>Fleet Maintenance</span></h2>
+      <p class="section-intro">Keep your trucks and delivery vehicles running profitably with nationwide discount accounts.</p>
 
-      <!-- HotelPlanner Engine -->
-      <div class="card card-featured">
-        <div>
-          <span class="card-badge">SBFA Booking Engine</span>
-          <h3>Search All Hotels &amp; Motels</h3>
-          <p>Compare discounted rates across thousands of independent motels and major hotel chains nationwide in one search.</p>
+      <div class="grid">
+
+        <!-- Mudflap Fuel App -->
+        <div class="card card-featured">
+          <div>
+            <span class="card-badge">Featured Partner</span>
+            <h3>Mudflap Fuel Savings App</h3>
+            <p>Get instant gallon discounts on diesel and gas at thousands of truck stops and stations nationwide with $0 app fees.</p>
+          </div>
+          <a href="https://dashboard.mudflapinc.com/invite/gab9c23e" target="_blank" class="btn btn-primary">Claim Fuel Savings (Code: gab9c23e)</a>
         </div>
-        <a href="https://sbfa.hotelplanner.com" target="_blank" class="btn btn-primary">Search All Hotels &amp; Motels</a>
-      </div>
 
-      <!-- Best Western -->
-      <div class="card">
-        <div>
-          <h3>Best Western Corporate Rates</h3>
-          <p>Save across Best Western, Best Western Plus, and SureStay properties nationwide with exclusive member rates.</p>
+        <!-- Goodyear Fleet Network -->
+        <div class="card">
+          <div>
+            <span class="card-badge">National Fleet Rate</span>
+            <h3>Goodyear Fleet Network</h3>
+            <p>National fleet pricing on commercial truck and delivery van tires, centralized billing, and 24/7 roadside assistance.</p>
+          </div>
+          <a href="https://www.goodyearfleetnetwork.com" target="_blank" class="btn btn-secondary">Access Goodyear Fleet</a>
         </div>
-        <a href="https://www.bestwestern.com/en_US.html?corporateId=01526650" target="_blank" class="btn btn-secondary">Book Best Western (Code: 01526650)</a>
-      </div>
 
-      <!-- Choice Hotels -->
-      <div class="card">
-        <div>
-          <h3>Choice Hotels (15% Off)</h3>
-          <p>Save at Quality Inn, Comfort Inn, and Econo Lodge properties along primary freight and delivery corridors.</p>
+        <!-- Jiffy Lube Fleet Care -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Up to 15% Off</span>
+            <h3>Jiffy Lube Fleet Care</h3>
+            <p>Up to 15% off preventative maintenance including oil changes, transmission fluids, filter replacements, and tire rotations.</p>
+          </div>
+          <a href="https://www.jiffylube.com/fleet-care" target="_blank" class="btn btn-secondary">Access Jiffy Lube Care</a>
         </div>
-        <a href="https://www.choicebusinessdirect.com/choice/sharedlink.html?invitationcode=GFmQWr43ftD93BydJcjzAkTjp" target="_blank" class="btn btn-secondary">Book Choice Hotels</a>
-      </div>
 
-      <!-- Hilton -->
-      <div class="card">
-        <div>
-          <h3>Hilton Corporate Rates</h3>
-          <p>Book directly with Hilton properties to earn personal Hilton Honors points while using SBFA rate options.</p>
+        <!-- Discount Tire Fleet -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Commercial Pricing</span>
+            <h3>Discount Tire Fleet Services</h3>
+            <p>Volume pricing on tires/wheels, complimentary flat repairs, and free rotation and balancing across Discount Tire and America's Tire stores.</p>
+          </div>
+          <a href="https://www.discounttire.com/fleet-services" target="_blank" class="btn btn-secondary">Access Discount Tire</a>
         </div>
-        <a href="https://www.hilton.com/en/p/hilton-for-business/" target="_blank" class="btn btn-secondary">Book Hilton Hotels</a>
-      </div>
 
-      <!-- Wyndham -->
-      <div class="card">
-        <div>
-          <h3>Wyndham Highway Lodging</h3>
-          <p>Preferred rates at Super 8, Days Inn, Microtel, and La Quinta for multi-day route drivers.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: HOTEL & LODGING -->
+    <section>
+      <h2 class="section-title">🏨 Travel &amp; <span>Lodging Discounts</span></h2>
+      <p class="section-intro">Corporate hotel programs and nationwide lodging discounts for route drivers and overnight haulers.</p>
+
+      <div class="grid">
+
+        <!-- HotelPlanner Engine -->
+        <div class="card card-featured">
+          <div>
+            <span class="card-badge">SBFA Booking Engine</span>
+            <h3>Search All Hotels &amp; Motels</h3>
+            <p>Compare discounted rates across thousands of independent motels and major hotel chains nationwide in one search.</p>
+          </div>
+          <a href="https://sbfa.hotelplanner.com" target="_blank" class="btn btn-primary">Search All Hotels &amp; Motels</a>
         </div>
-        <a href="https://www.wyndhamhotels.com/wyndham-rewards/business" target="_blank" class="btn btn-secondary">Book Wyndham Hotels</a>
-      </div>
 
-      <!-- IHG / Holiday Inn -->
-      <div class="card">
-        <div>
-          <h3>Holiday Inn &amp; IHG Hotels (15% Off)</h3>
-          <p>Save at Holiday Inn, Express, Candlewood Suites, and Staybridge Suites along major transit corridors.</p>
+        <!-- Best Western -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Corporate ID: 01526650</span>
+            <h3>Best Western Corporate Rates</h3>
+            <p>Save across Best Western, Best Western Plus, and SureStay properties nationwide with exclusive member rates.</p>
+          </div>
+          <a href="https://www.bestwestern.com/en_US.html?corporateId=01526650" target="_blank" class="btn btn-secondary">Book Best Western (Code: 01526650)</a>
         </div>
-        <a href="https://businessedge.ihg.com/s/" target="_blank" class="btn btn-secondary">Book IHG Business Edge</a>
-      </div>
 
-      <!-- Motel 6 -->
-      <div class="card">
-        <div>
-          <h3>Motel 6 &amp; Studio 6 (10% Off)</h3>
-          <p>Save 10% nationwide at over 1,400 Motel 6 and Studio 6 extended stay locations along freight corridors.</p>
+        <!-- Choice Hotels -->
+        <div class="card">
+          <div>
+            <span class="card-badge">15% Off Standard Rates</span>
+            <h3>Choice Hotels Direct</h3>
+            <p>Save at Quality Inn, Comfort Inn, and Econo Lodge properties along primary freight and delivery corridors.</p>
+          </div>
+          <a href="https://www.choicebusinessdirect.com/choice/sharedlink.html?invitationcode=GFmQWr43ftD93BydJcjzAkTjp" target="_blank" class="btn btn-secondary">Book Choice Hotels</a>
         </div>
-        <a href="https://www.motel6.com" target="_blank" class="btn btn-secondary">Book Motel 6</a>
-      </div>
 
-      <!-- Rental Cars -->
-      <div class="card">
-        <div>
-          <h3>Rental Car Fleet Perks</h3>
-          <p>Preferred rates, counter bypass, and driver rewards with Enterprise, National, Hertz, and Avis.</p>
+        <!-- IHG / Holiday Inn -->
+        <div class="card">
+          <div>
+            <span class="card-badge">15% Off IHG Business Edge</span>
+            <h3>Holiday Inn &amp; IHG Hotels</h3>
+            <p>Save at Holiday Inn, Express, Candlewood Suites, and Staybridge Suites along major transit corridors.</p>
+          </div>
+          <a href="https://businessedge.ihg.com/s/" target="_blank" class="btn btn-secondary">Book IHG Business Edge</a>
         </div>
-        <a href="https://www.enterprise.com/en/business-car-rental.html" target="_blank" class="btn btn-secondary">View Rental Perks</a>
-      </div>
 
-    </div>
-
-    <!-- SECTION 2: FLEET MAINTENANCE & FUEL -->
-    <h2 class="section-title">🔧 Fleet Maintenance &amp; Operations</h2>
-    <div class="grid">
-
-      <!-- Goodyear -->
-      <div class="card">
-        <div>
-          <h3>Goodyear Fleet Network</h3>
-          <p>National fleet pricing on commercial truck and delivery van tires, centralized billing, and 24/7 roadside assistance.</p>
+        <!-- Hilton -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Honors Point Earnings</span>
+            <h3>Hilton Corporate Rates</h3>
+            <p>Book directly with Hilton properties to earn personal Hilton Honors points while using SBFA rate options.</p>
+          </div>
+          <a href="https://www.hilton.com/en/p/hilton-for-business/" target="_blank" class="btn btn-secondary">Book Hilton Hotels</a>
         </div>
-        <a href="https://www.goodyearfleetnetwork.com" target="_blank" class="btn btn-secondary">Access Goodyear Fleet</a>
-      </div>
 
-      <!-- Jiffy Lube -->
-      <div class="card">
-        <div>
-          <h3>Jiffy Lube Fleet Care</h3>
-          <p>Up to 15% off preventative maintenance including oil changes, fluids, filter replacements, and tire rotations nationwide.</p>
+        <!-- Wyndham Rewards -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Up to 15% Off</span>
+            <h3>Wyndham Highway Lodging</h3>
+            <p>Preferred rates at Super 8, Days Inn, Microtel, and La Quinta for multi-day route drivers.</p>
+          </div>
+          <a href="https://www.wyndhamhotels.com/wyndham-rewards/business" target="_blank" class="btn btn-secondary">Book Wyndham Hotels</a>
         </div>
-        <a href="https://www.jiffylube.com/fleet-care" target="_blank" class="btn btn-secondary">Access Jiffy Lube Care</a>
-      </div>
 
-      <!-- Discount Tire -->
-      <div class="card">
-        <div>
-          <h3>Discount Tire Fleet</h3>
-          <p>Volume pricing on commercial tires and wheels, complimentary flat repairs, and free rotation and balancing.</p>
+        <!-- Motel 6 -->
+        <div class="card">
+          <div>
+            <span class="card-badge">10% Off Nationwide</span>
+            <h3>Motel 6 &amp; Studio 6</h3>
+            <p>Save 10% nationwide at over 1,400 Motel 6 and Studio 6 extended stay locations along freight corridors.</p>
+          </div>
+          <a href="https://www.motel6.com" target="_blank" class="btn btn-secondary">Book Motel 6</a>
         </div>
-        <a href="https://www.discounttire.com/fleet-services" target="_blank" class="btn btn-secondary">Access Discount Tire</a>
-      </div>
 
-      <!-- Fuel Savings (Mudflap) -->
-      <div class="card">
-        <div>
-          <h3>Fuel Savings (Mudflap Network)</h3>
-          <p>Save up to 40¢ per gallon at thousands of truck stops and diesel locations nationwide with instantly applied discounts.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: RENTAL VEHICLES -->
+    <section>
+      <h2 class="section-title">🚚 Commercial <span>Rental Vehicles</span></h2>
+      <p class="section-intro">Backup rental trucks, cargo vans, and fleet vehicles when your primary rig is in the shop.</p>
+
+      <div class="grid">
+
+        <!-- Enterprise & National -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Counter Bypass &amp; Credits</span>
+            <h3>Enterprise &amp; National</h3>
+            <p>Corporate rental discounts on trucks, vans, and SUVs. Earn 1 free rental credit per 15 completed rental days.</p>
+          </div>
+          <a href="https://www.enterprise.com/en/business-car-rental.html" target="_blank" class="btn btn-secondary">Book Enterprise &amp; National</a>
         </div>
-        <a href="https://www.mudflapinc.com" target="_blank" class="btn btn-secondary">Get Mudflap App</a>
-      </div>
 
-    </div>
-
-    <!-- SECTION 3: DRIVER HEALTH & TOOLS -->
-    <h2 class="section-title">🛡️ Driver Perks &amp; Business Tools</h2>
-    <div class="grid">
-
-      <!-- Stride Health -->
-      <div class="card">
-        <div>
-          <h3>Health &amp; Dental Insurance</h3>
-          <p>Access affordable health, dental, vision, and life insurance tailored specifically for independent contractors and 1099 drivers.</p>
+        <!-- Hertz -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Hertz Business Rewards</span>
+            <h3>Hertz Fleet Program</h3>
+            <p>Discounted corporate rates, Gold Plus Rewards counter bypass, and 1 free rental day per 15 completed rental days.</p>
+          </div>
+          <a href="https://www.hertz.com/us/en/programs/business-rewards" target="_blank" class="btn btn-secondary">Book Hertz Rentals</a>
         </div>
-        <a href="https://www.stridehealth.com" target="_blank" class="btn btn-secondary">Explore Health Plans</a>
-      </div>
 
-      <!-- MileIQ -->
-      <div class="card">
-        <div>
-          <h3>Automatic Mileage Tracking</h3>
-          <p>Easily log business miles for maximum tax deductions with automated drive detection and report generation.</p>
+        <!-- Avis -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Up to 30% Off Base Rates</span>
+            <h3>Avis for Business</h3>
+            <p>Save up to 30% off standard rates with complimentary Avis Preferred counter bypass for SBFA members.</p>
+          </div>
+          <a href="https://www.avis.com/en/business-programs/small-mid-sized-business/partner-1" target="_blank" class="btn btn-secondary">Book Avis Rentals</a>
         </div>
-        <a href="https://www.mileiq.com" target="_blank" class="btn btn-secondary">Get MileIQ</a>
-      </div>
 
-      <!-- Upside -->
-      <div class="card">
-        <div>
-          <h3>Cashback Rewards (Upside)</h3>
-          <p>Earn cash back on daily fuel purchases, convenience store snacks, and dining along your delivery route.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4: DRIVER TOOLS & HEALTH -->
+    <section>
+      <h2 class="section-title">🛡️ Business Tools &amp; <span>Health Perks</span></h2>
+      <p class="section-intro">Insurance solutions, automatic mileage logging, and everyday cashback for independent operators.</p>
+
+      <div class="grid">
+
+        <!-- Stride Health -->
+        <div class="card">
+          <div>
+            <span class="card-badge">1099 &amp; Independent Drivers</span>
+            <h3>Health &amp; Dental Insurance</h3>
+            <p>Access affordable health, dental, vision, and life insurance tailored specifically for independent contractors and 1099 drivers.</p>
+          </div>
+          <a href="https://www.stridehealth.com" target="_blank" class="btn btn-secondary">Explore Health Plans</a>
         </div>
-        <a href="https://www.upside.com" target="_blank" class="btn btn-secondary">Get Upside Cashback</a>
-      </div>
 
-    </div>
+        <!-- MileIQ -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Automatic Tax Deductions</span>
+            <h3>Automatic Mileage Tracking</h3>
+            <p>Easily log business miles for maximum tax deductions with automated drive detection and report generation.</p>
+          </div>
+          <a href="https://www.mileiq.com" target="_blank" class="btn btn-secondary">Get MileIQ App</a>
+        </div>
+
+        <!-- Upside -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Cashback Rewards</span>
+            <h3>Upside Fuel &amp; Snacks</h3>
+            <p>Earn cash back on daily fuel purchases, convenience store snacks, and dining along your delivery route.</p>
+          </div>
+          <a href="https://www.upside.com" target="_blank" class="btn btn-secondary">Get Upside Cashback</a>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Small Business Fleet Alliance (SBFA). All rights reserved.</p>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">SBFA <span>|</span> Small Business Fleet Alliance</div>
+        <div class="footer-copy">© 2026 Small Business Fleet Alliance. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">About</a>
+        <a href="benefits.html">Benefits</a>
+        <a href="join.html">Join</a>
+        <a href="mailto:gwillis@sbfaohio.com">Contact</a>
+      </div>
+    </div>
   </footer>
 
 </body>
