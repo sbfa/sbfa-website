@@ -282,6 +282,55 @@
       color: var(--orange-light);
     }
 
+    /* Rental Search Form Specific Styles */
+    .rental-search-card {
+      margin-bottom: 24px;
+    }
+
+    .rental-form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+    }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--orange-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus {
+      border-color: var(--orange);
+    }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
     /* Footer */
     footer {
       background: #070b14;
@@ -515,10 +564,39 @@
       </div>
     </section>
 
-    <!-- SECTION 3: RENTAL VEHICLES -->
+    <!-- SECTION 3: RENTAL VEHICLES & COMPARISON TOOL -->
     <section>
       <h2 class="section-title">🚚 Commercial <span>Rental Vehicles</span></h2>
       <p class="section-intro">Backup rental trucks, cargo vans, and fleet vehicles when your primary rig is in the shop.</p>
+
+      <!-- Multi-Tab Comparison Launcher Card -->
+      <div class="card card-featured rental-search-card">
+        <div>
+          <span class="card-badge">Instant Fleet Comparison</span>
+          <h3>Compare All Fleet Rental Rates</h3>
+          <p>Enter your location and trip dates below. Clicking compare will open Enterprise, Hertz, and Avis in separate tabs with SBFA corporate rates pre-loaded.</p>
+          
+          <form id="rental-search-form" onsubmit="compareRentals(event)">
+            <div class="rental-form-grid">
+              <div class="form-group">
+                <label for="rental-location">Pickup Location</label>
+                <input type="text" id="rental-location" placeholder="City or Airport (e.g. CMH or Columbus, OH)" required>
+              </div>
+              <div class="form-group">
+                <label for="pickup-date">Pickup Date</label>
+                <input type="date" id="pickup-date" required>
+              </div>
+              <div class="form-group">
+                <label for="dropoff-date">Return Date</label>
+                <input type="date" id="dropoff-date" required>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Compare All Fleets At Once</button>
+            <p class="form-note">*Note: Please allow pop-ups for this site if your browser asks when launching comparison tabs.</p>
+          </form>
+        </div>
+      </div>
 
       <div class="grid">
 
@@ -529,7 +607,7 @@
             <h3>Enterprise &amp; National</h3>
             <p>Corporate rental discounts on trucks, vans, and SUVs. Earn 1 free rental credit per 15 completed rental days.</p>
           </div>
-          <a href="https://www.enterprise.com/en/business-car-rental.html" target="_blank" class="btn btn-secondary">Book Enterprise &amp; National</a>
+          <a href="https://www.enterprise.com/en/business-car-rental.html" target="_blank" class="btn btn-secondary">Book Enterprise &amp; National Direct</a>
         </div>
 
         <!-- Hertz -->
@@ -539,7 +617,7 @@
             <h3>Hertz Fleet Program</h3>
             <p>Discounted corporate rates, Gold Plus Rewards counter bypass, and 1 free rental day per 15 completed rental days.</p>
           </div>
-          <a href="https://www.hertz.com/us/en/programs/business-rewards" target="_blank" class="btn btn-secondary">Book Hertz Rentals</a>
+          <a href="https://www.hertz.com/us/en/programs/business-rewards" target="_blank" class="btn btn-secondary">Book Hertz Rentals Direct</a>
         </div>
 
         <!-- Avis -->
@@ -549,7 +627,7 @@
             <h3>Avis for Business</h3>
             <p>Save up to 30% off standard rates with complimentary Avis Preferred counter bypass for SBFA members.</p>
           </div>
-          <a href="https://www.avis.com/en/business-programs/small-mid-sized-business/partner-1" target="_blank" class="btn btn-secondary">Book Avis Rentals</a>
+          <a href="https://www.avis.com/en/business-programs/small-mid-sized-business/partner-1" target="_blank" class="btn btn-secondary">Book Avis Rentals Direct</a>
         </div>
 
       </div>
@@ -579,39 +657,4 @@
             <h3>Automatic Mileage Tracking</h3>
             <p>Easily log business miles for maximum tax deductions with automated drive detection and report generation.</p>
           </div>
-          <a href="https://www.mileiq.com" target="_blank" class="btn btn-secondary">Get MileIQ App</a>
-        </div>
-
-        <!-- Upside -->
-        <div class="card">
-          <div>
-            <span class="card-badge">Cashback Rewards</span>
-            <h3>Upside Fuel &amp; Snacks</h3>
-            <p>Earn cash back on daily fuel purchases, convenience store snacks, and dining along your delivery route.</p>
-          </div>
-          <a href="https://www.upside.com" target="_blank" class="btn btn-secondary">Get Upside Cashback</a>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <div>
-        <div class="footer-logo">SBFA <span>|</span> Small Business Fleet Alliance</div>
-        <div class="footer-copy">© 2026 Small Business Fleet Alliance. All rights reserved.</div>
-      </div>
-      <div class="footer-links">
-        <a href="index.html#about">About</a>
-        <a href="benefits.html">Benefits</a>
-        <a href="join.html">Join</a>
-        <a href="mailto:gwillis@sbfaohio.com">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
+          <a href="https://www.mileiq.com" target="_blank" class="btn bt
