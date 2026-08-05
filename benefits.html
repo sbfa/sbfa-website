@@ -282,53 +282,33 @@
       color: var(--orange-light);
     }
 
-    /* Rental Search Form Specific Styles */
-    .rental-search-card {
-      margin-bottom: 24px;
+    .partner-list {
+      list-style: none;
+      margin: 0 0 20px 0;
     }
 
-    .rental-form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      text-align: left;
-    }
-
-    .form-group label {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--orange-light);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .form-group input {
-      background: var(--bg-dark);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 12px 14px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-group input:focus {
-      border-color: var(--orange);
-    }
-
-    .form-note {
-      font-size: 0.8rem;
+    .partner-list li {
       color: var(--text-muted);
-      margin-top: 10px;
+      font-size: 0.92rem;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .partner-list li:last-child {
+      border-bottom: none;
+    }
+
+    .partner-list strong {
+      color: var(--white);
+    }
+
+    .code-tag {
+      color: var(--orange-light);
+      background: rgba(249, 115, 22, 0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.88rem;
     }
 
     /* Footer */
@@ -484,119 +464,36 @@
       </div>
     </section>
 
-    <!-- SECTION 2: HOTEL & LODGING -->
+    <!-- SECTION 2: HOTEL & LODGING PLACARD -->
     <section>
       <h2 class="section-title">🏨 Travel &amp; <span>Lodging Discounts</span></h2>
-      <p class="section-intro">Corporate hotel programs and nationwide lodging discounts for route drivers and overnight haulers.</p>
+      <p class="section-intro">Corporate hotel rates, discount codes, and booking networks for SBFA route drivers.</p>
 
       <div class="grid">
-
-        <!-- HotelPlanner Engine -->
-        <div class="card card-featured">
+        <div class="card card-featured" style="grid-column: 1 / -1;">
           <div>
-            <span class="card-badge">SBFA Booking Engine</span>
-            <h3>Search All Hotels &amp; Motels</h3>
-            <p>Compare discounted rates across thousands of independent motels and major hotel chains nationwide in one search.</p>
+            <span class="card-badge">SBFA Lodging Hub</span>
+            <h3>Corporate Hotel Rates &amp; Partner Codes</h3>
+            <p>We've secured corporate accounts across major highway lodging chains to keep multi-day drivers covered nationwide:</p>
+            
+            <ul class="partner-list">
+              <li><strong>Best Western &amp; SureStay:</strong> Corporate ID <span class="code-tag">01526650</span></li>
+              <li><strong>Choice Hotels (Quality Inn, Comfort Inn, Econo Lodge):</strong> 15% Off Preferred Rates</li>
+              <li><strong>IHG Business Edge (Holiday Inn &amp; Express):</strong> 15% Off Corporate Program</li>
+              <li><strong>Motel 6 &amp; Studio 6:</strong> 10% Off Nationwide Discount</li>
+              <li><strong>Hilton &amp; Wyndham Rewards:</strong> Direct Corporate Booking &amp; Points Earnings</li>
+              <li><strong>SBFA Booking Engine:</strong> Search thousands of independent motels &amp; hotels nationwide</li>
+            </ul>
           </div>
-          <a href="https://sbfa.hotelplanner.com" target="_blank" class="btn btn-primary">Search All Hotels &amp; Motels</a>
+          <a href="travel.html" class="btn btn-primary">View All Lodging Perks &amp; Book Direct →</a>
         </div>
-
-        <!-- Best Western -->
-        <div class="card">
-          <div>
-            <span class="card-badge">Corporate ID: 01526650</span>
-            <h3>Best Western Corporate Rates</h3>
-            <p>Save across Best Western, Best Western Plus, and SureStay properties nationwide with exclusive member rates.</p>
-          </div>
-          <a href="https://www.bestwestern.com/en_US.html?corporateId=01526650" target="_blank" class="btn btn-secondary">Book Best Western (Code: 01526650)</a>
-        </div>
-
-        <!-- Choice Hotels -->
-        <div class="card">
-          <div>
-            <span class="card-badge">15% Off Standard Rates</span>
-            <h3>Choice Hotels Direct</h3>
-            <p>Save at Quality Inn, Comfort Inn, and Econo Lodge properties along primary freight and delivery corridors.</p>
-          </div>
-          <a href="https://www.choicebusinessdirect.com/choice/sharedlink.html?invitationcode=GFmQWr43ftD93BydJcjzAkTjp" target="_blank" class="btn btn-secondary">Book Choice Hotels</a>
-        </div>
-
-        <!-- IHG / Holiday Inn -->
-        <div class="card">
-          <div>
-            <span class="card-badge">15% Off IHG Business Edge</span>
-            <h3>Holiday Inn &amp; IHG Hotels</h3>
-            <p>Save at Holiday Inn, Express, Candlewood Suites, and Staybridge Suites along major transit corridors.</p>
-          </div>
-          <a href="https://businessedge.ihg.com/s/" target="_blank" class="btn btn-secondary">Book IHG Business Edge</a>
-        </div>
-
-        <!-- Hilton -->
-        <div class="card">
-          <div>
-            <span class="card-badge">Honors Point Earnings</span>
-            <h3>Hilton Corporate Rates</h3>
-            <p>Book directly with Hilton properties to earn personal Hilton Honors points while using SBFA rate options.</p>
-          </div>
-          <a href="https://www.hilton.com/en/p/hilton-for-business/" target="_blank" class="btn btn-secondary">Book Hilton Hotels</a>
-        </div>
-
-        <!-- Wyndham Rewards -->
-        <div class="card">
-          <div>
-            <span class="card-badge">Up to 15% Off</span>
-            <h3>Wyndham Highway Lodging</h3>
-            <p>Preferred rates at Super 8, Days Inn, Microtel, and La Quinta for multi-day route drivers.</p>
-          </div>
-          <a href="https://www.wyndhamhotels.com/wyndham-rewards/business" target="_blank" class="btn btn-secondary">Book Wyndham Hotels</a>
-        </div>
-
-        <!-- Motel 6 -->
-        <div class="card">
-          <div>
-            <span class="card-badge">10% Off Nationwide</span>
-            <h3>Motel 6 &amp; Studio 6</h3>
-            <p>Save 10% nationwide at over 1,400 Motel 6 and Studio 6 extended stay locations along freight corridors.</p>
-          </div>
-          <a href="https://www.motel6.com" target="_blank" class="btn btn-secondary">Book Motel 6</a>
-        </div>
-
       </div>
     </section>
 
-    <!-- SECTION 3: RENTAL VEHICLES & COMPARISON TOOL -->
+    <!-- SECTION 3: RENTAL VEHICLES -->
     <section>
       <h2 class="section-title">🚚 Commercial <span>Rental Vehicles</span></h2>
       <p class="section-intro">Backup rental trucks, cargo vans, and fleet vehicles when your primary rig is in the shop.</p>
-
-      <!-- Multi-Tab Comparison Launcher Card -->
-      <div class="card card-featured rental-search-card">
-        <div>
-          <span class="card-badge">Instant Fleet Comparison</span>
-          <h3>Compare All Fleet Rental Rates</h3>
-          <p>Enter your location and trip dates below. Clicking compare will open Enterprise, Hertz, and Avis in separate tabs with SBFA corporate rates pre-loaded.</p>
-          
-          <form id="rental-search-form" onsubmit="compareRentals(event)">
-            <div class="rental-form-grid">
-              <div class="form-group">
-                <label for="rental-location">Pickup Location</label>
-                <input type="text" id="rental-location" placeholder="City or Airport (e.g. CMH or Columbus, OH)" required>
-              </div>
-              <div class="form-group">
-                <label for="pickup-date">Pickup Date</label>
-                <input type="date" id="pickup-date" required>
-              </div>
-              <div class="form-group">
-                <label for="dropoff-date">Return Date</label>
-                <input type="date" id="dropoff-date" required>
-              </div>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Compare All Fleets At Once</button>
-            <p class="form-note">*Note: Please allow pop-ups for this site if your browser asks when launching comparison tabs.</p>
-          </form>
-        </div>
-      </div>
 
       <div class="grid">
 
@@ -657,4 +554,40 @@
             <h3>Automatic Mileage Tracking</h3>
             <p>Easily log business miles for maximum tax deductions with automated drive detection and report generation.</p>
           </div>
-          <a href="https://www.mileiq.com" target="_blank" class="btn bt
+          <a href="https://www.mileiq.com" target="_blank" class="btn btn-secondary">Get MileIQ App</a>
+        </div>
+
+        <!-- Upside -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Cashback Rewards</span>
+            <h3>Upside Fuel &amp; Snacks</h3>
+            <p>Earn cash back on daily fuel purchases, convenience store snacks, and dining along your delivery route.</p>
+          </div>
+          <a href="https://www.upside.com" target="_blank" class="btn btn-secondary">Get Upside Cashback</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">SBFA <span>|</span> Small Business Fleet Alliance</div>
+        <div class="footer-copy">© 2026 Small Business Fleet Alliance. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">About</a>
+        <a href="benefits.html">Benefits</a>
+        <a href="travel.html">Travel</a>
+        <a href="join.html">Join</a>
+        <a href="mailto:gwillis@sbfaohio.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
