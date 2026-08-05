@@ -311,6 +311,18 @@
       font-size: 0.88rem;
     }
 
+    .action-btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .action-btn-group .btn {
+      flex: 1;
+      min-width: 220px;
+    }
+
     /* Footer */
     footer {
       background: #070b14;
@@ -473,19 +485,22 @@
         <div class="card card-featured" style="grid-column: 1 / -1;">
           <div>
             <span class="card-badge">SBFA Lodging Hub</span>
-            <h3>Corporate Hotel Rates &amp; Partner Codes</h3>
-            <p>We've secured corporate accounts across major highway lodging chains to keep multi-day drivers covered nationwide:</p>
-            
+            <h3>Corporate Hotel Rates &amp; Travel Portal</h3>
+            <p>We've secured corporate accounts and built a dedicated booking portal across major highway lodging chains to keep multi-day drivers covered nationwide:</p>
+
             <ul class="partner-list">
+              <li><strong>SBFA Booking Engine:</strong> Search thousands of independent motels &amp; hotels nationwide at <span class="code-tag">sbfa.hotelplanner.com</span></li>
               <li><strong>Best Western &amp; SureStay:</strong> Corporate ID <span class="code-tag">01526650</span></li>
               <li><strong>Choice Hotels (Quality Inn, Comfort Inn, Econo Lodge):</strong> 15% Off Preferred Rates</li>
               <li><strong>IHG Business Edge (Holiday Inn &amp; Express):</strong> 15% Off Corporate Program</li>
               <li><strong>Motel 6 &amp; Studio 6:</strong> 10% Off Nationwide Discount</li>
               <li><strong>Hilton &amp; Wyndham Rewards:</strong> Direct Corporate Booking &amp; Points Earnings</li>
-              <li><strong>SBFA Booking Engine:</strong> Search thousands of independent motels &amp; hotels nationwide</li>
             </ul>
           </div>
-          <a href="travel.html" class="btn btn-primary">View All Lodging Perks &amp; Book Direct →</a>
+          <div class="action-btn-group">
+            <a href="https://sbfa.hotelplanner.com" target="_blank" class="btn btn-primary">Launch SBFA Travel Portal →</a>
+            <a href="travel.html" class="btn btn-secondary">View All Hotel Codes &amp; Book Direct</a>
+          </div>
         </div>
       </div>
     </section>
