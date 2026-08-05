@@ -1,654 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Member Benefits & Resources | Small Business Fleet Alliance</title>
-  <meta name="description" content="Exclusive member perks, travel discounts, health savings, fuel programs, and business resources for independent drivers and fleet operators.">
-  <style>
-    :root {
-      --bg-dark: #0b1220;
-      --bg-card: #121a2b;
-      --bg-section: #0f172a;
-      --orange: #f97316;
-      --orange-dark: #ea580c;
-      --orange-light: #fb923c;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --border: #1e293b;
-      --white: #ffffff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Benefits - Small Business Fleet Alliance</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --accent-color: #ff9900;
+            --bg-color: #f4f6f8;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg-dark);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+        nav {
+            margin-top: 1rem;
+        }
 
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
 
-    /* Header */
-    header {
-      background: rgba(11, 18, 32, 0.98);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(8px);
-    }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-    }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: inherit;
-    }
+        .hero {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
 
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+        .hero h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .logo-icon svg {
-      width: 26px;
-      height: 26px;
-    }
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+        }
 
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
 
-    .logo-text strong {
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-      color: var(--white);
-    }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #e1e4e8;
+        }
 
-    .logo-text span {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
 
-    .nav-cta {
-      background: var(--orange);
-      color: var(--white);
-      font-weight: 700;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
 
-    .nav-cta:hover {
-      background: var(--orange-dark);
-    }
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+        }
 
-    /* Hero Section */
-    .hero {
-      padding: 50px 16px 40px;
-      text-align: center;
-      background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
-      border-bottom: 1px solid var(--border);
-    }
+        .btn-secondary {
+            background-color: var(--primary-color);
+            color: white;
+            transition: background 0.2s ease;
+        }
 
-    .hero-badge {
-      display: inline-block;
-      background: rgba(249, 115, 22, 0.15);
-      color: var(--orange-light);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 16px;
-      border: 1px solid rgba(249, 115, 22, 0.4);
-    }
+        .btn-secondary:hover {
+            background-color: #002244;
+        }
 
-    .hero h1 {
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.5px;
-      margin: 0 0 14px;
-      color: var(--white);
-    }
-
-    .hero h1 span {
-      color: var(--orange);
-    }
-
-    .hero-tagline {
-      font-size: clamp(0.98rem, 2.2vw, 1.15rem);
-      color: var(--text-muted);
-      margin: 0 auto;
-      max-width: 680px;
-      line-height: 1.5;
-    }
-
-    /* Section Styling */
-    section.content-section {
-      padding: 45px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    section.content-section:nth-child(even) {
-      background: var(--bg-section);
-    }
-
-    .section-header {
-      margin-bottom: 28px;
-    }
-
-    .section-title {
-      font-size: clamp(1.35rem, 3.5vw, 1.75rem);
-      font-weight: 800;
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .section-title span {
-      color: var(--orange);
-    }
-
-    .section-subtitle {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-top: 4px;
-    }
-
-    /* Grid & Cards */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .card:hover {
-      border-color: rgba(249, 115, 22, 0.45);
-      transform: translateY(-2px);
-    }
-
-    .card-featured {
-      border: 2px solid var(--orange);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    .card-badge {
-      display: inline-block;
-      background: rgba(249, 115, 22, 0.2);
-      color: var(--orange-light);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 4px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin-bottom: 18px;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 10px 18px;
-      border-radius: 6px;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      text-align: center;
-      width: 100%;
-    }
-
-    .btn-primary {
-      background: var(--orange);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--orange-dark);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid #475569;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--orange);
-      color: var(--orange-light);
-    }
-
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(135deg, #1a2336 0%, #0f172a 100%);
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .cta-section h2 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .cta-section p {
-      color: var(--text-muted);
-      max-width: 520px;
-      margin: 0 auto 24px;
-      font-size: 0.95rem;
-    }
-
-    .cta-btns {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-btns .btn {
-      width: auto;
-      min-width: 200px;
-    }
-
-    /* Footer */
-    footer {
-      background: #070b14;
-      padding: 36px 0 28px;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      text-align: center;
-    }
-
-    @media (min-width: 640px) {
-      .footer-inner {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-      }
-    }
-
-    .footer-logo {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--white);
-    }
-
-    .footer-logo span {
-      color: var(--orange);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--orange-light);
-    }
-
-    .footer-copy {
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      margin-top: 8px;
-    }
-
-    @media (max-width: 600px) {
-      .hero {
-        padding: 35px 14px 30px;
-      }
-      .container {
-        padding: 0 14px;
-      }
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #222;
+            color: #aaa;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container header-inner">
-      <a href="/" class="logo">
-        <div class="logo-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 8h11v8H3V8z" fill="#0b1220"/>
-            <path d="M14 10h4l3 3v3h-7v-6z" fill="#0b1220"/>
-            <circle cx="6.5" cy="17.5" r="1.8" fill="#f97316"/>
-            <circle cx="17.5" cy="17.5" r="1.8" fill="#f97316"/>
-          </svg>
-        </div>
-        <div class="logo-text">
-          <strong>SBFA</strong>
-          <span>Small Business Fleet Alliance</span>
-        </div>
-      </a>
-      <a href="join.html" class="nav-cta">Join Today</a>
-    </div>
-  </header>
+    <header>
+        <h2>Small Business Fleet Alliance</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="benefits.html">Member Benefits</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
     <div class="container">
-      <div class="hero-badge">Member Resources & Perks</div>
-      <h1>
-        MEMBER BENEFITS &amp; <span class="accent">RESOURCES</span>
-      </h1>
-      <p class="hero-tagline">
-        Exclusive savings, health programs, lodging discounts, and driver tools designed to keep independent fleet operators profitable and protected on the road.
-      </p>
+        <section class="hero">
+            <h1>Exclusive Member Perks & Discounts</h1>
+            <p>Designed specifically to lower operational costs and support independent drivers and small fleet owners.</p>
+        </section>
+
+        <div class="grid">
+            <!-- Choice Hotels -->
+            <div class="card">
+                <div>
+                    <h3>Choice Hotels (Up to 15% Off)</h3>
+                    <p>Save at Quality Inn, Comfort Inn, and Econo Lodge along primary delivery corridors by linking your free Choice Privileges account.</p>
+                </div>
+                <a href="https://www.choicebusinessdirect.com/choice/sharedlink.html?invitationcode=GFmQWr43ftD93BydJcjzAkTjp" target="_blank" class="btn btn-secondary">Activate Choice Discount</a>
+            </div>
+
+            <!-- Mudflap Fuel Discounts -->
+            <div class="card">
+                <div>
+                    <h3>Mudflap Fuel Savings</h3>
+                    <p>Save instantly on diesel and gas nationwide at participating truck stops and service stations with no monthly fees.</p>
+                </div>
+                <a href="#" target="_blank" class="btn btn-secondary">Get Mudflap Savings</a>
+            </div>
+
+            <!-- Upside Cash Back -->
+            <div class="card">
+                <div>
+                    <h3>Upside Fuel & Road Cash Back</h3>
+                    <p>Earn cash back on fuel, snacks, and roadside meals while on your daily routes.</p>
+                </div>
+                <a href="#" target="_blank" class="btn btn-secondary">Claim Upside Perks</a>
+            </div>
+
+            <!-- Tax & Mileage Tracking -->
+            <div class="card">
+                <div>
+                    <h3>Tax & Mileage Tracking Tools</h3>
+                    <p>Streamline your business deductions, vehicle logs, and expense tracking built for independent operators.</p>
+                </div>
+                <a href="#" class="btn btn-secondary">Explore Tax Tools</a>
+            </div>
+
+            <!-- Healthcare & Telehealth -->
+            <div class="card">
+                <div>
+                    <h3>Healthcare & Telehealth Access</h3>
+                    <p>Affordable, on-demand medical care and prescriptions tailored for drivers and independent contractors on the go.</p>
+                </div>
+                <a href="#" class="btn btn-secondary">View Health Options</a>
+            </div>
+
+            <!-- Driver Legal Support -->
+            <div class="card">
+                <div>
+                    <h3>Driver Legal & Support Network</h3>
+                    <p>Protect your commercial license and business with dedicated legal defense and dispute support services.</p>
+                </div>
+                <a href="#" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Main Content Areas -->
-  <main>
-
-    <!-- SECTION 1: TRAVEL & LODGING -->
-    <section class="content-section" id="travel">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">🏨 Travel, Lodging &amp; <span>Highway Perks</span></h2>
-          <p class="section-subtitle">Preferred lodging options for overnight routes, long hauls, and business travel.</p>
-        </div>
-
-        <div class="grid">
-          <!-- SBFA Branded Engine -->
-          <div class="card card-featured">
-            <div>
-              <span class="card-badge">SBFA Booking Engine</span>
-              <h3>Search All Hotels &amp; Motels</h3>
-              <p>Compare discounted rates across thousands of independent motels and major hotel chains nationwide in one search.</p>
-            </div>
-            <a href="https://sbfa.hotelplanner.com" target="_blank" class="btn btn-primary">Search All Hotels &amp; Motels</a>
-          </div>
-
-          <!-- Direct Hilton Rates -->
-          <div class="card">
-            <div>
-              <h3>Hilton Corporate Rates</h3>
-              <p>Book directly with Hilton properties to earn your personal Hilton Honors points while utilizing SBFA rate options.</p>
-            </div>
-            <a href="https://www.hilton.com/en/p/hilton-for-business/" target="_blank" class="btn btn-secondary">Book Hilton (Honors Points)</a>
-          </div>
-
-          <!-- Direct Choice Hotels -->
-          <div class="card">
-            <div>
-              <h3>Choice Hotels (15% Off)</h3>
-              <p>Save at Quality Inn, Comfort Inn, and Econo Lodge properties along primary freight and delivery corridors.</p>
-            </div>
-            <a href="https://www.choicehotels.com/choice-privileges/business" target="_blank" class="btn btn-secondary">Book Choice Hotels</a>
-          </div>
-
-          <!-- Direct Wyndham -->
-          <div class="card">
-            <div>
-              <h3>Wyndham Highway Lodging</h3>
-              <p>Preferred rates at Super 8, Days Inn, Microtel, and La Quinta for multi-day route drivers.</p>
-            </div>
-            <a href="https://www.wyndhamhotels.com/wyndham-rewards/business" target="_blank" class="btn btn-secondary">Book Wyndham Hotels</a>
-          </div>
-
-          <!-- Rental Cars -->
-          <div class="card">
-            <div>
-              <h3>Rental Car Fleet Perks</h3>
-              <p>Preferred rates, counter bypass, and driver rewards with Enterprise, National, and Hertz Business Rewards.</p>
-            </div>
-            <a href="https://www.enterprise.com/en/business-car-rental.html" target="_blank" class="btn btn-secondary">View Rental Perks</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: HEALTHCARE & TELEHEALTH -->
-    <section class="content-section" id="health">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">🛡️ Healthcare &amp; <span>Telehealth Hub</span></h2>
-          <p class="section-subtitle">Affordable health coverage, prescription savings, and on-demand doctor access for independent operators.</p>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <div>
-              <h3>Stride Health Marketplace</h3>
-              <p>Free portal to compare ACA health insurance, dental, and vision plans tailored for 1099 operators with government tax subsidies.</p>
-            </div>
-            <a href="https://www.stridehealth.com" target="_blank" class="btn btn-secondary">Explore Health Plans</a>
-          </div>
-
-          <div class="card">
-            <div>
-              <h3>Prescription Savings Cards</h3>
-              <p>Save up to 80% on medications at over 65,000 pharmacies nationwide using $0-cost member digital savings cards.</p>
-            </div>
-            <a href="partner.html" class="btn btn-secondary">Get Rx Discount Card</a>
-          </div>
-
-          <div class="card">
-            <div>
-              <h3>24/7 Virtual Telehealth Doctor</h3>
-              <p>Connect with US-board certified doctors on the road for routine illness, prescriptions, and medical advice without ER visits.</p>
-            </div>
-            <a href="partner.html" class="btn btn-secondary">Access Telehealth</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: FUEL & ROAD EXPENSES -->
-    <section class="content-section" id="fuel">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">⛽ Fuel &amp; <span>Road Expense Savings</span></h2>
-          <p class="section-subtitle">Lower your biggest daily variable costs with instant fuel discounts and cash-back apps.</p>
-        </div>
-
-        <div class="grid">
-          <!-- Mudflap with Live Partner Link -->
-          <div class="card card-featured">
-            <div>
-              <span class="card-badge">Partner Deal</span>
-              <h3>Mudflap Fuel Savings App</h3>
-              <p>Get instant gallon discounts on diesel and gas at thousands of independent truck stops and stations nationwide with $0 app fees.</p>
-            </div>
-            <a href="https://dashboard.mudflapinc.com/invite/gab9c23e" target="_blank" class="btn btn-primary">Claim Fuel Savings (Code: gab9c23e)</a>
-          </div>
-
-          <div class="card">
-            <div>
-              <h3>Upside Cash-Back Program</h3>
-              <p>Earn cash back on every gas purchase, convenience store run, and highway meal stop along your delivery route.</p>
-            </div>
-            <a href="https://www.upside.com" target="_blank" class="btn btn-secondary">Download Upside App</a>
-          </div>
-
-          <div class="card">
-            <div>
-              <h3>Commercial Tire &amp; Maintenance</h3>
-              <p>Access national account fleet pricing on commercial tires, preventive maintenance, and emergency roadside service.</p>
-            </div>
-            <a href="partner.html" class="btn btn-secondary">View Service Partners</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: TAX, MILEAGE & BUSINESS TOOLS -->
-    <section class="content-section" id="business">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">📊 Tax, Mileage &amp; <span>Business Tools</span></h2>
-          <p class="section-subtitle">Self-employed bookkeeping, deduction tracking, and small business growth resources.</p>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <div>
-              <h3>Automated Mileage Tracking</h3>
-              <p>Track delivery miles automatically to maximize your end-of-year IRS standard mileage tax deductions.</p>
-            </div>
-            <a href="https://www.mileiq.com" target="_blank" class="btn btn-secondary">Explore Mileage Apps</a>
-          </div>
-
-          <div class="card">
-            <div>
-              <h3>IRS Tax &amp; Deduction Hub</h3>
-              <p>Direct links to 1040-ES quarterly estimated tax calculators, standard mileage rates, and small business tax guides.</p>
-            </div>
-            <a href="https://www.irs.gov/businesses/small-businesses-self-employed" target="_blank" class="btn btn-secondary">Access IRS Tax Hub</a>
-          </div>
-
-          <div class="card">
-            <div>
-              <h3>SCORE Business Mentorship</h3>
-              <p>Free $0 one-on-one coaching, business plan reviews, and legal structure guidance backed by the Small Business Administration.</p>
-            </div>
-            <a href="https://www.score.org" target="_blank" class="btn btn-secondary">Find a Free Mentor</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 5: LEGAL & DRIVER PROTECTION -->
-    <section class="content-section" id="legal">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">⚖️ Legal Defense &amp; <span>Driver Protection</span></h2>
-          <p class="section-subtitle">Protect your CDL, moving record, and commercial business liability.</p>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <div>
-              <h3>Traffic Ticket &amp; CDL Defense</h3>
-              <p>Legal representation for moving violations, inspection issues, and license protection tailored for commercial drivers.</p>
-            </div>
-            <a href="partner.html" class="btn btn-secondary">View CDL Legal Options</a>
-          </div>
-
-          <div class="card">
-            <div>
-              <h3>Commercial Auto &amp; Cargo Liability</h3>
-              <p>Compare quotes for commercial van, box truck, cargo, and general liability insurance built for independent fleet operators.</p>
-            </div>
-            <a href="partner.html" class="btn btn-secondary">Get Insurance Quotes</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Join CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Founding Spots Are Open</h2>
-      <p>
-        Join the waitlist and lock in your Founding 100 status from day one — whether you run a box truck, Sprinter, or work the gig apps.
-      </p>
-      <div class="cta-btns">
-        <a href="join.html" class="btn btn-primary">Join the Waitlist</a>
-        <a href="chapter.html" class="btn btn-secondary">Start a Chapter</a>
-        <a href="partner.html" class="btn btn-secondary">Become a Service Partner</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <div>
-        <div class="footer-logo">SBFA <span>|</span> Small Business Fleet Alliance</div>
-        <div class="footer-copy">© 2026 Small Business Fleet Alliance. All rights reserved.</div>
-      </div>
-      <div class="footer-links">
-        <a href="/#about">About</a>
-        <a href="benefits.html">Benefits</a>
-        <a href="join.html">Join</a>
-        <a href="mailto:gwillis@sbfaohio.com">Contact</a>
-      </div>
-    </div>
-  </footer>
+    <footer>
+        <p>&copy; 2026 Small Business Fleet Alliance. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
