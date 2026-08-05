@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel & Lodging Perks | Small Business Fleet Alliance</title>
+  <title>Travel &amp; Lodging Perks | Small Business Fleet Alliance</title>
   <style>
     :root {
       --navy: #0b1220;
@@ -78,6 +78,24 @@
       font-size: 0.7rem;
       color: var(--text-muted);
       letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--orange);
     }
 
     .btn {
@@ -235,12 +253,25 @@
       font-size: 0.9rem;
     }
 
+    footer nav {
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
     footer a {
-      color: var(--orange);
+      color: var(--text-muted);
       text-decoration: none;
     }
 
+    footer a:hover {
+      color: var(--orange);
+    }
+
     @media (max-width: 600px) {
+      nav {
+        display: none;
+      }
       .hero {
         padding: 40px 16px 30px;
       }
@@ -261,6 +292,11 @@
           <span>SMALL BUSINESS FLEET ALLIANCE</span>
         </div>
       </a>
+      <nav>
+        <a href="benefits.html">Benefits</a>
+        <a href="travel.html" class="active">Travel Perks</a>
+        <a href="partner.html">Partners</a>
+      </nav>
       <a href="join.html" class="btn btn-primary">Join Waitlist</a>
     </div>
   </header>
@@ -303,7 +339,7 @@
     </div>
 
     <!-- Best Western Business Advantage Card -->
-    <div class="card">
+    <div class="card" style="border-color: var(--orange);">
       <div class="card-header">
         <div>
           <span class="badge-code">Corporate ID: 01526650</span>
@@ -312,17 +348,18 @@
       </div>
 
       <p>
-        Preferred corporate rate access at Best Western, Best Western Plus, and Executive Residency locations nationwide.
+        Preferred corporate rate access across 4,000+ Best Western, Best Western Plus, and Executive Residency locations nationwide.
       </p>
 
       <ul class="perks-list">
-        <li><span>✓</span> Up to 10% off best available rates</li>
-        <li><span>✓</span> Automatic Gold Status upgrade for SBFA members</li>
-        <li><span>✓</span> Earn bonus points on all business stays</li>
+        <li><span>✓</span> Discounted corporate rates on all business and personal stays</li>
+        <li><span>✓</span> Book online at BWbusinessadvantage.com or bestwestern.com with ID 01526650</li>
+        <li><span>✓</span> Phone reservations available 24/7 at 1-855-504-1079 (Option #1)</li>
+        <li><span>✓</span> Automatic Business Advantage rewards enrollment &amp; bonus points</li>
       </ul>
 
-      <a href="https://www.bestwestern.com" target="_blank" rel="noopener" class="btn btn-secondary">
-        Book Best Western (Code: 01526650) →
+      <a href="https://www.BWbusinessadvantage.com" target="_blank" rel="noopener" class="btn btn-primary">
+        Book Best Western (ID: 01526650) →
       </a>
     </div>
 
@@ -479,6 +516,12 @@
   </section>
 
   <footer>
+    <nav>
+      <a href="benefits.html">Benefits</a> •
+      <a href="travel.html">Travel Perks</a> •
+      <a href="partner.html">Become a Partner</a> •
+      <a href="join.html">Join Waitlist</a>
+    </nav>
     <p>smallbusinessfleetalliance.com &nbsp;•&nbsp; gwillis@sbfaohio.com</p>
     <p style="margin-top: 8px;">© 2026 Small Business Fleet Alliance</p>
   </footer>
