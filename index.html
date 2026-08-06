@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Small Business Fleet Alliance | Big-Fleet Purchasing Power</title>
-  <meta name="description" content="SBFA unites independent drivers and gig workers — box trucks, Sprinters, delivery vans, and more. Group buying power on fuel, parts, service, and more.">
+  <meta name="description" content="SBFA unites independent drivers and gig workers — box trucks, Sprinters, delivery vans, and more. Group buying power on fuel, hotels, healthcare, and fleet rentals.">
   
   <!-- Favicon / Mobile Home Screen Icon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
@@ -37,6 +37,10 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -403,7 +407,7 @@
 
     @media (min-width: 640px) {
       .perks-grid {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
     }
 
@@ -574,7 +578,7 @@
         </div>
       </a>
       <nav>
-        <a href="benefits.html">Benefits</a>
+        <a href="#perks">Benefits</a>
         <a href="healthcare.html">Healthcare</a>
         <a href="travel.html">Travel Perks</a>
         <a href="partner.html">Partners</a>
@@ -624,7 +628,7 @@
 
       <div class="hero-ctas">
         <a href="join.html" class="btn btn-primary">Lock In Your Founding Spot</a>
-        <a href="benefits.html" class="btn btn-secondary">Explore Member Benefits →</a>
+        <a href="#perks" class="btn btn-secondary">Explore Member Benefits ↓</a>
         <a href="partner.html" class="btn btn-secondary">Become a Service Partner</a>
       </div>
     </div>
@@ -661,59 +665,54 @@
       <h2 class="section-title">Core Alliance <span>Member Perks</span></h2>
       <p class="section-intro">
         Real savings that help you stay profitable and protected on the road. 
-        <a href="benefits.html" style="color:var(--orange); font-weight:600; text-decoration:underline;">View full benefits directory →</a>
+        <a href="join.html" style="color:var(--orange); font-weight:600; text-decoration:underline;">Join waitlist to unlock all perks →</a>
       </p>
 
       <div class="perks-grid">
+        <!-- Fuel Perks -->
         <div class="perk-card">
           <div>
-            <div class="perk-icon">🩺</div>
-            <h3>Healthcare &amp; Prescription Savings</h3>
-            <p>Up to 80% off prescriptions with LowerMyRx, plus direct access to individual VSP vision care, Delta Dental coverage, and 24/7 telehealth.</p>
+            <div class="perk-icon">⛽</div>
+            <h3>Commercial Fuel Savings</h3>
+            <p>Substantial commercial diesel and fuel discounts nationwide at major pumps without steep fleet volume requirements.</p>
           </div>
-          <a href="healthcare.html" class="perk-link">Explore Healthcare Benefits →</a>
+          <a href="join.html" class="perk-link">Unlock Fuel Discounts →</a>
         </div>
 
+        <!-- Travel Perks -->
         <div class="perk-card">
           <div>
             <div class="perk-icon">🏨</div>
             <h3>Travel &amp; Lodging Perks</h3>
-            <p>Exclusive corporate hotel rates with Best Western, IHG, Choice Hotels, Wyndham, and Motel 6, plus commercial rental vehicle discounts nationwide.</p>
+            <p>Exclusive corporate rates with <strong>Choice Hotels, Motel 6, Wyndham, IHG Hotels &amp; Resorts, and Best Western</strong>, plus commercial rental vehicle discounts nationwide.</p>
           </div>
           <a href="travel.html" class="perk-link">Explore Travel Perks →</a>
         </div>
 
+        <!-- Prescription & Health Perks -->
+        <div class="perk-card">
+          <div>
+            <div class="perk-icon">🩺</div>
+            <h3>Healthcare &amp; Prescription Savings</h3>
+            <p>Save up to 80% on medications with <strong>LowerMyRx prescription discounts</strong> at 60,000+ pharmacies, plus individual VSP vision and Delta Dental coverage.</p>
+          </div>
+          <a href="healthcare.html" class="perk-link">Explore Healthcare Benefits →</a>
+        </div>
+
+        <!-- Commercial Rental Perks -->
         <div class="perk-card">
           <div>
             <div class="perk-icon">🚚</div>
             <h3>Commercial Rental &amp; Backup Trucks</h3>
-            <p>Preferred corporate discount codes with Enterprise. Pre-negotiated labor rates and priority service at participating regional repair shops.</p>
+            <p>Preferred corporate discount codes with Enterprise Commercial Truck Rental to keep your route moving when your main vehicle is down.</p>
           </div>
-          <a href="benefits.html" class="perk-link">Explore Rental Perks →</a>
-        </div>
-
-        <div class="perk-card">
-          <div>
-            <div class="perk-icon">⚖️</div>
-            <h3>Driver Legal &amp; License Defense</h3>
-            <p>Nationwide CDL legal representation with TVC Pro-Driver, instant mobile ticket defense with Off Record, and contract review services.</p>
-          </div>
-          <a href="benefits.html" class="perk-link">Explore Legal Protection →</a>
-        </div>
-
-        <div class="perk-card">
-          <div>
-            <div class="perk-icon">💳</div>
-            <h3>Commercial Fuel &amp; Fleet Savings</h3>
-            <p>Significant discounts on fuel, tires, maintenance, and fleet services through our nationwide vendor network.</p>
-          </div>
-          <a href="benefits.html" class="perk-link">Explore Fleet Discounts →</a>
+          <a href="join.html" class="perk-link">Unlock Rental Rates →</a>
         </div>
       </div>
 
       <!-- View All Benefits Directory Link Button -->
       <div style="text-align: center; margin-top: 32px;">
-        <a href="benefits.html" class="btn btn-primary">Browse Full Member Benefits Directory →</a>
+        <a href="join.html" class="btn btn-primary">Join Waitlist to Access Member Perks →</a>
       </div>
     </div>
   </section>
@@ -727,4 +726,8 @@
             <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
               INCLUDED WITH MEMBERSHIP*
             </span>
-            <h3 style="font-size: 1.5rem; font-
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-top: 8px; margin-bottom: 0; color: var(--white);">
+              $10,000 Group AD&amp;D Protection*
+            </h3>
+          </div>
+          <span style="font-size: 2.2rem;"
