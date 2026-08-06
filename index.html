@@ -4,20 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Small Business Fleet Alliance | Big-Fleet Purchasing Power</title>
-  <meta name="description" content="SBFA unites independent drivers and gig workers â€” box trucks, Sprinters, delivery vans, and more. Group buying power on fuel, hotels, healthcare, and fleet rentals.">
-  
-  <!-- Favicon / Mobile Home Screen Icon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>ðŸš›</text></svg>">
+  <meta name="description" content="SBFA unites independent drivers and gig workers. Group buying power on fuel, hotels, healthcare, and fleet rentals.">
 
-  <!-- Social & Open Graph Metadata -->
+  <!-- Favicon: white square with navy truck + orange wheels -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ffffff'/%3E%3Cpath d='M4 11h12v9H4V11z' fill='%230b1220'/%3E%3Cpath d='M16 13h5l3 3v4h-8v-7z' fill='%230b1220'/%3E%3Ccircle cx='8' cy='21.5' r='2' fill='%23f97316'/%3E%3Ccircle cx='22' cy='21.5' r='2' fill='%23f97316'/%3E%3C/svg%3E">
+
   <meta property="og:title" content="Small Business Fleet Alliance | Big-Fleet Purchasing Power">
-  <meta property="og:description" content="Group buying power for independent drivers & gig workers â€” box trucks, Sprinters, delivery vans, and route operators.">
+  <meta property="og:description" content="Group buying power for independent drivers and gig workers.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://smallbusinessfleetalliance.com/">
-  <meta property="og:image" content="https://smallbusinessfleetalliance.com/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Small Business Fleet Alliance">
-  <meta name="twitter:description" content="Group buying power for independent drivers & gig workers.">
 
   <style>
     :root {
@@ -32,17 +28,8 @@
       --border: #1e293b;
       --white: #ffffff;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg-dark);
@@ -50,532 +37,176 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Header */
     header {
       background: rgba(11, 18, 32, 0.98);
       border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
       backdrop-filter: blur(8px);
     }
-
     .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 14px 0;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: inherit;
-    }
-
+    .logo { display: flex; align-items: center; gap: 12px; color: inherit; }
     .logo-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width: 44px; height: 44px; background: var(--white); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-
-    .logo-icon svg {
-      width: 26px;
-      height: 26px;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-    }
-
-    .logo-text strong {
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-      color: var(--white);
-    }
-
-    .logo-text span {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    nav a:hover, nav a.active {
-      color: var(--orange);
-    }
-
+    .logo-icon svg { width: 26px; height: 26px; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+    .logo-text strong { font-size: 1.1rem; letter-spacing: 0.5px; color: var(--white); }
+    .logo-text span { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    nav { display: flex; align-items: center; gap: 16px; }
+    nav a { color: var(--text-muted); font-size: 0.92rem; font-weight: 500; }
+    nav a:hover { color: var(--orange); }
     .nav-cta {
-      background: var(--orange);
-      color: var(--white);
-      font-weight: 700;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: background 0.2s;
+      background: var(--orange); color: var(--white); font-weight: 700;
+      padding: 10px 18px; border-radius: 6px; font-size: 0.9rem;
     }
+    .nav-cta:hover { background: var(--orange-dark); }
 
-    .nav-cta:hover {
-      background: var(--orange-dark);
-    }
-
-    /* Hero Section */
     .hero-special {
-      padding: 40px 16px 50px;
-      text-align: center;
+      padding: 40px 16px 50px; text-align: center;
       background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
       border-bottom: 1px solid var(--border);
     }
-
     .hero-badge {
       display: inline-block;
-      background: rgba(249, 115, 22, 0.15);
-      color: #fb923c;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 16px;
+      background: rgba(249, 115, 22, 0.15); color: #fb923c;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
       border: 1px solid rgba(249, 115, 22, 0.4);
     }
-
     .hero-special h1 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.5px;
-      margin: 0 0 14px;
-      color: var(--white);
+      font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 800; line-height: 1.15;
+      letter-spacing: -0.5px; margin: 0 0 14px; color: var(--white);
     }
-
-    .hero-special h1 .accent {
-      color: var(--orange);
-    }
-
+    .hero-special h1 .accent { color: var(--orange); }
     .hero-tagline {
-      font-size: clamp(0.98rem, 2.2vw, 1.15rem);
-      color: #94a3b8;
-      margin: 0 auto 28px;
-      max-width: 680px;
-      line-height: 1.5;
+      font-size: clamp(0.98rem, 2.2vw, 1.15rem); color: #94a3b8;
+      margin: 0 auto 28px; max-width: 680px; line-height: 1.5;
     }
-
     .hero-offer-box {
-      background: var(--bg-card);
-      border: 2px solid var(--orange);
-      border-radius: 16px;
-      padding: 28px 20px;
-      max-width: 860px;
-      margin: 16px auto 32px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-      position: relative;
+      background: var(--bg-card); border: 2px solid var(--orange); border-radius: 16px;
+      padding: 28px 20px; max-width: 860px; margin: 16px auto 32px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
     }
-
     .hero-offer-box h2 {
-      font-size: clamp(1.15rem, 3.5vw, 1.4rem);
-      color: var(--white);
-      margin-bottom: 6px;
-      line-height: 1.3;
+      font-size: clamp(1.15rem, 3.5vw, 1.4rem); color: var(--white);
+      margin-bottom: 6px; line-height: 1.3;
     }
-
-    .hero-offer-box > p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
-
+    .hero-offer-box > p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
     .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      text-align: left;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px; text-align: left;
     }
-
     .pricing-card {
-      background: var(--bg-dark);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      background: var(--bg-dark); border: 1px solid var(--border); border-radius: 12px;
+      padding: 20px; display: flex; flex-direction: column; justify-content: space-between;
     }
-
     .pricing-card .badge-inline {
-      display: inline-block;
-      background: rgba(249, 115, 22, 0.2);
-      color: var(--orange-light);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: 4px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
+      display: inline-block; background: rgba(249,115,22,0.2); color: var(--orange-light);
+      font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px;
+      margin-bottom: 10px; text-transform: uppercase;
     }
-
-    .pricing-card h3 {
-      color: var(--white);
-      font-size: 1.1rem;
-      margin-bottom: 4px;
-    }
-
-    .pricing-card .price {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--orange);
-      margin-bottom: 2px;
-    }
-
-    .pricing-card .price-sub {
-      font-size: 0.82rem;
-      color: var(--orange-light);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .pricing-card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
+    .pricing-card h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 4px; }
+    .pricing-card .price { font-size: 1.8rem; font-weight: 800; color: var(--orange); margin-bottom: 2px; }
+    .pricing-card .price-sub { font-size: 0.82rem; color: var(--orange-light); font-weight: 600; margin-bottom: 12px; }
+    .pricing-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
     .hero-ctas {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 10px;
+      display: flex; flex-direction: column; gap: 12px; align-items: center; margin-bottom: 10px;
     }
-
     @media (min-width: 560px) {
-      .hero-ctas {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+      .hero-ctas { flex-direction: row; flex-wrap: wrap; justify-content: center; }
     }
-
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.98rem;
-      padding: 13px 24px;
-      border-radius: 8px;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      min-width: 210px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.98rem; padding: 13px 24px; border-radius: 8px;
+      transition: all 0.2s; border: none; cursor: pointer; text-decoration: none; min-width: 210px;
     }
+    .btn-primary { background: var(--orange); color: var(--white); }
+    .btn-primary:hover { background: var(--orange-dark); }
+    .btn-secondary { background: transparent; color: var(--white); border: 2px solid #475569; }
+    .btn-secondary:hover { border-color: var(--orange); color: #fb923c; }
 
-    .btn-primary {
-      background: var(--orange);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--orange-dark);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid #475569;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--orange);
-      color: #fb923c;
-    }
-
-    /* Sections */
-    section {
-      padding: 55px 0;
-    }
-
+    section { padding: 55px 0; }
     .section-title {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: var(--white);
-      text-align: center;
+      font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; margin-bottom: 12px;
+      color: var(--white); text-align: center;
     }
-
-    .section-title span {
-      color: var(--orange);
-    }
-
+    .section-title span { color: var(--orange); }
     .section-intro {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 32px;
-      text-align: center;
-      font-size: 0.95rem;
+      color: var(--text-muted); max-width: 600px; margin: 0 auto 32px;
+      text-align: center; font-size: 0.95rem;
     }
 
-    /* Who We Are */
-    .who {
-      background: var(--bg-section);
-    }
-
-    .who-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
+    .who { background: var(--bg-section); }
+    .who-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
     @media (min-width: 768px) {
-      .who-grid {
-        grid-template-columns: 1fr 1fr;
-        align-items: start;
-      }
+      .who-grid { grid-template-columns: 1fr 1fr; align-items: start; }
     }
-
-    .who-text p {
-      margin-bottom: 14px;
-      color: var(--text-muted);
-      font-size: 1rem;
-    }
-
-    .who-text strong {
-      color: var(--white);
-    }
-
+    .who-text p { margin-bottom: 14px; color: var(--text-muted); font-size: 1rem; }
+    .who-text strong { color: var(--white); }
     .who-highlight {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--orange);
-      padding: 20px;
-      border-radius: 10px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-left: 4px solid var(--orange); padding: 20px; border-radius: 10px;
     }
+    .who-highlight p { color: var(--text); font-size: 1rem; margin: 0; }
 
-    .who-highlight p {
-      color: var(--text);
-      font-size: 1rem;
-      margin: 0;
-    }
-
-    /* Perks */
-    .perks {
-      background: var(--bg-dark);
-    }
-
-    .perks-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
+    .perks { background: var(--bg-dark); }
+    .perks-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width: 640px) {
-      .perks-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
+      .perks-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
     }
-
     .perk-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px 20px;
-      transition: border-color 0.2s, transform 0.2s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 24px 20px; display: flex; flex-direction: column; justify-content: space-between;
     }
-
-    .perk-card:hover {
-      border-color: rgba(249, 115, 22, 0.45);
-      transform: translateY(-2px);
-    }
-
     .perk-icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(249, 115, 22, 0.12);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-      font-size: 1.4rem;
+      width: 44px; height: 44px; background: rgba(249,115,22,0.12); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-size: 1.4rem;
     }
+    .perk-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--white); }
+    .perk-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 16px; }
+    .perk-link { color: var(--orange); font-weight: 600; font-size: 0.9rem; }
+    .perk-link:hover { color: var(--orange-light); }
 
-    .perk-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--white);
-    }
-
-    .perk-card p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-
-    .perk-link {
-      color: var(--orange);
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .perk-link:hover {
-      color: var(--orange-light);
-    }
-
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(135deg, #1a2336 0%, #0f172a 100%);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .cta-section h2 {
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .cta-section p {
-      color: var(--text-muted);
-      max-width: 520px;
-      margin: 0 auto 26px;
-      font-size: 1rem;
-    }
-
-    /* AD&D Box */
     .add-list {
-      list-style: none;
-      margin: 20px 0 24px;
-      text-align: left;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
+      list-style: none; margin: 20px auto 24px; text-align: left; max-width: 520px;
     }
-
     .add-list li {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 14px;
-      align-items: flex-start;
+      display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start;
     }
-
     .add-list .label {
-      color: var(--orange);
-      font-weight: 700;
-      min-width: 110px;
-      flex-shrink: 0;
-      font-size: 0.92rem;
+      color: var(--orange); font-weight: 700; min-width: 110px; flex-shrink: 0; font-size: 0.92rem;
     }
+    .add-list .desc { color: var(--text-muted); font-size: 0.92rem; line-height: 1.4; }
 
-    .add-list .desc {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.4;
-    }
-
-    /* Footer */
     footer {
-      background: #070b14;
-      padding: 36px 0 28px;
-      border-top: 1px solid var(--border);
+      background: #070b14; padding: 36px 0 28px; border-top: 1px solid var(--border);
     }
-
     .footer-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      align-items: center;
-      text-align: center;
+      display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center;
     }
-
-    .footer-copy {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
-
+    .footer-copy { color: var(--text-muted); font-size: 0.88rem; }
     .footer-disclaimer {
-      color: #64748b;
-      font-size: 0.78rem;
-      line-height: 1.5;
-      max-width: 720px;
-      margin: 8px auto 0;
+      color: #64748b; font-size: 0.78rem; line-height: 1.5; max-width: 720px; margin: 8px auto 0;
     }
 
-    @media (max-width: 860px) {
-      nav {
-        display: none;
-      }
-    }
-
+    @media (max-width: 860px) { nav { display: none; } }
     @media (max-width: 600px) {
-      .hero-special {
-        padding: 30px 12px 40px;
-      }
-      .hero-offer-box {
-        padding: 22px 14px;
-        margin-top: 12px;
-      }
-      .container {
-        padding: 0 14px;
-      }
-      .add-list .label {
-        min-width: 90px;
-        font-size: 0.85rem;
-      }
+      .hero-special { padding: 30px 12px 40px; }
+      .hero-offer-box { padding: 22px 14px; margin-top: 12px; }
+      .container { padding: 0 14px; }
+      .add-list .label { min-width: 90px; font-size: 0.85rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="container header-inner">
       <a href="/" class="logo">
@@ -604,7 +235,6 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero-special">
     <div class="container">
       <div class="hero-badge">STRICTLY LIMITED TO THE FIRST 100 MEMBERS</div>
@@ -613,30 +243,28 @@
         <span class="accent">FLEET ALLIANCE</span>
       </h1>
       <p class="hero-tagline">
-        Group buying power for independent drivers &amp; gig workers â€” box trucks, Sprinters, delivery vans, and route operators.
+        Group buying power for independent drivers &amp; gig workers — box trucks, Sprinters, delivery vans, and route operators.
       </p>
 
       <div class="hero-offer-box">
         <h2>Founding 100 Special Introductory Rates</h2>
         <p>Lock in lifetime rate protection and permanent national referral earnings for helping launch the Alliance.</p>
-
         <div class="pricing-grid">
           <div class="pricing-card">
             <div>
               <span class="badge-inline">Founding Special</span>
               <h3>Commercial Pro Annual</h3>
               <div class="price">$150 <span style="font-size:0.95rem; font-weight:normal; color:var(--text-muted);">/ year</span></div>
-              <div class="price-sub">Save $50/yr off standard $200 rate (~41Â¢/day)</div>
+              <div class="price-sub">Save $50/yr off standard $200 rate (~41c/day)</div>
             </div>
             <p>For box truck, Sprinter, cargo van, and small fleet operators. Unlocks full commercial fleet discounts plus <strong>$50.00/yr lifetime referral residuals</strong>.</p>
           </div>
-
           <div class="pricing-card">
             <div>
               <span class="badge-inline">Founding Annual</span>
               <h3>Gig Tier Annual</h3>
               <div class="price">$60 <span style="font-size:0.95rem; font-weight:normal; color:var(--text-muted);">/ year</span></div>
-              <div class="price-sub">$5/month equivalent (~16Â¢/day)</div>
+              <div class="price-sub">$5/month equivalent (~16c/day)</div>
             </div>
             <p>For sedans, SUVs, minivans, and gig delivery drivers (Spark, DoorDash, Flex). Includes fleet fuel discounts and <strong>$20.00/yr lifetime referral residuals</strong>.</p>
           </div>
@@ -651,89 +279,121 @@
     </div>
   </section>
 
-  <!-- Who We Are -->
   <section class="who" id="about">
     <div class="container">
       <h2 class="section-title">Who <span>We Are</span></h2>
       <div class="who-grid">
         <div class="who-text">
-          <p>
-            The <strong>Small Business Fleet Alliance (SBFA)</strong> unites independent drivers and gig workersâ€”box trucks, hotshot pickups, Sprinters, cargo vans, delivery drivers, and small service operatorsâ€”into one purchasing group.
-          </p>
-          <p>
-            You run your own business, but you shouldnâ€™t have to pay full retail while big fleets get the discounts.
-          </p>
-          <p>
-            Weâ€™re building group buying power so independent operators and gig workers can access better rates on fuel, parts, service, and more.
-          </p>
+          <p>The <strong>Small Business Fleet Alliance (SBFA)</strong> unites independent drivers and gig workers—box trucks, hotshot pickups, Sprinters, cargo vans, delivery drivers, and small service operators—into one purchasing group.</p>
+          <p>You run your own business, but you shouldn't have to pay full retail while big fleets get the discounts.</p>
+          <p>We're building group buying power so independent operators and gig workers can access better rates on fuel, parts, service, and more.</p>
         </div>
         <div class="who-highlight">
-          <p>
-            Independent operators and gig workers get real buying power â€” without giving up ownership of their business.
-          </p>
+          <p>Independent operators and gig workers get real buying power — without giving up ownership of their business.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Core Perks -->
   <section class="perks" id="perks">
     <div class="container">
       <h2 class="section-title">Core Alliance <span>Member Perks</span></h2>
       <p class="section-intro">
-        Real savings that help you stay profitable and protected on the road. 
-        <a href="join.html" style="color:var(--orange); font-weight:600; text-decoration:underline;">Join waitlist to unlock all perks â†’</a>
+        Real savings that help you stay profitable and protected on the road.
+        <a href="join.html" style="color:var(--orange); font-weight:600; text-decoration:underline;">Join waitlist to unlock all perks</a>
       </p>
-
       <div class="perks-grid">
         <div class="perk-card">
           <div>
-            <div class="perk-icon">â›½</div>
+            <div class="perk-icon">⛽</div>
             <h3>Mudflap Commercial Fuel Savings</h3>
             <p>Save big on diesel and fuel nationwide with <strong>Mudflap</strong>. Instant pump discounts at hundreds of stations with zero credit checks or minimum volume requirements.</p>
           </div>
-          <a href="join.html" class="perk-link">Unlock Mudflap Savings â†’</a>
+          <a href="join.html" class="perk-link">Unlock Mudflap Savings</a>
         </div>
-
         <div class="perk-card">
           <div>
-            <div class="perk-icon">ðŸ¨</div>
+            <div class="perk-icon">🏨</div>
             <h3>Travel &amp; Lodging Perks</h3>
             <p>Exclusive corporate rates with <strong>Choice Hotels, Motel 6, Wyndham, IHG Hotels &amp; Resorts, and Best Western</strong>, plus commercial rental vehicle discounts nationwide.</p>
           </div>
-          <a href="travel.html" class="perk-link">Explore Travel Perks â†’</a>
+          <a href="travel.html" class="perk-link">Explore Travel Perks</a>
         </div>
-
         <div class="perk-card">
           <div>
-            <div class="perk-icon">ðŸ©º</div>
+            <div class="perk-icon">🩺</div>
             <h3>Healthcare &amp; Prescription Savings</h3>
             <p>Save up to 80% on medications with <strong>LowerMyRx prescription discounts</strong> at 60,000+ pharmacies, plus individual VSP vision and Delta Dental coverage.</p>
           </div>
-          <a href="healthcare.html" class="perk-link">Explore Healthcare Benefits â†’</a>
+          <a href="healthcare.html" class="perk-link">Explore Healthcare Benefits</a>
         </div>
-
         <div class="perk-card">
           <div>
-            <div class="perk-icon">ðŸ’»</div>
+            <div class="perk-icon">💻</div>
             <h3>Fleet Tools &amp; Payroll Software</h3>
             <p>Direct partner access to <strong>OnPay</strong> and <strong>Patriot Software</strong> for automated 1099 contractor payouts, W-2 driver payroll, and business tax tools.</p>
           </div>
-          <a href="resources.html" class="perk-link">Explore Tools &amp; Resources â†’</a>
+          <a href="resources.html" class="perk-link">Explore Tools &amp; Resources</a>
         </div>
       </div>
-
       <div style="text-align: center; margin-top: 32px;">
-        <a href="benefits.html" class="btn btn-primary">Explore Full Benefits Directory â†’</a>
+        <a href="benefits.html" class="btn btn-primary">Explore Full Benefits Directory</a>
       </div>
     </div>
   </section>
 
-  <!-- $10,000 AD&D Protection Box ONLY -->
+  <!-- AD&D BOX -->
   <section style="padding: 10px 0 50px;">
     <div class="container">
       <div style="background: var(--bg-card); border: 2px solid var(--orange); border-radius: 16px; padding: 32px 24px; color: var(--text); box-shadow: 0 10px 25px rgba(0,0,0,0.35); text-align: center;">
         <div style="margin-bottom: 14px;">
           <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
             Included with Membership*
-  
+          </span>
+        </div>
+        <h2 style="font-size: clamp(1.35rem, 4vw, 1.75rem); font-weight: 800; margin-bottom: 12px; color: var(--white);">
+          $10,000 Group AD&amp;D Protection*
+        </h2>
+        <div style="font-size: 2rem; margin-bottom: 14px;">🛡️</div>
+        <p style="color: var(--text-muted); font-size: 0.98rem; max-width: 520px; margin: 0 auto 8px; line-height: 1.55;">
+          Built specifically for independent route operators and commercial drivers. Membership includes $10,000 in guaranteed-issue protection in the event of severe accidents on or off the road.
+        </p>
+        <ul class="add-list">
+          <li>
+            <span class="label">$0 Extra Premiums:</span>
+            <span class="desc">Fully covered through active SBFA membership dues</span>
+          </li>
+          <li>
+            <span class="label">Guaranteed Issue:</span>
+            <span class="desc">No medical exams, health questionnaires, or pre-approvals</span>
+          </li>
+          <li>
+            <span class="label">24/7 Coverage:</span>
+            <span class="desc">Protects you on route, at home, or traveling nationwide</span>
+          </li>
+          <li>
+            <span class="label">Launch Status:</span>
+            <span class="desc">Master Policy setup in progress for launch day activation</span>
+          </li>
+        </ul>
+        <a href="join.html" class="btn btn-primary">Lock In Your Founding Spot</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        smallbusinessfleetalliance.com · gwillis@sbfaohio.com
+      </div>
+      <p class="footer-disclaimer">
+        *Insurance Disclosure: The $10,000 Group AD&amp;D protection is fully funded through active SBFA membership dues with zero additional fees or separate premiums. Master Group Policy application and administrative setup are currently in progress to ensure coverage takes effect on launch day for active members in good standing.
+      </p>
+      <div class="footer-copy" style="margin-top: 4px;">
+        © 2026 Small Business Fleet Alliance
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
