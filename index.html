@@ -4,7 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Small Business Fleet Alliance | Big-Fleet Purchasing Power</title>
-  <meta name="description" content="SBFA unites independent drivers and gig workers — box trucks, Sprinters, delivery vans, and more. Group buying power on fuel, parts, service, and more.">
+  <meta name="description" content="SBFA unites independent drivers and gig workers — box trucks, Sprinters, delivery vans, and more. Group buying power on fuel, hotels, healthcare, and fleet rentals.">
+  
+  <!-- Favicon / Mobile Home Screen Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
+
+  <!-- Social & Open Graph Metadata -->
+  <meta property="og:title" content="Small Business Fleet Alliance | Big-Fleet Purchasing Power">
+  <meta property="og:description" content="Group buying power for independent drivers & gig workers — box trucks, Sprinters, delivery vans, and route operators.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smallbusinessfleetalliance.com/">
+  <meta property="og:image" content="https://smallbusinessfleetalliance.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Small Business Fleet Alliance">
+  <meta name="twitter:description" content="Group buying power for independent drivers & gig workers.">
+
   <style>
     :root {
       --bg-dark: #0b1220;
@@ -23,6 +37,10 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -105,6 +123,24 @@
       letter-spacing: 0.5px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--orange);
+    }
+
     .nav-cta {
       background: var(--orange);
       color: var(--white);
@@ -120,7 +156,7 @@
       background: var(--orange-dark);
     }
 
-    /* Hero Section with Founding 100 Special */
+    /* Hero Section */
     .hero-special {
       padding: 40px 16px 50px;
       text-align: center;
@@ -163,7 +199,6 @@
       line-height: 1.5;
     }
 
-    /* Hero Offer Box - Fully Framed Border Fix */
     .hero-offer-box {
       background: var(--bg-card);
       border: 2px solid var(--orange);
@@ -374,7 +409,7 @@
 
     @media (min-width: 640px) {
       .perks-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
     }
 
@@ -384,6 +419,9 @@
       border-radius: 12px;
       padding: 24px 20px;
       transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .perk-card:hover {
@@ -414,6 +452,20 @@
       color: var(--text-muted);
       font-size: 0.92rem;
       line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .perk-link {
+      color: var(--orange);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .perk-link:hover {
+      color: var(--orange-light);
     }
 
     /* CTA Section */
@@ -490,6 +542,12 @@
       margin-top: 8px;
     }
 
+    @media (max-width: 820px) {
+      nav {
+        display: none;
+      }
+    }
+
     @media (max-width: 600px) {
       .hero-special {
         padding: 30px 12px 40px;
@@ -523,11 +581,18 @@
           <span>Small Business Fleet Alliance</span>
         </div>
       </a>
+      <nav>
+        <a href="benefits.html">Benefits</a>
+        <a href="resources.html">Tools &amp; Resources</a>
+        <a href="healthcare.html">Healthcare</a>
+        <a href="travel.html">Travel Perks</a>
+        <a href="partner.html">Partners</a>
+      </nav>
       <a href="join.html" class="nav-cta">Join Today</a>
     </div>
   </header>
 
-  <!-- Hero Section featuring Founding 100 Special -->
+  <!-- Hero Section -->
   <section class="hero-special">
     <div class="container">
       <div class="hero-badge">STRICTLY LIMITED TO THE FIRST 100 MEMBERS</div>
@@ -539,7 +604,6 @@
         Group buying power for independent drivers &amp; gig workers — box trucks, Sprinters, delivery vans, and route operators.
       </p>
 
-      <!-- Founding 100 Special Box -->
       <div class="hero-offer-box">
         <h2>Founding 100 Special Introductory Rates</h2>
         <p>Lock in lifetime rate protection and permanent national referral earnings for helping launch the Alliance.</p>
@@ -569,7 +633,7 @@
 
       <div class="hero-ctas">
         <a href="join.html" class="btn btn-primary">Lock In Your Founding Spot</a>
-        <a href="chapter.html" class="btn btn-secondary">Start a Chapter</a>
+        <a href="benefits.html" class="btn btn-secondary">Explore Member Benefits ↓</a>
         <a href="partner.html" class="btn btn-secondary">Become a Service Partner</a>
       </div>
     </div>
@@ -604,66 +668,67 @@
   <section class="perks" id="perks">
     <div class="container">
       <h2 class="section-title">Core Alliance <span>Member Perks</span></h2>
-      <p class="section-intro">Real savings that help you stay profitable and protected on the road.</p>
+      <p class="section-intro">
+        Real savings that help you stay profitable and protected on the road. 
+        <a href="join.html" style="color:var(--orange); font-weight:600; text-decoration:underline;">Join waitlist to unlock all perks →</a>
+      </p>
 
       <div class="perks-grid">
+        <!-- Fuel Perks -->
         <div class="perk-card">
-          <div class="perk-icon">📱</div>
-          <h3>Cell Phone &amp; Wireless Savings</h3>
-          <p>Signature corporate account discounts with Verizon, AT&amp;T, and T-Mobile. Save 15% to 20% on monthly plans.</p>
+          <div>
+            <div class="perk-icon">⛽</div>
+            <h3>Commercial Fuel Savings</h3>
+            <p>Substantial commercial diesel and fuel discounts nationwide at major pumps without steep fleet volume requirements.</p>
+          </div>
+          <a href="join.html" class="perk-link">Unlock Fuel Discounts →</a>
         </div>
 
+        <!-- Travel Perks -->
         <div class="perk-card">
-          <div class="perk-icon">🚚</div>
-          <h3>Commercial Rental &amp; Backup Trucks</h3>
-          <p>Preferred corporate discount codes with Enterprise. Pre-negotiated labor rates and priority service at participating regional repair shops.</p>
+          <div>
+            <div class="perk-icon">🏨</div>
+            <h3>Travel &amp; Lodging Perks</h3>
+            <p>Exclusive corporate rates with <strong>Choice Hotels, Motel 6, Wyndham, IHG Hotels &amp; Resorts, and Best Western</strong>, plus commercial rental vehicle discounts nationwide.</p>
+          </div>
+          <a href="travel.html" class="perk-link">Explore Travel Perks →</a>
         </div>
 
+        <!-- Prescription & Health Perks -->
         <div class="perk-card">
-          <div class="perk-icon">🛡️</div>
-          <h3>Health, Accident &amp; Income Protection</h3>
-          <p>Group-rate AD&amp;D accident, short-term disability, and hospital indemnity coverage. 24/7 telehealth access and prescription discount cards saving up to 80%.</p>
+          <div>
+            <div class="perk-icon">🩺</div>
+            <h3>Healthcare &amp; Prescription Savings</h3>
+            <p>Save up to 80% on medications with <strong>LowerMyRx prescription discounts</strong> at 60,000+ pharmacies, plus individual VSP vision and Delta Dental coverage.</p>
+          </div>
+          <a href="healthcare.html" class="perk-link">Explore Healthcare Benefits →</a>
         </div>
 
+        <!-- Fleet Tools & Resources -->
         <div class="perk-card">
-          <div class="perk-icon">💳</div>
-          <h3>Commercial Savings</h3>
-          <p>Significant discounts on fuel, tires, maintenance, and fleet services through our nationwide vendor network.</p>
+          <div>
+            <div class="perk-icon">💻</div>
+            <h3>Fleet Tools &amp; Payroll Software</h3>
+            <p>Direct partner access to <strong>OnPay</strong> and <strong>Patriot Software</strong> for automated 1099 contractor payouts, W-2 driver payroll, and business tax tools.</p>
+          </div>
+          <a href="resources.html" class="perk-link">Explore Tools &amp; Resources →</a>
         </div>
+      </div>
+
+      <!-- View All Directory Link Button -->
+      <div style="text-align: center; margin-top: 32px;">
+        <a href="benefits.html" class="btn btn-primary">Explore Full Benefits Directory →</a>
       </div>
     </div>
   </section>
 
-  <!-- Join CTA -->
-  <section class="cta-section" id="join">
+  <!-- $10,000 AD&D Protection Highlight Box -->
+  <section style="padding: 10px 0 50px;">
     <div class="container">
-      <h2>Founding Spots Are Open</h2>
-      <p>
-        Join the waitlist and lock in your Founding 100 status from day one — whether you run a box truck, Sprinter, or work the gig apps.
-      </p>
-      <div class="hero-ctas">
-        <a href="join.html" class="btn btn-primary">Join the Waitlist</a>
-        <a href="chapter.html" class="btn btn-secondary">Start a Chapter</a>
-        <a href="partner.html" class="btn btn-secondary">Become a Service Partner</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <div>
-        <div class="footer-logo">SBFA <span>|</span> Small Business Fleet Alliance</div>
-        <div class="footer-copy">© 2026 Small Business Fleet Alliance. All rights reserved.</div>
-      </div>
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#perks">Benefits</a>
-        <a href="join.html">Join</a>
-        <a href="mailto:gwillis@sbfaohio.com">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
+      <div style="background: var(--bg-card); border: 2px solid var(--orange); border-radius: 16px; padding: 32px 24px; color: var(--text); box-shadow: 0 10px 25px rgba(0,0,0,0.35);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+          <div>
+            <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+              INCLUDED WITH MEMBERSHIP*
+            </span>
+            <h3 style="font-size: 1.5rem; font-weight: 80
