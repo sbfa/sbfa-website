@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax, Legal & Business Tools | Small Business Fleet Alliance</title>
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-light: #141c2b;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --white: #ffffff;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--orange);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .hero {
+      padding: 60px 20px 40px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 12px;
+    }
+
+    .section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 20px 0;
+      color: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-top: 6px;
+    }
+
+    .badge-code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .perks-list {
+      list-style: none;
+      color: var(--white);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .perks-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .perks-list li span {
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--orange);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: none;
+      }
+      .hero {
+        padding: 40px 16px 30px;
+      }
+      .section {
+        padding: 40px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚛</div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>SMALL BUSINESS FLEET ALLIANCE</span>
+        </div>
+      </a>
+      <nav>
+        <a href="benefits.html">Benefits</a>
+        <a href="tax-legal.html" class="active">Tax &amp; Legal</a>
+        <a href="healthcare.html">Healthcare</a>
+        <a href="travel.html">Travel Perks</a>
+        <a href="partner.html">Partners</a>
+      </nav>
+      <a href="join.html" class="btn btn-primary">Join Waitlist</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">OPERATIONAL &amp; COMPLIANCE HUB</div>
+    <h1>Tax, Legal &amp; <span>Business Tools</span></h1>
+    <p class="hero-sub">
+      Protect your assets, streamline driver payroll, access turnkey commercial contracts, and optimize your 1099 tax write-offs without enterprise-level overhead.
+    </p>
+  </section>
+
+  <section class="section">
+    
+    <h2 class="section-title">Fleet &amp; Business <span>Resources</span></h2>
+
+    <!-- LawDepot Legal Forms Card -->
+    <div class="card" style="border-color: var(--orange);">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">EXCLUSIVE LEGAL PORTAL</span>
+          <h3>LawDepot DIY Legal Documents &amp; Fleet Contracts</h3>
+        </div>
+      </div>
+
+      <p>
+        Save hundreds in legal fees with on-demand access to 150+ state-specific commercial and personal contracts. Build binding agreements in minutes to protect your equipment and limit personal liability.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>1099 Independent Contractor Agreements:</strong> Bulletproof agreements when sub-contracting or onboarding relief drivers</li>
+        <li><span>✓</span> <strong>Commercial Vehicle &amp; Equipment Leases:</strong> Standardized lease and rental terms for box trucks, vans, and trailers</li>
+        <li><span>✓</span> <strong>Bills of Sale &amp; Promissory Notes:</strong> Clean legal documentation for buying, selling, or financing fleet assets</li>
+        <li><span>✓</span> <strong>Driver &amp; Family Protection:</strong> State-specific Last Will &amp; Testament, Power of Attorney, and Healthcare Directives</li>
+      </ul>
+
+      <a href="YOUR_LAWDEPOT_AFFILIATE_LINK" class="btn btn-primary" target="_blank" rel="noopener noreferrer sponsored">
+        Access Legal Documents (Free Trial) →
+      </a>
+    </div>
+
+    <!-- OnPay Payroll Card -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">SBFA ALLIANCE PRICING</span>
+          <h3>OnPay Automated W-2 &amp; 1099 Fleet Payroll</h3>
+        </div>
+      </div>
+
+      <p>
+        Run driver payouts and 1099 contractor direct deposits with full-service automated tax calculations, payroll tax filings, and year-end reporting backed by SBFA partner rates.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Automated Tax Filings:</strong> Hands-off federal, state, and local payroll taxes calculated and filed automatically</li>
+        <li><span>✓</span> <strong>Direct Deposit Payouts:</strong> Reliable payments for both W-2 employees and 1099 independent contractors</li>
+        <li><span>✓</span> <strong>Fleet HR &amp; Document Management:</strong> Secure digital driver records, onboarding forms, and contractor tax compliance</li>
+        <li><span>✓</span> <strong>White-Glove Firm Activation:</strong> Quick account setup managed under your SBFA membership discount</li>
+      </ul>
+
+      <a href="YOUR_TALLY_FORM_URL" class="btn btn-secondary">
+        Request Fleet Payroll Activation →
+      </a>
+    </div>
+
+    <!-- Tax & Deduction Suite Card -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">TAX STRATEGY &amp; WRITE-OFFS</span>
+          <h3>1099 Route Tax &amp; Mileage Expense Suite</h3>
+        </div>
+      </div>
+
+      <p>
+        Keep more revenue in your pocket with dedicated tax deduction frameworks, Schedule C guides, and expense-tracking strategies designed specifically for high-mileage commercial operators.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Standard Mileage vs. Actual Expense:</strong> Comparison guides to maximize deductions for vans, hotshots, and box trucks</li>
+        <li><span>✓</span> <strong>Quarterly Estimated Tax Guidance:</strong> Simple estimation formulas to avoid IRS underpayment penalties</li>
+        <li><span>✓</span> <strong>Fleet Write-Off Checklists:</strong> Maximize deductions for tolls, DOT physicals, safety gear, phone plans, and maintenance</li>
+      </ul>
+
+      <a href="join.html" class="btn btn-secondary">
+        Join Waitlist for Tax Toolkit Updates →
+      </a>
+    </div>
+
+    <!-- Business Formation Card -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">BUSINESS INFRASTRUCTURE</span>
+          <h3>Entity Formation &amp; Operating Authority Tools</h3>
+        </div>
+      </div>
+
+      <p>
+        Everything you need to separate personal assets, establish corporate credit, and set up your transport business correctly from day one.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>LLC &amp; Corporate Structure:</strong> Operating agreements and formation checklists to shield personal assets</li>
+        <li><span>✓</span> <strong>Commercial Banking &amp; Credit:</strong> Frameworks for setting up business banking, EIN, and fleet vendor credit lines</li>
+        <li><span>✓</span> <strong>DOT &amp; Operating Compliance:</strong> Pre-trip safety checklists, vehicle inspection forms, and driver clearinghouse basics</li>
+      </ul>
+
+      <a href="join.html" class="btn btn-secondary">
+        Join Waitlist for Early Access →
+      </a>
+    </div>
+
+  </section>
+
+  <footer>
+    <nav>
+      <a href="benefits.html">Benefits</a> •
+      <a href="tax-legal.html">Tax &amp; Legal</a> •
+      <a href="healthcare.html">Healthcare</a> •
+      <a href="travel.html">Travel Perks</a> •
+      <a href="partner.html">Become a Partner</a> •
+      <a href="join.html">Join Waitlist</a>
+    </nav>
+    <p>smallbusinessfleetalliance.com &nbsp;•&nbsp; gwillis@sbfaohio.com</p>
+    <p style="margin-top: 8px;">© 2026 Small Business Fleet Alliance</p>
+  </footer>
+
+</body>
+</html>
