@@ -130,7 +130,7 @@
       top: 100%;
       left: 0;
       background: var(--navy-light);
-      min-width: 230px;
+      min-width: 240px;
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 8px 0;
@@ -247,12 +247,12 @@
       color: var(--orange);
     }
 
-    /* --- In-Page Resources Jump Section --- */
+    /* --- In-Page Resources Jump Section (Mobile-Safe) --- */
     .resources-hub-box {
       background: var(--navy-light);
       border: 1px solid rgba(249, 115, 22, 0.4);
       border-radius: 14px;
-      padding: 28px 24px;
+      padding: 28px 20px;
       margin-bottom: 36px;
       text-align: center;
     }
@@ -271,21 +271,30 @@
     }
 
     .resource-select-wrap {
-      display: inline-block;
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
       position: relative;
     }
 
     .resource-dropdown-select {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
       background: var(--navy);
       color: var(--white);
       border: 1px solid var(--orange);
-      padding: 12px 24px;
+      padding: 12px 16px;
       border-radius: 8px;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 600;
       cursor: pointer;
       outline: none;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     .resource-dropdown-select option {
@@ -384,6 +393,13 @@
       .section {
         padding: 30px 16px;
       }
+      .resources-hub-box {
+        padding: 22px 16px;
+      }
+      .resource-dropdown-select {
+        font-size: 0.88rem;
+        padding: 10px 12px;
+      }
     }
   </style>
 </head>
@@ -408,6 +424,7 @@
           </button>
           <div class="nav-dropdown-content">
             <a href="savings.html">💰 Financial Planning</a>
+            <a href="expense.html">🚚 1099 Tax &amp; Mileage Suite</a>
             <a href="tax.html">⚖️ Tax, Legal &amp; Payroll</a>
             <a href="healthcare.html">🩺 Healthcare Resources</a>
             <a href="travel.html">🏨 Travel Perks</a>
@@ -440,9 +457,10 @@
       
       <div class="resource-select-wrap">
         <select class="resource-dropdown-select" onchange="if (this.value) window.location.href=this.value;">
-          <option value="" disabled selected>Select an Alliance Resource Area...</option>
+          <option value="" disabled selected>Select an Alliance Resource Playbook...</option>
           <option value="savings.html">💰 Financial Planning &amp; Wealth Strategy</option>
-          <option value="tax.html">⚖️ Tax, Legal &amp; Payroll Tools</option>
+          <option value="expense.html">🚚 1099 Route Tax &amp; Mileage Suite</option>
+          <option value="tax.html">⚖️ Legal Contracts &amp; Fleet Payroll</option>
           <option value="healthcare.html">🩺 Healthcare &amp; Dental Portals</option>
           <option value="travel.html">🏨 Travel &amp; Hotel Booking Codes</option>
         </select>
@@ -552,6 +570,7 @@
     <nav>
       <a href="benefits.html">Benefits</a> •
       <a href="savings.html">Financial Planning</a> •
+      <a href="expense.html">1099 Tax &amp; Mileage</a> •
       <a href="tax.html">Tax &amp; Legal</a> •
       <a href="healthcare.html">Healthcare</a> •
       <a href="travel.html">Travel Perks</a> •
