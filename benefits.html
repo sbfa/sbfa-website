@@ -365,13 +365,18 @@
     }
 
     .perks-list li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
     }
 
-    .perks-list li span {
+    .perks-list li strong {
+      color: var(--orange);
+      min-width: 140px;
+    }
+
+    .perks-list li span.bullet {
       color: var(--orange);
       font-weight: bold;
     }
@@ -425,6 +430,13 @@
         font-size: 0.88rem;
         padding: 10px 12px;
       }
+      .perks-list li {
+        flex-direction: column;
+        gap: 2px;
+      }
+      .perks-list li strong {
+        min-width: unset;
+      }
     }
   </style>
 </head>
@@ -459,7 +471,7 @@
 
         <a href="partner.html">Partners</a>
       </nav>
-      <a href="join.html" class="btn btn-primary">Join Waitlist</a>
+      <a href="join.html" class="btn btn-primary">Join Today</a>
     </div>
   </header>
 
@@ -493,6 +505,54 @@
         </select>
       </div>
     </div>
+
+    <h2 class="section-title">Included <span>Member Protections</span></h2>
+
+    <!-- $10,000 Group AD&D Protection Card -->
+    <div class="card" style="border-color: var(--orange);">
+      <div class="card-header">
+        <div>
+          <span class="badge-green">INCLUDED WITH MEMBERSHIP*</span>
+          <div style="display: flex; align-items: center; gap: 10px; margin-top: 6px;">
+            <span style="font-size: 1.5rem;">🛡️</span>
+            <h3 style="margin-top: 0;">$10,000 Group AD&amp;D Protection*</h3>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Built specifically for independent route operators and commercial drivers. Membership includes $10,000 in guaranteed-issue protection in the event of severe accidents on or off the road.
+      </p>
+
+      <ul class="perks-list">
+        <li>
+          <strong>$0 Extra Premiums:</strong>
+          <span>Fully covered through active SBFA membership dues</span>
+        </li>
+        <li>
+          <strong>Guaranteed Issue:</strong>
+          <span>No medical exams, health questionnaires, or pre-approvals</span>
+        </li>
+        <li>
+          <strong>24/7 Coverage:</strong>
+          <span>Protects you on route, at home, or traveling nationwide</span>
+        </li>
+        <li>
+          <strong>Launch Status:</strong>
+          <span>Master Policy setup in progress for launch day activation</span>
+        </li>
+      </ul>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="join.html" class="btn btn-primary">
+          Lock In Your Founding Spot →
+        </a>
+      </div>
+
+      <div class="disclaimer-text">
+        *Insurance Disclosure: The $10,000 Group AD&amp;D protection is fully funded through active SBFA membership dues with zero additional fees or separate premiums. Master Group Policy application and administrative setup are currently in progress to ensure coverage takes effect on launch day for active members in good standing.
+      </div>
+    </div>
     
     <h2 class="section-title">Fuel &amp; Route <span>Rebate Benefits</span></h2>
 
@@ -510,9 +570,9 @@
       </p>
 
       <ul class="perks-list">
-        <li><span>✓</span> <strong>$10 Member Fuel Bounty:</strong> Apply alliance invite code <strong style="color: var(--orange);">gab9c23e</strong> at activation to instantly credit $10 to your fuel balance.</li>
-        <li><span>✓</span> <strong>Save Up to $0.60/Gal:</strong> Secure deep gallon discounts at Sapp Bros, Casey's, Kwik Trip, and premier regional truck stops.</li>
-        <li><span>✓</span> <strong>Fleet Card Compatibility:</strong> Connect any commercial checking account, business debit, or credit card for instant pump authorization.</li>
+        <li><span class="bullet">✓</span> <strong>$10 Member Fuel Bounty:</strong> Apply alliance invite code <strong style="color: var(--orange); min-width: unset;">gab9c23e</strong> at activation to instantly credit $10 to your fuel balance.</li>
+        <li><span class="bullet">✓</span> <strong>Save Up to $0.60/Gal:</strong> Secure deep gallon discounts at Sapp Bros, Casey's, Kwik Trip, and premier regional truck stops.</li>
+        <li><span class="bullet">✓</span> <strong>Fleet Card Compatibility:</strong> Connect any commercial checking account, business debit, or credit card for instant pump authorization.</li>
       </ul>
 
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
@@ -536,9 +596,9 @@
       </p>
 
       <ul class="perks-list">
-        <li><span>✓</span> <strong>+15¢/Gal Extra Fuel Rebate:</strong> Use alliance activation code <strong style="color: var(--orange);">3Y8TBF</strong> to unlock an added 15¢ per gallon cash-back bonus on your first fill-up.</li>
-        <li><span>✓</span> <strong>10% Route Dining &amp; Grocery Bonus:</strong> Earn an additional 10% cash-back rebate on roadside dining, convenience marts, and groceries.</li>
-        <li><span>✓</span> <strong>Direct Cash Payouts:</strong> Transfer earnings directly to your business checking account, PayPal, or digital gift cards anytime with zero redemption fees.</li>
+        <li><span class="bullet">✓</span> <strong>+15¢/Gal Extra Fuel Rebate:</strong> Use alliance activation code <strong style="color: var(--orange); min-width: unset;">3Y8TBF</strong> to unlock an added 15¢ per gallon cash-back bonus on your first fill-up.</li>
+        <li><span class="bullet">✓</span> <strong>10% Route Dining &amp; Grocery Bonus:</strong> Earn an additional 10% cash-back rebate on roadside dining, convenience marts, and groceries.</li>
+        <li><span class="bullet">✓</span> <strong>Direct Cash Payouts:</strong> Transfer earnings directly to your business checking account, PayPal, or digital gift cards anytime with zero redemption fees.</li>
       </ul>
 
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
@@ -564,9 +624,9 @@
       </p>
 
       <ul class="perks-list">
-        <li><span>✓</span> <strong>LowerMyRx Discounts:</strong> Up to 80% off prescriptions at 60,000+ pharmacies</li>
-        <li><span>✓</span> <strong>VSP Vision Care:</strong> Affordable individual eye exam &amp; eyewear coverage</li>
-        <li><span>✓</span> <strong>Delta Dental:</strong> Direct-enrollment dental plans for cleanings &amp; major care</li>
+        <li><span class="bullet">✓</span> <strong>LowerMyRx Discounts:</strong> Up to 80% off prescriptions at 60,000+ pharmacies</li>
+        <li><span class="bullet">✓</span> <strong>VSP Vision Care:</strong> Affordable individual eye exam &amp; eyewear coverage</li>
+        <li><span class="bullet">✓</span> <strong>Delta Dental:</strong> Direct-enrollment dental plans for cleanings &amp; major care</li>
       </ul>
 
       <a href="healthcare.html" class="btn btn-secondary">
@@ -588,9 +648,9 @@
       </p>
 
       <ul class="perks-list">
-        <li><span>✓</span> <strong>Commercial Debt Shield:</strong> Ensure personal guarantees on truck loans, trailers, and business lines aren't passed to your family</li>
-        <li><span>✓</span> <strong>100% Digital Applications:</strong> Apply online in under 10 minutes with zero lab work or medical exams for qualified operators</li>
-        <li><span>✓</span> <strong>A+ Rated National Underwriters:</strong> Lock in affordable, level-term monthly rates with coverage up to $1M–$3M</li>
+        <li><span class="bullet">✓</span> <strong>Commercial Debt Shield:</strong> Ensure personal guarantees on truck loans, trailers, and business lines aren't passed to your family</li>
+        <li><span class="bullet">✓</span> <strong>100% Digital Applications:</strong> Apply online in under 10 minutes with zero lab work or medical exams for qualified operators</li>
+        <li><span class="bullet">✓</span> <strong>A+ Rated National Underwriters:</strong> Lock in affordable, level-term monthly rates with coverage up to $1M–$3M</li>
       </ul>
 
       <a href="healthcare.html" class="btn btn-secondary">
@@ -602,68 +662,4 @@
       </div>
     </div>
 
-    <h2 class="section-title">Operational &amp; <span>Business Tools</span></h2>
-
-    <!-- Tax, Legal & Business Tools Card -->
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <span class="badge-code">DIRECT RESOURCE CENTER</span>
-          <h3>Tax, Legal &amp; Business Tools</h3>
-        </div>
-      </div>
-
-      <p>
-        Access on-demand DIY commercial legal contracts, automated W-2 and 1099 payroll solutions, and route expense write-off tools built for independent fleet operators.
-      </p>
-
-      <ul class="perks-list">
-        <li><span>✓</span> <strong>LawDepot Fleet Suite:</strong> 1099 contractor agreements, commercial leases &amp; bills of sale</li>
-        <li><span>✓</span> <strong>OnPay Payroll:</strong> Automated tax filing and driver direct deposit payouts</li>
-        <li><span>✓</span> <strong>1099 Tax Strategies:</strong> Mileage deduction frameworks &amp; Schedule C write-off checklists</li>
-      </ul>
-
-      <a href="tax.html" class="btn btn-secondary">
-        Explore Tax &amp; Legal Tools →
-      </a>
-    </div>
-
-    <!-- Travel & Lodging Perks Directory Card -->
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <span class="badge-code">FLEET HOTEL RATES</span>
-          <h3>Travel &amp; Lodging Perks</h3>
-        </div>
-      </div>
-
-      <p>
-        Exclusive corporate rates on hotel lodging, box truck rentals, and vehicle rentals to keep independent drivers and fleet owners moving for less.
-      </p>
-
-      <ul class="perks-list">
-        <li><span>✓</span> <strong>Best Western Business Advantage:</strong> ID 01526650 for discounted corporate stays</li>
-        <li><span>✓</span> <strong>IHG Hotels &amp; Resorts:</strong> Code 787242609 pre-applied across Holiday Inn brands</li>
-        <li><span>✓</span> <strong>Wyndham Hotels:</strong> Code 1000117478 for up to 20% off roadside stays</li>
-      </ul>
-
-      <a href="travel.html" class="btn btn-secondary">
-        Explore Travel Perks →
-      </a>
-    </div>
-
-    <!-- Commercial Parts & Fleet Maintenance Card (Preview) -->
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <span class="badge-code">COMING SOON</span>
-          <h3>Commercial Parts &amp; Fleet Maintenance</h3>
-        </div>
-      </div>
-
-      <p>
-        Commercial trade desk pricing, heavy-duty parts savings, tire replacement discounts, and shop repair programs designed to minimize route downtime.
-      </p>
-
-      <ul class="perks-list">
-        
+    <h2 class="section-title">Operational &amp; <span>Business Tool
