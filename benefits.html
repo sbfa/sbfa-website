@@ -8,6 +8,7 @@
     :root {
       --navy: #0b1220;
       --navy-light: #141c2b;
+      --navy-card-hover: #1a2436;
       --orange: #f97316;
       --orange-dark: #ea580c;
       --white: #ffffff;
@@ -98,6 +99,65 @@
       color: var(--orange);
     }
 
+    /* --- Resources Navigation Dropdown --- */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropdown-btn {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 0;
+      transition: color 0.2s;
+    }
+
+    .nav-dropdown-btn:hover,
+    .nav-dropdown:hover .nav-dropdown-btn {
+      color: var(--orange);
+    }
+
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--navy-light);
+      min-width: 230px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .nav-dropdown-content a {
+      color: var(--white);
+      padding: 10px 18px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .nav-dropdown-content a:hover {
+      background: rgba(249, 115, 22, 0.12);
+      color: var(--orange);
+      padding-left: 22px;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-content {
+      display: block;
+    }
+
     .btn {
       display: inline-block;
       padding: 12px 24px;
@@ -169,7 +229,7 @@
     }
 
     .section {
-      padding: 50px 20px;
+      padding: 40px 20px 60px;
       max-width: 900px;
       margin: 0 auto;
     }
@@ -185,6 +245,52 @@
 
     .section-title span {
       color: var(--orange);
+    }
+
+    /* --- In-Page Resources Jump Section --- */
+    .resources-hub-box {
+      background: var(--navy-light);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .resources-hub-box h3 {
+      font-size: 1.35rem;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .resources-hub-box p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 620px;
+      margin: 0 auto 20px;
+    }
+
+    .resource-select-wrap {
+      display: inline-block;
+      position: relative;
+    }
+
+    .resource-dropdown-select {
+      background: var(--navy);
+      color: var(--white);
+      border: 1px solid var(--orange);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .resource-dropdown-select option {
+      background: var(--navy-light);
+      color: var(--white);
     }
 
     .card {
@@ -276,7 +382,7 @@
         padding: 40px 16px 30px;
       }
       .section {
-        padding: 40px 16px;
+        padding: 30px 16px;
       }
     }
   </style>
@@ -294,9 +400,20 @@
       </a>
       <nav>
         <a href="benefits.html" class="active">Benefits</a>
-        <a href="tax.html">Tax &amp; Legal</a>
-        <a href="healthcare.html">Healthcare</a>
-        <a href="travel.html">Travel Perks</a>
+        
+        <!-- Resources Dropdown Menu -->
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn">
+            Resources <span style="font-size: 0.75rem;">▼</span>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="savings.html">💰 Financial Planning</a>
+            <a href="tax.html">⚖️ Tax, Legal &amp; Payroll</a>
+            <a href="healthcare.html">🩺 Healthcare Resources</a>
+            <a href="travel.html">🏨 Travel Perks</a>
+          </div>
+        </div>
+
         <a href="partner.html">Partners</a>
       </nav>
       <a href="join.html" class="btn btn-primary">Join Waitlist</a>
@@ -312,6 +429,25 @@
   </section>
 
   <section class="section">
+
+    <!-- Dedicated Operational Resources Section with Dropdown Menu -->
+    <div class="resources-hub-box">
+      <span class="badge-code">OPERATIONAL RESOURCE TOOLKITS</span>
+      <h3>Alliance Playbooks &amp; Financial Tools</h3>
+      <p>
+        Jump directly to operational guides, tax reduction strategies, and zero-fee retirement tools built for independent operators.
+      </p>
+      
+      <div class="resource-select-wrap">
+        <select class="resource-dropdown-select" onchange="if (this.value) window.location.href=this.value;">
+          <option value="" disabled selected>Select an Alliance Resource Area...</option>
+          <option value="savings.html">💰 Financial Planning &amp; Wealth Strategy</option>
+          <option value="tax.html">⚖️ Tax, Legal &amp; Payroll Tools</option>
+          <option value="healthcare.html">🩺 Healthcare &amp; Dental Portals</option>
+          <option value="travel.html">🏨 Travel &amp; Hotel Booking Codes</option>
+        </select>
+      </div>
+    </div>
     
     <h2 class="section-title">Program <span>Categories</span></h2>
 
@@ -379,7 +515,7 @@
       <ul class="perks-list">
         <li><span>✓</span> <strong>Best Western Business Advantage:</strong> ID 01526650 for discounted corporate stays</li>
         <li><span>✓</span> <strong>IHG Hotels &amp; Resorts:</strong> Code 787242609 pre-applied across Holiday Inn brands</li>
-        <li><span>✓</span> <strong>Enterprise &amp; Avis:</strong> Commercial vehicle rates and rental discounts</li>
+        <li><span>✓</span> <strong>Wyndham Hotels:</strong> Code 1000117478 for up to 20% off roadside stays</li>
       </ul>
 
       <a href="travel.html" class="btn btn-secondary">
@@ -415,6 +551,7 @@
   <footer>
     <nav>
       <a href="benefits.html">Benefits</a> •
+      <a href="savings.html">Financial Planning</a> •
       <a href="tax.html">Tax &amp; Legal</a> •
       <a href="healthcare.html">Healthcare</a> •
       <a href="travel.html">Travel Perks</a> •
