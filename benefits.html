@@ -14,6 +14,7 @@
       --white: #ffffff;
       --text-muted: #94a3b8;
       --border: #1e293b;
+      --green: #10b981;
     }
 
     * {
@@ -247,7 +248,7 @@
       color: var(--orange);
     }
 
-    /* --- In-Page Resources Jump Section (Mobile-Safe) --- */
+    /* --- In-Page Resources Jump Section (Mobile Safe) --- */
     .resources-hub-box {
       background: var(--navy-light);
       border: 1px solid rgba(249, 115, 22, 0.4);
@@ -308,6 +309,11 @@
       border-radius: 14px;
       padding: 28px 24px;
       margin-bottom: 24px;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(249, 115, 22, 0.5);
     }
 
     .card-header {
@@ -329,6 +335,16 @@
       background: rgba(249, 115, 22, 0.15);
       color: var(--orange);
       border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .badge-green {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.4);
       padding: 4px 12px;
       border-radius: 50px;
       font-size: 0.8rem;
@@ -441,7 +457,7 @@
     <div class="hero-badge">SBFA MEMBER DIRECTORY</div>
     <h1>Explore Member <span>Benefits &amp; Savings</span></h1>
     <p class="hero-sub">
-      Your central directory for group-buying discounts, hotel corporate rates, healthcare resources, and commercial fleet services.
+      Your central directory for commercial fuel discounts, route cash-back rewards, group hotel rates, and independent fleet operational tools.
     </p>
   </section>
 
@@ -467,10 +483,64 @@
       </div>
     </div>
     
-    <h2 class="section-title">Program <span>Categories</span></h2>
+    <h2 class="section-title">Fuel &amp; Route <span>Rebate Benefits</span></h2>
+
+    <!-- Mudflap Commercial Fuel Discounts Card -->
+    <div class="card" style="border-color: var(--orange);">
+      <div class="card-header">
+        <div>
+          <span class="badge-green">MEMBER CODE: gab9c23e • $10 FUEL CREDIT</span>
+          <h3>Mudflap Commercial Fleet Fuel Network</h3>
+        </div>
+      </div>
+
+      <p>
+        Exclusive alliance access to institutional diesel and commercial pump discounts across 2,500+ nationwide truck stops and travel plazas. Zero transaction fees, subscription costs, or credit checks.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>$10 Member Fuel Bounty:</strong> Apply alliance invite code <strong style="color: var(--orange);">gab9c23e</strong> at activation to instantly credit $10 to your fuel balance.</li>
+        <li><span>✓</span> <strong>Save Up to $0.60/Gal:</strong> Secure deep gallon discounts at Sapp Bros, Casey's, Kwik Trip, and premier regional truck stops.</li>
+        <li><span>✓</span> <strong>Fleet Card Compatibility:</strong> Connect any commercial checking account, business debit, or credit card for instant pump authorization.</li>
+      </ul>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://download.mudflapinc.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Activate Mudflap Fleet Fuel (Code: gab9c23e) →
+        </a>
+      </div>
+    </div>
+
+    <!-- Upside Gas & Route Dining Rebate Card -->
+    <div class="card" style="border-color: var(--orange);">
+      <div class="card-header">
+        <div>
+          <span class="badge-green">MEMBER CODE: 3Y8TBF • +15¢/GAL BONUS</span>
+          <h3>Upside Route Fuel &amp; Food Cash-Back Program</h3>
+        </div>
+      </div>
+
+      <p>
+        Alliance cash-back rebates on unleaded gas, route meals, and convenience grocery stops at 50,000+ national locations. Stacks directly on top of your existing credit card rewards and fuel points.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>+15¢/Gal Extra Fuel Rebate:</strong> Use alliance activation code <strong style="color: var(--orange);">3Y8TBF</strong> to unlock an added 15¢ per gallon cash-back bonus on your first fill-up.</li>
+        <li><span>✓</span> <strong>10% Route Dining &amp; Grocery Bonus:</strong> Earn an additional 10% cash-back rebate on roadside dining, convenience marts, and groceries.</li>
+        <li><span>✓</span> <strong>Direct Cash Payouts:</strong> Transfer earnings directly to your business checking account, PayPal, or digital gift cards anytime with zero redemption fees.</li>
+      </ul>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://upside.app.link/3Y8TBF" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Claim Upside Member Rebate (Code: 3Y8TBF) →
+        </a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Healthcare &amp; <span>Operational Benefits</span></h2>
 
     <!-- Healthcare Resources Directory Card -->
-    <div class="card" style="border-color: var(--orange);">
+    <div class="card">
       <div class="card-header">
         <div>
           <span class="badge-code">DIRECT RESOURCE CENTER</span>
@@ -488,7 +558,7 @@
         <li><span>✓</span> <strong>Delta Dental:</strong> Direct-enrollment dental plans for cleanings &amp; major care</li>
       </ul>
 
-      <a href="healthcare.html" class="btn btn-primary">
+      <a href="healthcare.html" class="btn btn-secondary">
         Explore Healthcare Benefits →
       </a>
     </div>
