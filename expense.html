@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1099 Route Tax &amp; Mileage Expense Suite | Small Business Fleet Alliance</title>
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-light: #141c2b;
+      --navy-card-hover: #1a2436;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --white: #ffffff;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --green: #10b981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--orange);
+    }
+
+    /* --- Resources Navigation Dropdown --- */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropdown-btn {
+      color: var(--orange);
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 0;
+      transition: color 0.2s;
+    }
+
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--navy-light);
+      min-width: 240px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .nav-dropdown-content a {
+      color: var(--white);
+      padding: 10px 18px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .nav-dropdown-content a:hover {
+      background: rgba(249, 115, 22, 0.12);
+      color: var(--orange);
+      padding-left: 22px;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-content {
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .hero {
+      padding: 60px 20px 40px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 12px;
+    }
+
+    .section {
+      padding: 40px 20px 60px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 30px 0 20px;
+      color: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px 26px;
+      margin-bottom: 28px;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(249, 115, 22, 0.5);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-top: 6px;
+    }
+
+    .badge-code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .badge-green {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .perks-list {
+      list-style: none;
+      color: var(--white);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .perks-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .perks-list li span {
+      color: var(--orange);
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .setup-box {
+      background: rgba(11, 18, 32, 0.7);
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+    }
+
+    .setup-box h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .setup-steps {
+      list-style: decimal inside;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .setup-steps li {
+      margin-bottom: 6px;
+    }
+
+    .setup-steps strong {
+      color: var(--white);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Comparison Table Styling */
+    .table-container {
+      overflow-x: auto;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: rgba(249, 115, 22, 0.08);
+      color: var(--orange);
+      font-weight: 700;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: middle;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: var(--navy-card-hover);
+      color: var(--white);
+    }
+
+    td strong {
+      color: var(--white);
+      display: block;
+    }
+
+    .table-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--orange);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .hero {
+        padding: 40px 16px 30px;
+      }
+      .section {
+        padding: 30px 16px;
+      }
+      .card {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚛</div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>SMALL BUSINESS FLEET ALLIANCE</span>
+        </div>
+      </a>
+      <nav>
+        <a href="benefits.html">Benefits</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn">
+            Resources <span>▼</span>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="savings.html">💰 Financial Planning</a>
+            <a href="expense.html" style="color: var(--orange);">🚚 1099 Tax &amp; Mileage Suite</a>
+            <a href="tax.html">⚖️ Tax, Legal &amp; Payroll</a>
+            <a href="healthcare.html">🩺 Healthcare Resources</a>
+            <a href="travel.html">🏨 Travel Perks</a>
+          </div>
+        </div>
+        <a href="partner.html">Partners</a>
+      </nav>
+      <a href="join.html" class="btn btn-primary">Join Waitlist</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">OPERATIONAL TAX SUITE</div>
+    <h1>1099 Route Tax &amp; <span>Mileage Playbook</span></h1>
+    <p class="hero-sub">
+      Keep more revenue in your pocket with dedicated vehicle deduction frameworks, IRS safe harbor formulas, and categorized write-off checklists for independent drivers and fleet owners.
+    </p>
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">Fleet Tax &amp; <span>Mileage Strategy Guides</span></h2>
+
+    <!-- Strategy 1: Standard Mileage vs. Actual Expense -->
+    <div class="card" style="border-color: var(--orange);">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">VEHICLE DEDUCTION STRATEGY</span>
+          <h3>1. Standard Mileage vs. Actual Expense Method</h3>
+        </div>
+      </div>
+
+      <p>
+        <strong>How it saves money:</strong> Choosing the correct deduction method based on your vehicle class and mileage profile can save $5,000 to $12,000+ per year in allowable write-offs.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Standard Mileage Method:</strong> Best for high-mileage cargo vans, passenger transit, and sprinters. Deduct a flat rate per business mile driven plus 100% of bridge tolls and parking fees.</li>
+        <li><span>✓</span> <strong>Actual Expense + Section 179:</strong> Best for box trucks, flatbeds, and heavy commercial vehicles (>6,000 lbs GVWR). Write off 100% of fuel, tires, oil, repairs, commercial insurance, and heavy equipment depreciation.</li>
+        <li><span>✓</span> <strong>The First-Year Rule:</strong> If you plan to use the standard mileage rate for a vehicle, you must elect it in the first year it is placed in service for your business.</li>
+      </ul>
+
+      <div class="setup-box">
+        <h4>Operational Rule of Thumb:</h4>
+        <ol class="setup-steps">
+          <li><strong>Cargo Vans &amp; Couriers (>35,000 miles/yr):</strong> Standard mileage generally yields higher deductions with zero receipt-tracking friction.</li>
+          <li><strong>Box Trucks &amp; Heavy Fleet Vehicles:</strong> Actual expenses almost always win due to heavy diesel costs, frequent tire changes, high repair invoices, and Section 179 purchase write-offs.</li>
+        </ol>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://www.irs.gov/tax-professionals/standard-mileage-rates" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          View Official IRS Mileage Rates →
+        </a>
+      </div>
+    </div>
+
+    <!-- Strategy 2: Quarterly Estimated Taxes & Safe Harbor Rules -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-green">IRS PENALTY SHIELD</span>
+          <h3>2. Quarterly Estimated Taxes &amp; Safe Harbor Formulas</h3>
+        </div>
+      </div>
+
+      <p>
+        <strong>How it saves money:</strong> The IRS assesses automated underpayment interest penalties if self-employed taxes aren't paid quarterly. Utilizing the statutory Safe Harbor rule legally eliminates all IRS underpayment penalties regardless of how much you earn.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>The 100% Safe Harbor Rule:</strong> Pay at least 100% of your total prior-year federal tax liability split across 4 quarterly payments (or 110% if prior-year AGI exceeded $150,000) and the IRS cannot charge you an underpayment penalty.</li>
+        <li><span>✓</span> <strong>The 4 Critical Deadlines:</strong> Q1 due April 15 • Q2 due June 15 • Q3 due September 15 • Q4 due January 15.</li>
+        <li><span>✓</span> <strong>Direct Electronic Payments:</strong> Submit payments directly via IRS Direct Pay from your business checking in under 3 minutes with zero processing fees.</li>
+      </ul>
+
+      <div class="setup-box">
+        <h4>Direct Payment Instructions:</h4>
+        <ol class="setup-steps">
+          <li>Navigate to <strong>IRS Direct Pay</strong>.</li>
+          <li>Select <strong>Reason for Payment:</strong> <em>"Estimated Tax"</em>.</li>
+          <li>Select <strong>Apply Payment To:</strong> <em>"1040ES (for 1040, 1040A, 1040EZ)"</em> and select the current tax year.</li>
+          <li>Save the electronic confirmation receipt for your Schedule C tax file.</li>
+        </ol>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://www.irs.gov/payments/direct-pay" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Pay via IRS Direct Pay Portal →
+        </a>
+        <a href="https://www.irs.gov/forms-pubs/about-form-1040-es" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Download Form 1040-ES Voucher →
+        </a>
+      </div>
+    </div>
+
+    <!-- Strategy 3: Fleet & Cargo Equipment Checklist -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">SCHEDULE C WRITE-OFFS</span>
+          <h3>3. Cargo Securement, Safety Gear &amp; Cab Tools</h3>
+        </div>
+      </div>
+
+      <p>
+        <strong>How it saves money:</strong> Everyday operational equipment used to run your route is 100% deductible as non-depreciable materials, supplies, or small tools on IRS Schedule C.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Cargo Securement:</strong> E-track straps, ratchet tie-downs, load lock bars, moving blankets, hand trucks, two-wheel dollies, and pallet jacks.</li>
+        <li><span>✓</span> <strong>Cab Electronics &amp; Power:</strong> Heavy-duty dash cams, commercial GPS navigation units, vibration-dampened phone mounts, and in-cab power inverters.</li>
+        <li><span>✓</span> <strong>Safety &amp; PPE Gear:</strong> High-visibility safety vests, steel-toe composite work boots, work gloves, first-aid kits, LED flashlights, and emergency road triangles.</li>
+      </ul>
+    </div>
+
+    <!-- Strategy 4: Regulatory, Road Costs & DOT Per Diem -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-green">DOT &amp; TRAVEL DEDUCTIONS</span>
+          <h3>4. DOT Physicals, Road Costs &amp; Special 80% Meal Allowance</h3>
+        </div>
+      </div>
+
+      <p>
+        <strong>How it saves money:</strong> Regulatory compliance, road fees, and meals away from home can add thousands of dollars in legitimate business write-offs every year.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Regulatory Medical &amp; License Fees:</strong> 100% write-offs for DOT physical exams, mandatory drug/alcohol screenings, CDL renewals, and TWIC card applications.</li>
+        <li><span>✓</span> <strong>Tolls &amp; Scale Fees:</strong> 100% deductible highway/bridge tolls, weigh station CAT Scale tickets, parking fees, and commercial truck wash bays.</li>
+        <li><span>✓</span> <strong>Special 80% DOT Meal Per Diem:</strong> Drivers subject to DOT Hours of Service (HOS) rules who travel away from their home terminal overnight qualify for the <strong>special 80% DOT meal deduction</strong> (higher than the standard 50% business meal rate).</li>
+      </ul>
+    </div>
+
+    <!-- Strategy 5: Communications, Dispatch & Tech Apps -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">OPERATIONAL OVERHEAD</span>
+          <h3>5. Mobile Communications, Route Optimization &amp; Subscriptions</h3>
+        </div>
+      </div>
+
+      <p>
+        <strong>How it saves money:</strong> Technology and software used to dispatch, navigate, and communicate with brokers or customers are fully recognized operating expenses.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Cell Phone &amp; Data:</strong> Deduct the business-use percentage of your monthly cell phone and hotspot plan (typically 75%–90% for active couriers).</li>
+        <li><span>✓</span> <strong>Route Optimization Software:</strong> Multi-stop routing subscriptions (Circuit, Route4Me, RoadWarrior) and dispatch applications.</li>
+        <li><span>✓</span> <strong>Digital Presence &amp; Tools:</strong> Custom business domain registration, professional Google Workspace email, and electronic document signing tools.</li>
+      </ul>
+    </div>
+
+    <!-- Comparison Table -->
+    <h2 class="section-title">1099 Deduction <span>Reference Matrix</span></h2>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Deduction Category</th>
+            <th>Deduction Framework</th>
+            <th>Allowable Write-Off</th>
+            <th>Recordkeeping Required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Standard Mileage</strong>
+              <span class="table-badge">Cargo Vans &amp; Couriers</span>
+            </td>
+            <td>IRS standard rate per mile driven for business purposes.</td>
+            <td>IRS per-mile rate + tolls/parking</td>
+            <td>Date, mileage log &amp; business purpose</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Heavy Vehicle Expense</strong>
+              <span class="table-badge">Box Trucks &amp; Heavy Fleets</span>
+            </td>
+            <td>Actual operating costs plus Section 179 purchase depreciation.</td>
+            <td>100% fuel, tires, repairs, insurance</td>
+            <td>Itemized receipts, repair invoices &amp; VIN</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Quarterly Safe Harbor</strong>
+              <span class="table-badge">Tax Penalty Shield</span>
+            </td>
+            <td>Equal quarterly payments based on prior-year tax total.</td>
+            <td>Eliminates IRS penalty charges</td>
+            <td>IRS Direct Pay confirmation re
