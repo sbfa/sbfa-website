@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Doctors &amp; Roadside Healthcare | Small Business Fleet Alliance</title>
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-light: #141c2b;
+      --navy-card-hover: #1a2436;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --white: #ffffff;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --green: #10b981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--orange);
+    }
+
+    /* --- Resources Navigation Dropdown --- */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropdown-btn {
+      color: var(--orange);
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 0;
+      transition: color 0.2s;
+    }
+
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--navy-light);
+      min-width: 250px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .nav-dropdown-content a {
+      color: var(--white);
+      padding: 10px 18px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .nav-dropdown-content a:hover {
+      background: rgba(249, 115, 22, 0.12);
+      color: var(--orange);
+      padding-left: 22px;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-content {
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .hero {
+      padding: 60px 20px 40px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 740px;
+      margin: 0 auto 12px;
+    }
+
+    .section {
+      padding: 40px 20px 60px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 30px 0 20px;
+      color: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px 26px;
+      margin-bottom: 28px;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(249, 115, 22, 0.5);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-top: 6px;
+    }
+
+    .badge-code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .badge-green {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .perks-list {
+      list-style: none;
+      color: var(--white);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .perks-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .perks-list li span {
+      color: var(--orange);
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .setup-box {
+      background: rgba(11, 18, 32, 0.7);
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+    }
+
+    .setup-box h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .setup-steps {
+      list-style: decimal inside;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .setup-steps li {
+      margin-bottom: 6px;
+    }
+
+    .setup-steps strong {
+      color: var(--white);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Comparison Table Styling */
+    .table-container {
+      overflow-x: auto;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: rgba(249, 115, 22, 0.08);
+      color: var(--orange);
+      font-weight: 700;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: middle;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: var(--navy-card-hover);
+      color: var(--white);
+    }
+
+    td strong {
+      color: var(--white);
+      display: block;
+    }
+
+    .table-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+    }
+
+    .disclaimer-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 24px;
+      border-top: 1px dashed var(--border);
+      padding-top: 14px;
+      line-height: 1.4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--orange);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .hero {
+        padding: 40px 16px 30px;
+      }
+      .section {
+        padding: 30px 16px;
+      }
+      .card {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚛</div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>SMALL BUSINESS FLEET ALLIANCE</span>
+        </div>
+      </a>
+      <nav>
+        <a href="benefits.html">Benefits</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn">
+            Resources <span>▼</span>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="savings.html">💰 Financial Planning</a>
+            <a href="expense.html">🚚 1099 Tax &amp; Mileage Suite</a>
+            <a href="formation.html">🏛️ Entity &amp; Operating Authority</a>
+            <a href="tax.html">⚖️ Tax, Legal &amp; Payroll</a>
+            <a href="healthcare.html">🩺 Healthcare Resources</a>
+            <a href="doctor.html" style="color: var(--orange);">👨‍⚕️ Virtual Doctor &amp; Clinics</a>
+            <a href="travel.html">🏨 Travel Perks</a>
+          </div>
+        </div>
+        <a href="partner.html">Partners</a>
+      </nav>
+      <a href="join.html" class="btn btn-primary">Join Today</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">DIRECT-ACCESS HEALTHCARE TOOLKIT</div>
+    <h1>On-Demand Doctors &amp; <span>Roadside Care</span></h1>
+    <p class="hero-sub">
+      Connect with a board-certified doctor from your cab in under 15 minutes, find flat-fee family physicians near your home terminal, and locate transparent walk-in clinics nationwide—all with zero insurance required.
+    </p>
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">24/7 Virtual <span>Telehealth Consults</span></h2>
+
+    <!-- Resource 1: Sesame Care & Virtual Urgent Care -->
+    <div class="card" style="border-color: var(--orange);">
+      <div class="card-header">
+        <div>
+          <span class="badge-green">FLAT $29-$45 VISITS • NO INSURANCE NEEDED</span>
+          <h3>1. 24/7 Telehealth &amp; Same-Day Prescription Routing</h3>
+        </div>
+      </div>
+
+      <p>
+        <strong>How it saves time &amp; money:</strong> Skip expensive emergency room copays and lost route time. Connect with licensed medical doctors via video or phone from your driver seat for urgent sick visits, rashes, minor injuries, and fast prescription refills.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Same-Day Pharmacy Routing:</strong> Doctors call in antibiotics, blood pressure maintenance meds, and acute treatments to any roadside pharmacy or truck stop within minutes.</li>
+        <li><span>✓</span> <strong>Upfront Transparent Cash Rates:</strong> Pay a simple flat fee ($25 to $45) per visit directly with any debit or credit card—no hidden facility fees or surprise bills.</li>
+        <li><span>✓</span> <strong>Zero Monthly Subscription Friction:</strong> Book on demand when you need care without being locked into expensive monthly retainer contracts.</li>
+      </ul>
+
+      <div class="setup-box">
+        <h4>How to Access Virtual Care on Route:</h4>
+        <ol class="setup-steps">
+          <li>Select an on-demand telehealth provider (Sesame Care or HealthTap).</li>
+          <li>Choose your appointment time (immediate 15-minute queue or scheduled slot) and state location.</li>
+          <li>Enter the address of the nearest pharmacy along your delivery route for prescription dispatch.</li>
+        </ol>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://sesamecare.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Book Doctor on Sesame Care ($29+) →
+        </a>
+        <a href="https://www.healthtap.com/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Visit HealthTap 24/7 Portal →
+        </a>
+      </div>
+    </div>
+
+    <!-- Resource 2: Direct Primary Care (DPC) -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">MEMBERSHIP MEDICINE • $0 COPAYS</span>
+          <h3>2. Direct Primary Care (DPC) Local Family Doctors</h3>
+        </div>
+      </div>
+
+      <p>
+        <strong>How it works:</strong> Direct Primary Care bypasses health insurance completely. You pay a low monthly membership fee ($60–$90/month) directly to a local clinic for unlimited doctor visits, wholesale lab tests, and direct texting/calling with your personal physician.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Unlimited Office Visits:</strong> Schedule in-person checkups, physicals, and chronic disease management visits with $0 per-visit copays.</li>
+        <li><span>✓</span> <strong>Direct Physician Phone Access:</strong> Call or text your doctor directly when health questions arise while you are out on the road.</li>
+        <li><span>✓</span> <strong>Wholesale Prescription &amp; Lab Pricing:</strong> Access routine bloodwork, panels, and common generic prescriptions at up to 90% below commercial lab rates.</li>
+      </ul>
+
+      <div class="setup-box">
+        <h4>Find a DPC Doctor in Your Area:</h4>
+        <ol class="setup-steps">
+          <li>Open the free <strong>DPC Frontier Mapper</strong> database.</li>
+          <li>Enter your home terminal or city zip code to locate independent DPC practices nearby.</li>
+          <li>Contact the clinic to enroll in a direct doctor-patient membership.</li>
+        </ol>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://mapper.dpcfrontier.com/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Search Nationwide DPC Doctor Mapper →
+        </a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Walk-In Clinics &amp; <span>Major Medical Shields</span></h2>
+
+    <!-- Resource 3: Walk-In Urgent Care & DOT Physicals -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">NATIONWIDE WALK-IN SITES</span>
+          <h3>3. Roadside Walk-In Clinics &amp; DOT Recertifications</h3>
+        </div>
+      </div>
+
+      <p>
+        <strong>How to use on the road:</strong> When you need in-person diagnostics, rapid strep/flu testing, or walk-in DOT physical renewals, retail urgent care networks provide fast roadside access across all major freight corridors.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Concentra Urgent Care:</strong> National standard for walk-in DOT physicals, mandatory commercial drug/alcohol testing, and occupational minor injury treatment.</li>
+        <li><span>✓</span> <strong>CVS MinuteClinic:</strong> 1,100+ locations open 7 days a week for evening/weekend illness care, minor wound dressing, and routine vaccinations with clear cash pricing.</li>
+      </ul>
+
+      <div class="btn-group">
+        <a href="https://www.concentra.com/urgent-care-centers/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Find Concentra Clinic (DOT Physicals) →
+        </a>
+        <a href="https://www.cvs.com/minuteclinic" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Locate CVS MinuteClinic →
+        </a>
+      </div>
+    </div>
+
+    <!-- Resource 4: Health Sharing & Catastrophic Hospitalization -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-green">AFFORDABLE MAJOR MEDICAL ALTERNATIVE</span>
+          <h3>4. Catastrophic HealthShare Communities (ER &amp; Surgery)</h3>
+        </div>
+      </div>
+
+      <p>
+        <strong>How it protects your revenue:</strong> Traditional individual ACA insurance can cost $600 to $1,200/month with huge deductibles. Modern non-insurance health-sharing networks pool member funds to share major hospital bills, emergency room visits, and surgeries for $150 to $300/month.
+      </p>
+
+      <ul class="perks-list">
+        <li><span>✓</span> <strong>Zion HealthShare:</strong> Modern, non-religious health-sharing community with straightforward guidelines for sharing major medical and hospitalization costs.</li>
+        <li><span>✓</span> <strong>CrowdHealth:</strong> Tech-forward crowdfunding alternative designed specifically for self-employed entrepreneurs and 1099 contractors to negotiate and crowdfund medical events.</li>
+        <li><span>✓</span> <strong>Year-Round Enrollment:</strong> Sign up any day of the year without waiting for open enrollment deadlines.</li>
+      </ul>
+
+      <div class="btn-group">
+        <a href="https://zionhealthshare.org/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Explore Zion HealthShare →
+        </a>
+        <a href="https://www.joincrowdhealth.com/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Explore CrowdHealth →
+        </a>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <h2 class="section-title">Direct Healthcare <span>Option Matrix</span></h2>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Healthcare Solution</th>
+            <th>Primary Use Case</th>
+            <th>Estimated Cost</th>
+            <th>Insurance Required?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Virtual Telehealth</strong>
+              <span class="table-badge">Sesame / HealthTap</span>
+            </td>
+            <td>24/7 sick visits, minor rashes, and fast Rx refills sent to route pharmacies.</td>
+            <td>$25–$45 / visit flat fee</td>
+            <td>No Insurance Needed</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Direct Primary Care (DPC)</strong>
+              <span class="table-badge">Local Doctor</span>
+            </td>
+            <td>Unlimited office visits, phone/text consults, and wholesale generic labs.</td>
+            <td>$60–$90 / month</td>
+            <td>No Insurance Needed</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Roadside Urgent Care</strong>
+              <span class="table-badge">CVS / Concentra</span>
+            </td>
+            <td>In-person diagnostics, minor injuries, and certified DOT physical exams.</td>
+            <td>$59–$110 transparent cash</td>
+            <td>No Insurance Needed</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>HealthShare Community</strong>
+              <span class="table-badge">Zion / CrowdHealth</span>
+            </td>
+            <td>Catastrophic emergency room bills, hospital stays, and major surgeries.</td>
+            <td>$150–$300 / month</td>
+            <td>Non-I
