@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fleet Wealth &amp; Savings Guide | Small Business Fleet Alliance</title>
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-light: #141c2b;
+      --navy-card-hover: #1a2436;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --white: #ffffff;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --green: #10b981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--orange);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropdown-btn {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 0;
+      transition: color 0.2s;
+    }
+
+    .nav-dropdown-btn:hover,
+    .nav-dropdown:hover .nav-dropdown-btn {
+      color: var(--orange);
+    }
+
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--navy-light);
+      min-width: 250px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .nav-dropdown-content a {
+      color: var(--white);
+      padding: 10px 18px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .nav-dropdown-content a:hover {
+      background: rgba(249, 115, 22, 0.12);
+      color: var(--orange);
+      padding-left: 22px;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-content {
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .hero {
+      padding: 48px 20px 32px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 32px 20px 50px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 28px 0 18px;
+      color: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px 22px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(249, 115, 22, 0.5);
+    }
+
+    .card.highlight {
+      border-color: rgba(249, 115, 22, 0.55);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-top: 6px;
+    }
+
+    .badge-code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .badge-green {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    .perks-list {
+      list-style: none;
+      color: var(--white);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    .perks-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .perks-list li span.bullet {
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    .setup-box {
+      background: rgba(11, 18, 32, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 16px 0 18px;
+    }
+
+    .setup-box h4 {
+      font-size: 0.95rem;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    .setup-steps {
+      margin-left: 18px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .setup-steps li {
+      margin-bottom: 6px;
+    }
+
+    .quick-jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 8px 0 28px;
+    }
+
+    .quick-jump a {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .quick-jump a:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      justify-content: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--orange);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: none;
+      }
+      .hero {
+        padding: 36px 16px 24px;
+      }
+      .section {
+        padding: 24px 16px 40px;
+      }
+      .quick-jump {
+        gap: 8px;
+      }
+      .quick-jump a {
+        font-size: 0.8rem;
+        padding: 7px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚛</div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>SMALL BUSINESS FLEET ALLIANCE</span>
+        </div>
+      </a>
+      <nav>
+        <a href="benefits.html">Benefits</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn">
+            Resources <span style="font-size: 0.75rem;">▼</span>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="savings.html" style="color: var(--orange);">💰 Financial Planning</a>
+            <a href="expense.html">🚚 1099 Tax &amp; Mileage Suite</a>
+            <a href="formation.html">🏛️ Entity &amp; Operating Authority</a>
+            <a href="tax.html">⚖️ Tax, Legal &amp; Payroll</a>
+            <a href="healthcare.html">🩺 Healthcare Resources</a>
+            <a href="doctor.html">👨‍⚕️ Virtual Doctor &amp; Clinics</a>
+            <a href="travel.html">🏨 Travel Perks</a>
+          </div>
+        </div>
+        <a href="partner.html">Partners</a>
+      </nav>
+      <!-- Member page: no Join CTA -->
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">FREE OPERATIONAL PLAYBOOK</div>
+    <h1>Fleet Wealth &amp; <span>Savings Strategies</span></h1>
+    <p class="hero-sub">
+      Actionable guides, direct custodian setups, and tax-sheltering tools built specifically for 1099 couriers, owner-operators, and independent fleet businesses.
+    </p>
+  </section>
+
+  <section class="section">
+
+    <!-- Quick jump -->
+    <div class="quick-jump">
+      <a href="#solo401k">🏦 Solo 401(k)</a>
+      <a href="#scorp">📋 S-Corp</a>
+      <a href="#hsa">💊 HSA</a>
+      <a href="#reserves">💵 Reserves</a>
+      <a href="#company401k">👥 Company 401(k)</a>
+    </div>
+
+    <h2 class="section-title">Self-Employed <span>Tax &amp; Retirement Hub</span></h2>
+
+    <!-- 1. Solo 401(k) -->
+    <div class="card highlight" id="solo401k">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">$0 PLATFORM FEES • DIRECT CUSTODIAN</span>
+          <h3>1. Self-Employed Solo 401(k) &amp; SEP IRA Suite</h3>
+        </div>
+      </div>
+
+      <p>
+        Solo drivers and single-member LLCs can shelter up to $72,000/year directly from federal and state taxable income by contributing as both the "employer" and "employee."
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> <strong>Maximum Income Write-Off:</strong> Contribute up to $23,500 as employee salary deferral plus up to 25% of net business compensation.</li>
+        <li><span class="bullet">✓</span> <strong>Solo 401(k) Loan Provision:</strong> Borrow up to 50% of your balance (up to $50,000) penalty-free for emergency truck repairs or equipment, paying interest back to yourself.</li>
+        <li><span class="bullet">✓</span> <strong>Zero Ongoing Overhead:</strong> $0 account opening and maintenance fees through major institutional custodians like Fidelity.</li>
+      </ul>
+
+      <div class="setup-box">
+        <h4>Direct Setup Steps:</h4>
+        <ol class="setup-steps">
+          <li>Have your <strong>Business EIN</strong> and business checking account routing number ready.</li>
+          <li>Select <strong>"Individual / Solo 401(k)"</strong> (for max write-offs + loan option) or <strong>"SEP IRA"</strong> (for simpler zero-paperwork profit sharing).</li>
+          <li>Complete the online application and e-sign the standard IRS Adoption Agreement naming your business as the plan sponsor.</li>
+        </ol>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://www.fidelity.com/retirement-ira/small-business/self-employed-401k/overview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Open Fidelity Solo 401(k) →
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. S-Corp -->
+    <div class="card" id="scorp">
+      <div class="card-header">
+        <div>
+          <span class="badge-green">TAX REDUCTION STRATEGY</span>
+          <h3>2. S-Corporation Election (Slashing 15.3% Self-Employment Tax)</h3>
+        </div>
+      </div>
+
+      <p>
+        Once an LLC nets over roughly $60,000–$75,000/year, electing S-Corp status can legally split net income between a W-2 salary and shareholder distributions, shielding distributions from the 15.3% Self-Employment Tax.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> <strong>Instant Cash Savings:</strong> A business netting $85,000 with a $50,000 reasonable salary can save approximately $5,000+ every year in self-employment taxes.</li>
+        <li><span class="bullet">✓</span> <strong>Keeps Your LLC:</strong> The legal structure stays the same; only the tax treatment changes.</li>
+        <li><span class="bullet">✓</span> <strong>Payroll Required:</strong> You must run reasonable officer payroll (OnPay or similar makes this easy).</li>
+      </ul>
+
+      <div class="setup-box">
+        <h4>Direct Setup Steps:</h4>
+        <ol class="setup-steps">
+          <li>Review annual profit with your tax preparer to confirm the strategy makes sense.</li>
+          <li>Complete and file <strong>IRS Form 2553</strong> (Election by a Small Business Corporation).</li>
+          <li>Set up officer payroll and begin running a reasonable salary.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 3. HSA -->
+    <div class="card" id="hsa">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">TRIPLE TAX-ADVANTAGED ACCOUNT</span>
+          <h3>3. Health Savings Account (The Medical Wealth Shield)</h3>
+        </div>
+      </div>
+
+      <p>
+        An HSA offers a triple tax shield: contributions are 100% tax-deductible, investments grow tax-free, and withdrawals for medical care are never taxed.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> <strong>Annual Tax Deductions:</strong> Contribute up to the current IRS limits for individual or family coverage.</li>
+        <li><span class="bullet">✓</span> <strong>Never Expires:</strong> Unlike an FSA, HSA funds roll over forever and can be invested.</li>
+        <li><span class="bullet">✓</span> <strong>Retirement Use:</strong> After age 65, funds can be withdrawn for any purpose (taxed as ordinary income, similar to a traditional 401k).</li>
+      </ul>
+
+      <div class="setup-box">
+        <h4>Direct Setup Steps:</h4>
+        <ol class="setup-steps">
+          <li>Enroll in an eligible <strong>High-Deductible Health Plan (HDHP)</strong>.</li>
+          <li>Open a low- or no-fee self-directed investment HSA (Fidelity or Lively are popular options).</li>
+          <li>Automate monthly transfers from your business checking.</li>
+        </ol>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://www.fidelity.com/go/hsa/why-hsa" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Open Fidelity No-Fee HSA →
+        </a>
+        <a href="https://livelyme.com/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Explore Lively HSA →
+        </a>
+      </div>
+    </div>
+
+    <!-- 4. High-Yield Reserves -->
+    <div class="card" id="reserves">
+      <div class="card-header">
+        <div>
+          <span class="badge-green">PASSIVE CASH FLOW STRATEGY</span>
+          <h3>4. High-Yield Tax &amp; Maintenance Sinking Funds</h3>
+        </div>
+      </div>
+
+      <p>
+        Stop letting quarterly tax reserves, insurance down payments, and emergency tire funds sit in commercial checking earning almost nothing.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> <strong>4%–5% Yield on Operating Cash:</strong> Holding reserves in high-yield accounts or short-term Treasuries generates meaningful passive income.</li>
+        <li><span class="bullet">✓</span> <strong>State Tax-Exempt T-Bills:</strong> Short-term US Treasury Bills are exempt from state and local income taxes.</li>
+        <li><span class="bullet">✓</span> <strong>Automated Discipline:</strong> Separate operating capital from tax money to avoid cash-flow crunches.</li>
+      </ul>
+
+      <div class="setup-box">
+        <h4>Direct Setup Steps:</h4>
+        <ol class="setup-steps">
+          <li>Open an account on <strong>TreasuryDirect</strong> or a high-yield business savings account.</li>
+          <li>Sweep 20%–25% of every route settlement into the reserve fund.</li>
+          <li>Reinvest short-term Treasury Bills so reserves continuously roll over.</li>
+        </ol>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://www.treasurydirect.gov/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Visit TreasuryDirect Portal →
+        </a>
+      </div>
+    </div>
+
+    <!-- 5. Company 401(k) -->
+    <div class="card" id="company401k">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">ONPAY PAYROLL INTEGRATION</span>
+          <h3>5. Turnkey Company 401(k) (For Fleets With Drivers on Payroll)</h3>
+        </div>
+      </div>
+
+      <p>
+        Attract and retain drivers with an automated 401(k) that links to payroll. Eligible small businesses can also claim federal startup tax credits under the SECURE 2.0 Act.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> <strong>Automated Sync:</strong> Deductions and employer matches process automatically every payroll cycle.</li>
+        <li><span class="bullet">✓</span> <strong>Fiduciary Support:</strong> Integrated providers can act as plan administrators and investment managers.</li>
+      </ul>
+
+      <div class="setup-box">
+        <h4>Direct Setup Steps:</h4>
+        <ol class="setup-steps">
+          <li>Log into your <strong>OnPay</strong> (or similar) employer dashboard.</li>
+          <li>Navigate to the App Directory / Benefits section and select a 401(k) partner.</li>
+          <li>Activate automated payroll contribution deductions.</li>
+        </ol>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <nav>
+      <a href="benefits.html">Benefits</a>
+      <a href="savings.html">Financial Planning</a>
+      <a href="expense.html">1099 Tax &amp; Mileage</a>
+      <a href="tax.html">Tax &amp; Legal</a>
+      <a href="formation.html">Entity &amp; Authority</a>
+      <a href="healthcare.html">Healthcare</a>
+      <a href="partner.html">Partners</a>
+    </nav>
+    <p>© 2026 Small Business Fleet Alliance. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
