@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel &amp; Lodging Perks | Small Business Fleet Alliance</title>
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-light: #141c2b;
+      --navy-card-hover: #1a2436;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --white: #ffffff;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --green: #10b981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--orange);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropdown-btn {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 0;
+      transition: color 0.2s;
+    }
+
+    .nav-dropdown-btn:hover,
+    .nav-dropdown:hover .nav-dropdown-btn {
+      color: var(--orange);
+    }
+
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--navy-light);
+      min-width: 250px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .nav-dropdown-content a {
+      color: var(--white);
+      padding: 10px 18px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .nav-dropdown-content a:hover {
+      background: rgba(249, 115, 22, 0.12);
+      color: var(--orange);
+      padding-left: 22px;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-content {
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .hero {
+      padding: 48px 20px 32px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 32px 20px 50px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 28px 0 18px;
+      color: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px 22px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(249, 115, 22, 0.5);
+    }
+
+    .card.highlight {
+      border-color: rgba(249, 115, 22, 0.55);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-top: 6px;
+    }
+
+    .badge-code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .badge-green {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    .perks-list {
+      list-style: none;
+      color: var(--white);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .perks-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .perks-list li span.bullet {
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    .quick-jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 8px 0 28px;
+    }
+
+    .quick-jump a {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .quick-jump a:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      justify-content: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--orange);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: none;
+      }
+      .hero {
+        padding: 36px 16px 24px;
+      }
+      .section {
+        padding: 24px 16px 40px;
+      }
+      .quick-jump {
+        gap: 8px;
+      }
+      .quick-jump a {
+        font-size: 0.8rem;
+        padding: 7px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚛</div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>SMALL BUSINESS FLEET ALLIANCE</span>
+        </div>
+      </a>
+      <nav>
+        <a href="benefits.html">Benefits</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn">
+            Resources <span style="font-size: 0.75rem;">▼</span>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="savings.html">💰 Financial Planning</a>
+            <a href="expense.html">🚚 1099 Tax &amp; Mileage Suite</a>
+            <a href="formation.html">🏛️ Entity &amp; Operating Authority</a>
+            <a href="tax.html">⚖️ Tax, Legal &amp; Payroll</a>
+            <a href="healthcare.html">🩺 Healthcare Resources</a>
+            <a href="doctor.html">👨‍⚕️ Virtual Doctor &amp; Clinics</a>
+            <a href="travel.html" style="color: var(--orange);">🏨 Travel Perks</a>
+          </div>
+        </div>
+        <a href="partner.html">Partners</a>
+      </nav>
+      <!-- Member page: no Join CTA -->
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">MEMBER TRAVEL PERKS</div>
+    <h1>Lodging &amp; <span>Travel Savings</span></h1>
+    <p class="hero-sub">
+      Exclusive corporate rates and hotel savings for independent drivers, route operators, and small fleet owners on the road.
+    </p>
+  </section>
+
+  <section class="section">
+
+    <!-- Quick jump -->
+    <div class="quick-jump">
+      <a href="#hotels">🏨 Hotels</a>
+      <a href="#rentals">🚗 Rentals</a>
+    </div>
+
+    <h2 class="section-title" id="hotels">Hotel &amp; <span>Lodging Partners</span></h2>
+
+    <!-- IHG -->
+    <div class="card highlight">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">Code Pre-Applied: 787242609</span>
+          <h3>Holiday Inn &amp; IHG Hotels &amp; Resorts</h3>
+        </div>
+      </div>
+      
+      <p>
+        Guaranteed corporate discount across 6,000+ participating IHG properties worldwide, including Holiday Inn, Holiday Inn Express, Candlewood Suites, Staybridge Suites, and Crowne Plaza.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> Guaranteed discount on business or personal stays</li>
+        <li><span class="bullet">✓</span> Corporate rate automatically applied when using the link below</li>
+        <li><span class="bullet">✓</span> Automatic IHG One Rewards loyalty upgrade after your first stay</li>
+        <li><span class="bullet">✓</span> Valid across all participating IHG brands globally</li>
+      </ul>
+
+      <a href="https://www.ihg.com/hotels/us/en/reservation?qCpid=787242609&srb_u=1" target="_blank" rel="noopener" class="btn btn-primary">
+        Book IHG Member Rate →
+      </a>
+    </div>
+
+    <!-- Best Western -->
+    <div class="card highlight">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">Corporate ID: 01526650</span>
+          <h3>Best Western Business Advantage</h3>
+        </div>
+      </div>
+
+      <p>
+        Preferred corporate rate access across 4,000+ Best Western, Best Western Plus, and Executive Residency locations nationwide.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> Discounted corporate rates on all business and personal stays</li>
+        <li><span class="bullet">✓</span> Book online at BWbusinessadvantage.com or bestwestern.com with ID 01526650</li>
+        <li><span class="bullet">✓</span> Phone reservations available 24/7 at 1-855-504-1079 (Option #1)</li>
+        <li><span class="bullet">✓</span> Automatic Business Advantage rewards enrollment &amp; bonus points</li>
+      </ul>
+
+      <a href="https://www.BWbusinessadvantage.com" target="_blank" rel="noopener" class="btn btn-primary">
+        Book Best Western (ID: 01526650) →
+      </a>
+    </div>
+
+    <!-- Choice -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">SBFA Member Rate</span>
+          <h3>Choice Hotels (Quality Inn, Comfort, MainStay)</h3>
+        </div>
+      </div>
+
+      <p>
+        Discounted hotel stays at Choice Hotels brands across the country, perfect for overnight route drivers and long-haul trips.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> Discounted rates at Comfort Inn, Quality Inn, Sleep Inn, and MainStay Suites</li>
+        <li><span class="bullet">✓</span> Special savings on extended-stay locations</li>
+      </ul>
+
+      <a href="https://www.choicehotels.com" target="_blank" rel="noopener" class="btn btn-secondary">
+        Book Choice Hotels →
+      </a>
+    </div>
+
+    <!-- Wyndham -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">SBFA Member Rate</span>
+          <h3>Wyndham Rewards (Super 8, Days Inn, La Quinta)</h3>
+        </div>
+      </div>
+
+      <p>
+        Preferred rates at over 9,000 Wyndham locations nationwide, including roadside staples for independent drivers.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> Savings at La Quinta, Super 8, Days Inn, and Ramada</li>
+        <li><span class="bullet">✓</span> Flexible cancellation on corporate bookings</li>
+      </ul>
+
+      <a href="https://www.wyndhamhotels.com" target="_blank" rel="noopener" class="btn btn-secondary">
+        Book Wyndham Hotels →
+      </a>
+    </div>
+
+    <!-- Motel 6 -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">Commercial Rate</span>
+          <h3>Motel 6 &amp; Studio 6</h3>
+        </div>
+      </div>
+
+      <p>
+        Nationwide driver-friendly rates with clean, reliable lodging and extended-stay amenities.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> Reliable roadside savings across all US locations</li>
+        <li><span class="bullet">✓</span> Kitchenette options available at Studio 6 extended stays</li>
+      </ul>
+
+      <a href="https://www.motel6.com" target="_blank" rel="noopener" class="btn btn-secondary">
+        Book Motel 6 →
+      </a>
+    </div>
+
+    <!-- Rentals -->
+    <h2 class="section-title" id="rentals">Rental &amp; <span>Fleet Vehicle Discounts</span></h2>
+
+    <!-- Avis -->
+    <div class="card highlight">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">AWD Code: T666478</span>
+          <h3>Avis Car Rental</h3>
+        </div>
+      </div>
+
+      <p>
+        Exclusive corporate savings on business and personal car rentals with Avis For Business.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> Up to 30% off base rates with AWD T666478</li>
+        <li><span class="bullet">✓</span> Complimentary Avis Preferred membership for skip-the-counter access</li>
+        <li><span class="bullet">✓</span> Reward points for every completed rental</li>
+      </ul>
+
+      <a href="https://www.avis.com" target="_blank" rel="noopener" class="btn btn-primary">
+        Book Avis (AWD: T666478) →
+      </a>
+    </div>
+
+    <!-- Enterprise -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">Account: SBT486V</span>
+          <h3>Enterprise Truck Rental</h3>
+        </div>
+      </div>
+
+      <p>
+        Discounted commercial vehicle rentals for box trucks, cargo vans, and pickup trucks to keep your route moving.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> Commercial business rates on cargo vans and box trucks</li>
+        <li><span class="bullet">✓</span> Flexible short-term and long-term fleet expansion</li>
+      </ul>
+
+      <a href="https://www.enterprisetrucks.com" target="_blank" rel="noopener" class="btn btn-secondary">
+        Book Enterprise Trucks →
+      </a>
+    </div>
+
+    <!-- Hertz -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge-code">SBFA Fleet Rate</span>
+          <h3>Hertz Rental Cars</h3>
+        </div>
+      </div>
+
+      <p>
+        Corporate rental rates and Gold Plus Rewards access for SBFA members traveling nationwide.
+      </p>
+
+      <ul class="perks-list">
+        <li><span class="bullet">✓</span> Corporate discount rates on passenger cars and SUVs</li>
+        <li><span class="bullet">✓</span> Free Hertz Gold Plus Rewards membership</li>
+      </ul>
+
+      <a href="https://www.hertz.com" target="_blank" rel="noopener" class="btn btn-secondary">
+        Book Hertz →
+      </a>
+    </div>
+
+    <!-- Coming Soon (no join CTA) -->
+    <div class="card" style="text-align: center; padding: 32px 22px;">
+      <h3 style="margin-bottom: 8px;">More Travel Partners Launching Soon</h3>
+      <p style="margin-bottom: 0; color: var(--text-muted);">
+        We are actively expanding our network to include additional lodging, fuel, and commercial fleet partners.
+      </p>
+    </div>
+
+  </section>
+
+  <footer>
+    <nav>
+      <a href="benefits.html">Benefits</a>
+      <a href="travel.html">Travel</a>
+      <a href="healthcare.html">Healthcare</a>
+      <a href="tax.html">Tax &amp; Legal</a>
+      <a href="partner.html">Partners</a>
+    </nav>
+    <p>© 2026 Small Business Fleet Alliance. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
