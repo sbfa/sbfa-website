@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start a Chapter | Small Business Fleet Alliance</title>
+  
+  <meta property="og:title" content="Start a Chapter | Small Business Fleet Alliance">
+  <meta property="og:description" content="Become an SBFA Chapter Leader. Recruit members, set up local partners, and earn recurring territory income.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smallbusinessfleetalliance.com/chapter.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-light: #141c2b;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --white: #ffffff;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-icon svg { width: 26px; height: 26px; }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.3px;
+    }
+
+    .logo-text span {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.4px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 22px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover { background: var(--orange-dark); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid #475569;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--orange);
+      color: #fb923c;
+    }
+
+    .hero {
+      padding: 48px 20px 40px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 2.7rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero-sub {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 24px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .section {
+      padding: 48px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .section-title span { color: var(--orange); }
+
+    .section-intro {
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 28px;
+      font-size: 0.98rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 700px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 18px;
+    }
+
+    .card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .card p, .card ul {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .card ul li {
+      padding: 4px 0 4px 16px;
+      position: relative;
+    }
+
+    .card ul li::before {
+      content: "•";
+      color: var(--orange);
+      position: absolute;
+      left: 0;
+    }
+
+    .highlight-box {
+      background: var(--navy-light);
+      border: 1px solid rgba(249, 115, 22, 0.45);
+      border-radius: 14px;
+      padding: 28px 22px;
+      margin: 10px 0 20px;
+    }
+
+    .highlight-box h2 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .highlight-box > p {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .incentive-list {
+      list-style: none;
+    }
+
+    .incentive-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .incentive-list li:last-child { border-bottom: none; }
+
+    .incentive-list strong { color: var(--orange); }
+
+    .sub-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .milestone {
+      background: rgba(249, 115, 22, 0.08);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+
+    .milestone h4 {
+      font-size: 0.95rem;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+
+    .milestone p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .steps { margin: 24px 0 10px; }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--orange);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1.05rem;
+      margin-bottom: 3px;
+    }
+
+    .step-content p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .form-section {
+      background: var(--navy-light);
+      border-radius: 16px;
+      padding: 32px 20px;
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .form-section h2 {
+      margin-bottom: 8px;
+      font-size: 1.45rem;
+    }
+
+    .form-section > p {
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      font-size: 0.95rem;
+    }
+
+    .form-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a { color: var(--orange); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 36px 16px 30px; }
+      .section { padding: 36px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8h11v8H3V8z" fill="#0b1220"/>
+            <path d="M14 10h4l3 3v3h-7v-6z" fill="#0b1220"/>
+            <circle cx="6.5" cy="17.5" r="1.8" fill="#f97316"/>
+            <circle cx="17.5" cy="17.5" r="1.8" fill="#f97316"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>SMALL BUSINESS FLEET ALLIANCE</span>
+        </div>
+      </a>
+      <a href="#apply" class="btn btn-primary">Apply Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">For Local Operators</div>
+    <h1>Start a <span>Chapter</span> in Your City</h1>
+    <p class="hero-sub">
+      Become a Chapter Leader. Recruit members, set up local service partners, and run your territory your way — inside a clear framework.
+    </p>
+    <div class="hero-ctas">
+      <a href="#apply" class="btn btn-primary">Apply to Lead a Chapter</a>
+      <a href="join.html" class="btn btn-secondary">Join as a Member Instead</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">What a Chapter Leader <span>Does</span></h2>
+    <p class="section-intro">
+      Simple role. Real independence. Clear framework.
+    </p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>1. Recruit Members</h3>
+        <p>Bring independent drivers and operators in your area into the Alliance. That’s the core of the role.</p>
+      </div>
+      <div class="card">
+        <h3>2. Set Up Local Partners</h3>
+        <p>Connect with local shops, tire places, and service providers so members can get better local pricing.</p>
+      </div>
+      <div class="card">
+        <h3>3. Run It Your Way</h3>
+        <p>You’re independent. Run the chapter the way that works for your city — as long as you stay inside the SBFA framework.</p>
+      </div>
+      <div class="card">
+        <h3>4. Stick to the Framework</h3>
+        <p>Use the brand, pricing structure, residual rules, and basic standards. Everything else is yours to build.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">What You <span>Get</span></h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Territory Income</h3>
+        <ul>
+          <li>50% of collected dues from members in your territory</li>
+          <li>Paid only after member payments clear</li>
+          <li>Milestone bonuses as the chapter grows</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Support &amp; Tools</h3>
+        <ul>
+          <li>Brand and positioning</li>
+          <li>Member benefits and deals to offer</li>
+          <li>Billing and residual tracking handled centrally</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="highlight-box">
+      <h2>How the Money Works</h2>
+      <p>Simple, fair, and paid only after member dues clear.</p>
+
+      <h3 style="color:var(--orange);font-size:1.05rem;margin:18px 0 10px;text-align:center;">Chapter Leader Pay</h3>
+      <p style="text-align:center;color:var(--text-muted);font-size:0.9rem;margin-bottom:12px;">For members in your local territory</p>
+
+      <ul class="incentive-list">
+        <li>
+          <strong>50% of collected dues</strong><br>
+          You earn half of the membership dues paid by operators in your chapter territory.
+          <div class="sub-note">Example: $150 Pro founding member → $75 to chapter leader · $60 Gig member → $30 to chapter leader</div>
+        </li>
+        <li>
+          <strong>Paid after dues clear</strong><br>
+          Monthly or annual — nothing is paid until the member payment has posted.
+        </li>
+        <li>
+          <strong>Recurring while they stay active</strong><br>
+          As long as the member renews and remains in your territory, your cut continues.
+        </li>
+      </ul>
+
+      <h3 style="color:var(--orange);font-size:1.05rem;margin:26px 0 10px;text-align:center;">Founding Member Residuals</h3>
+      <p style="text-align:center;color:var(--text-muted);font-size:0.9rem;margin-bottom:12px;">One-level residual for Founding 100 members — only when there is no chapter cut on that member</p>
+
+      <ul class="incentive-list">
+        <li>
+          <strong>Commercial Pro yearly referral</strong><br>
+          $20 / year residual while they stay active
+        </li>
+        <li>
+          <strong>Gig Tier yearly referral</strong><br>
+          $6 / year residual while they stay active
+        </li>
+      </ul>
+      <p class="sub-note" style="text-align:center; margin-top:12px; font-style:italic;">
+        No double-dipping: territory members pay the chapter leader cut. Out-of-territory founding referrals can earn the residual. Never both on the same member.
+      </p>
+
+      <h3 style="color:var(--orange);font-size:1.05rem;margin:26px 0 12px;text-align:center;">Chapter Milestones</h3>
+      <div class="milestone">
+        <h4>Early growth bonus</h4>
+        <p>Milestone bonuses may be awarded as your chapter hits member targets. Paid from collected dues after payments clear.</p>
+      </div>
+      <div class="milestone">
+        <h4>Local partner growth</h4>
+        <p>Additional rewards can be tied to bringing in local service partners that strengthen member value.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Simple <span>Steps</span></h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Apply</h3>
+          <p>Tell us who you are, where you’re based, and how many operators you already know.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Get Approved</h3>
+          <p>We review applications and set strong local leaders up with the tools and framework.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Launch Your Chapter</h3>
+          <p>Recruit members, set up local partners, and grow. We handle billing and residual tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apply">
+    <div class="form-section">
+      <h2>Apply to Start a Chapter</h2>
+      <p>Interested in leading a chapter in your city? Complete the application below.</p>
+
+      <iframe data-tally-src="https://tally.so/embed/ODKeZa?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="320" frameborder="0" marginheight="0" marginwidth="0" title="Start a Chapter Application"></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+      <p class="form-note" style="margin-top: 20px;">
+        Prefer email? Reach us at <a href="mailto:gwillis@sbfaohio.com?subject=Start%20a%20Chapter%20Application" style="color: var(--orange);">gwillis@sbfaohio.com</a><br>
+        Or join as a member first: <a href="join.html" style="color: var(--orange);">Join SBFA</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>smallbusinessfleetalliance.com &nbsp;•&nbsp; gwillis@sbfaohio.com</p>
+    <p style="margin-top: 8px;">© 2026 Small Business Fleet Alliance</p>
+  </footer>
+
+</body>
+</html>
