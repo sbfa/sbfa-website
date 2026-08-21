@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Founding 100 Interest List | Small Business Fleet Alliance</title>
+  
+  <meta property="og:title" content="Founding 100 Interest List | Small Business Fleet Alliance">
+  <meta property="og:description" content="Join the SBFA Founding 100 interest list. Help build group buying power for independent drivers and lock in founding rates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smallbusinessfleetalliance.com/join.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-light: #141c2b;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --white: #ffffff;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-icon svg { width: 26px; height: 26px; }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.3px;
+    }
+
+    .logo-text span {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.4px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 22px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover { background: var(--orange-dark); }
+
+    .hero {
+      padding: 48px 20px 36px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero-sub {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 10px;
+    }
+
+    .section {
+      padding: 44px 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .section-title span { color: var(--orange); }
+
+    .section-intro {
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 26px;
+      font-size: 0.98rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .pricing-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 18px;
+    }
+
+    .pricing-card .badge {
+      display: inline-block;
+      background: rgba(249,115,22,0.2);
+      color: #fb923c;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .pricing-card .price {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+
+    .pricing-card .price-sub {
+      font-size: 0.85rem;
+      color: #fb923c;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .pricing-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 600px) {
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .benefit-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 16px;
+    }
+
+    .benefit-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 6px;
+      color: var(--orange);
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .rewards-box {
+      background: var(--navy-light);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      border-radius: 14px;
+      padding: 26px 20px;
+      margin: 28px 0 10px;
+    }
+
+    .rewards-box h2 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .rewards-box > p {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      font-size: 0.92rem;
+    }
+
+    .rewards-list {
+      list-style: none;
+      margin-bottom: 14px;
+    }
+
+    .rewards-list li {
+      padding: 10px 0;
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rewards-list li:last-child { border-bottom: none; }
+
+    .rewards-list strong { color: var(--orange); }
+
+    .note-box {
+      background: rgba(249, 115, 22, 0.08);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .note-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .steps {
+      margin: 10px 0 6px;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--orange);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .step-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .form-section {
+      background: var(--navy-light);
+      border-radius: 16px;
+      padding: 30px 18px;
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .form-section h2 {
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+    }
+
+    .form-section > p {
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      font-size: 0.95rem;
+    }
+
+    .form-note {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 18px;
+      line-height: 1.45;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a { color: var(--orange); text-decoration: none; }
+
+    .footer-disclaimer {
+      font-size: 0.75rem;
+      color: #64748b;
+      max-width: 820px;
+      margin: 14px auto 0;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 36px 16px 28px; }
+      .section { padding: 36px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8h11v8H3V8z" fill="#0b1220"/>
+            <path d="M14 10h4l3 3v3h-7v-6z" fill="#0b1220"/>
+            <circle cx="6.5" cy="17.5" r="1.8" fill="#f97316"/>
+            <circle cx="17.5" cy="17.5" r="1.8" fill="#f97316"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>SMALL BUSINESS FLEET ALLIANCE</span>
+        </div>
+      </a>
+      <a href="#interest-list" class="btn btn-primary">Join the List</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">Founding 100 Interest List</div>
+    <h1>Help Build It. <span>Lock Founding Status.</span></h1>
+    <p class="hero-sub">
+      SBFA is lining up independent box truck, Sprinter, route, and gig operators so we can secure stronger group benefits before full launch.
+    </p>
+    <p class="hero-sub">
+      Join the Founding 100 interest list to reserve founding pricing and residual eligibility.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Founding <span>Rates</span></h2>
+    <p class="section-intro">
+      Both tiers are available on the interest list. Founding pricing is reserved for the first 100.
+    </p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="badge">Founding Special</div>
+        <h3>Commercial Pro</h3>
+        <div class="price">$150 <span style="font-size:0.95rem;font-weight:normal;color:var(--text-muted);">/ year</span></div>
+        <div class="price-sub">Save $50 off standard $200 rate</div>
+        <p>For box truck, Sprinter, cargo van, and small fleet operators.</p>
+      </div>
+      <div class="pricing-card">
+        <div class="badge">Founding Annual</div>
+        <h3>Gig Tier</h3>
+        <div class="price">$60 <span style="font-size:0.95rem;font-weight:normal;color:var(--text-muted);">/ year</span></div>
+        <div class="price-sub">$5/month equivalent</div>
+        <p>For sedans, SUVs, minivans, and gig delivery drivers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Why Join the <span>List Now</span></h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3>Reserve Founding Pricing</h3>
+        <p>Get in line for the introductory rates before full membership opens.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Help Unlock Better Benefits</h3>
+        <p>Real interest from operators helps us negotiate stronger partner deals.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Founding Residual Eligibility</h3>
+        <p>Simple one-level residual on operators you refer once membership is live.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Early Access</h3>
+        <p>First in line when new benefits, tools, and partner offers launch.</p>
+      </div>
+    </div>
+
+    <div class="rewards-box">
+      <h2>Simple Referral Residual</h2>
+      <p>One-level only. No teams. No downlines. Just a founding reward for bringing in other independent operators.</p>
+
+      <ul class="rewards-list">
+        <li><strong>Commercial Pro annual referral</strong> — $50/year residual while they stay active</li>
+        <li><strong>Gig Tier annual referral</strong> — $20/year residual while they stay active</li>
+      </ul>
+
+      <div class="note-box">
+        <p>
+          This is a flat referral residual for Founding 100 members — not a multi-level program. You refer an operator, they join on an annual plan, and you earn the residual while they remain active.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">What Happens <span>Next</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Join the interest list</h3>
+          <p>Tell us who you are and which tier fits you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>We build the benefit package</h3>
+          <p>Your interest helps us lock better partner rates and tools.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Founding members get first access</h3>
+          <p>When membership opens, Founding 100 are first in line at founding rates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="interest-list">
+    <div class="form-section">
+      <h2>Join the Founding 100 Interest List</h2>
+      <p>Reserve your founding status. No payment required to join the list.</p>
+
+      <iframe data-tally-src="https://tally.so/embed/ODKeZa?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="280" frameborder="0" marginheight="0" marginwidth="0" title="Founding 100 waitlist"></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+      <p class="form-note">
+        You’re joining the interest list. We’ll notify you as founding enrollment opens.
+      </p>
+      <p class="form-note" style="margin-top: 8px;">
+        Prefer email? Contact <a href="mailto:gwillis@sbfaohio.com?subject=Founding%20100%20Interest" style="color: var(--orange);">gwillis@sbfaohio.com</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>smallbusinessfleetalliance.com &nbsp;•&nbsp; gwillis@sbfaohio.com</p>
+    <p class="footer-disclaimer">
+      *Insurance note: Group AD&amp;D protection is intended to be included with active membership once the master policy is in place. Setup is in progress. SBFA is not an insurance carrier or broker. Final coverage details, eligibility, and effective dates will be confirmed at launch.
+    </p>
+    <p style="margin-top: 14px; font-size: 0.85rem;">© 2026 Small Business Fleet Alliance</p>
+  </footer>
+
+</body>
+</html>
