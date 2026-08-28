@@ -154,18 +154,30 @@
     }
 
     .who { background: var(--bg-section); }
-    .who-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
-    @media (min-width: 768px) {
-      .who-grid { grid-template-columns: 1.2fr 1fr; align-items: center; }
-    }
     .who-text p { color: var(--text-muted); margin-bottom: 14px; font-size: 1rem; }
     .who-text p strong { color: var(--white); }
-    .who-points { list-style: none; }
-    .who-points li {
-      display: flex; gap: 10px; margin-bottom: 12px;
-      color: var(--text-muted); font-size: 0.95rem;
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
     }
-    .who-points li span { color: var(--orange); font-weight: 700; }
+    .audience-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 18px;
+      transition: border-color 0.2s;
+    }
+    .audience-card:hover { border-color: var(--orange); }
+    .audience-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .audience-card h3 { color: var(--white); font-size: 1rem; margin-bottom: 6px; }
+    .audience-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; }
+    .audience-footnote {
+      text-align: center; color: var(--text-muted); font-size: 0.92rem; margin-top: 28px;
+    }
+    .audience-footnote a { color: var(--orange); font-weight: 700; }
+    .audience-footnote a:hover { color: var(--orange-light); text-decoration: underline; }
 
     .perks { background: var(--bg-dark); }
     .perks-grid {
@@ -298,19 +310,41 @@
   <section class="who" id="about">
     <div class="container">
       <h2 class="section-title">Who <span>We Are</span></h2>
-      <div class="who-grid">
-        <div class="who-text">
-          <p>The <strong>Small Business Fleet Alliance (SBFA)</strong> brings independent drivers and small operators together so they can access better rates than they can get alone.</p>
-          <p>You run your own business. You shouldn’t have to pay full retail while large fleets get preferred pricing on fuel, lodging, tools, and more.</p>
-          <p>We’re building practical group buying power for the people who actually move the freight and make the deliveries.</p>
-        </div>
-        <ul class="who-points">
-          <li><span>✓</span> Independent box truck &amp; route operators</li>
-          <li><span>✓</span> Sprinter, cargo van &amp; hotshot drivers</li>
-          <li><span>✓</span> Small fleet owners (1–10 units)</li>
-          <li><span>✓</span> Gig and last-mile delivery drivers</li>
-        </ul>
+      <div class="who-text" style="max-width: 700px; margin: 0 auto 40px; text-align: center;">
+        <p>The <strong>Small Business Fleet Alliance (SBFA)</strong> brings independent operators together so they can access better rates than they can get alone.</p>
+        <p>You run your own business — with a truck, a trailer, or your own tools. You shouldn’t have to pay full retail while large fleets get preferred pricing on fuel, lodging, tools, and more.</p>
+        <p>We’re building practical group buying power for the people who actually do the work.</p>
       </div>
+
+      <h3 style="text-align:center; color: var(--white); font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Who This Is For</h3>
+      <p class="section-intro">
+        If any of this is you, you're the reason SBFA exists.
+      </p>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="icon">🚚</div>
+          <h3>Delivery &amp; Transport</h3>
+          <p>Box truck, Sprinter, cargo van &amp; gig delivery drivers</p>
+        </div>
+        <div class="audience-card">
+          <div class="icon">🔧</div>
+          <h3>Mobile &amp; Field Services</h3>
+          <p>Mobile mechanics, power washing, mobile detailing</p>
+        </div>
+        <div class="audience-card">
+          <div class="icon">🌱</div>
+          <h3>Property &amp; Grounds</h3>
+          <p>Lawn care &amp; landscaping crews</p>
+        </div>
+        <div class="audience-card">
+          <div class="icon">🚛</div>
+          <h3>Removal &amp; Hauling</h3>
+          <p>Junk removal &amp; hauling operators</p>
+        </div>
+      </div>
+      <p class="audience-footnote">
+        Not seeing your trade? If you own your equipment and run your own show, you're probably a fit — <a href="mailto:gwillis@sbfaohio.com">reach out and ask</a>.
+      </p>
     </div>
   </section>
 
