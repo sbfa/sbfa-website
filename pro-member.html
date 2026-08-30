@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard | Small Business Fleet Alliance</title>
+  <meta name="description" content="Your SBFA Commercial Pro member dashboard — access all your benefits in one place.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ffffff'/%3E%3Cpath d='M4 11h12v9H4V11z' fill='%230b1220'/%3E%3Cpath d='M16 13h5l3 3v4h-8v-7z' fill='%230b1220'/%3E%3Ccircle cx='8' cy='21.5' r='2' fill='%23f97316'/%3E%3Ccircle cx='22' cy='21.5' r='2' fill='%23f97316'/%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --bg-dark: #0b1220;
+      --bg-card: #121a2b;
+      --bg-section: #0f172a;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --orange-light: #fb923c;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --white: #ffffff;
+      --green: #10b981;
+      --green-light: #4ade80;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background: rgba(11, 18, 32, 0.98);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; color: inherit; }
+    .logo-icon {
+      width: 44px; height: 44px; background: var(--white); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 28px; height: 28px; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text strong { font-size: 1.15rem; letter-spacing: 0.3px; }
+    .logo-text span { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.4px; }
+    .tier-pill {
+      background: rgba(249,115,22,0.15); color: var(--orange-light);
+      border: 1px solid rgba(249,115,22,0.4);
+      padding: 6px 14px; border-radius: 50px; font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.4px;
+    }
+
+    .hero-special {
+      padding: 44px 0 36px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+    .hero-special h1 {
+      font-size: clamp(1.7rem, 5vw, 2.4rem);
+      font-weight: 800; line-height: 1.2; margin-bottom: 10px;
+    }
+    .hero-special h1 .accent { color: var(--orange); }
+    .hero-tagline {
+      font-size: 1rem; color: var(--text-muted);
+      max-width: 560px; margin: 0 auto;
+    }
+
+    section { padding: 40px 0; }
+    .section-title {
+      font-size: clamp(1.3rem, 3.6vw, 1.7rem); font-weight: 800; margin-bottom: 10px;
+      color: var(--white); text-align: center;
+    }
+    .section-title span { color: var(--orange); }
+    .section-intro {
+      color: var(--text-muted); max-width: 600px; margin: 0 auto 28px;
+      text-align: center; font-size: 0.92rem;
+    }
+
+    .benefit-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .benefit-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 22px 20px; transition: border-color 0.2s;
+    }
+    .benefit-card:hover { border-color: rgba(249, 115, 22, 0.45); }
+    .benefit-card .icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .benefit-card h3 { font-size: 1.02rem; color: var(--white); margin-bottom: 6px; }
+    .benefit-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px; }
+    .benefit-card a.action {
+      font-size: 0.84rem; font-weight: 700; color: var(--orange-light);
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .benefit-card a.action:hover { color: var(--orange); }
+    .status-tag {
+      display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.4px;
+      text-transform: uppercase; padding: 3px 9px; border-radius: 20px; margin-bottom: 10px;
+    }
+    .tag-live { background: rgba(16,185,129,0.15); color: var(--green-light); border: 1px solid rgba(16,185,129,0.4); }
+    .tag-soon { background: rgba(234,179,8,0.15); color: #fde047; border: 1px solid rgba(234,179,8,0.4); }
+
+    .highlight-section { background: var(--bg-section); }
+
+    .partner-box {
+      background: var(--bg-card); border: 2px solid var(--orange); border-radius: 16px;
+      padding: 26px 24px; max-width: 700px; margin: 0 auto; text-align: center;
+    }
+    .partner-box h3 { color: var(--white); font-size: 1.15rem; margin-bottom: 8px; }
+    .partner-box p { color: var(--text-muted); font-size: 0.94rem; margin-bottom: 16px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.95rem; padding: 12px 22px; border-radius: 8px;
+      transition: all 0.2s; border: none; cursor: pointer; text-decoration: none;
+    }
+    .btn-primary { background: var(--orange); color: var(--white); }
+    .btn-primary:hover { background: var(--orange-dark); }
+
+    .residual-box {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 26px 24px; max-width: 700px; margin: 0 auto; text-align: center;
+    }
+    .residual-box h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 8px; }
+    .residual-box p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 6px; }
+
+    footer {
+      background: #070b14; padding: 30px 0 24px; border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .footer-copy { color: var(--text-muted); font-size: 0.86rem; }
+
+    @media (max-width: 600px) {
+      .hero-special { padding: 32px 0 28px; }
+      .container { padding: 0 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8h11v8H3V8z" fill="#0b1220"/>
+            <path d="M14 10h4l3 3v3h-7v-6z" fill="#0b1220"/>
+            <circle cx="6.5" cy="17.5" r="1.8" fill="#f97316"/>
+            <circle cx="17.5" cy="17.5" r="1.8" fill="#f97316"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>Small Business Fleet Alliance</span>
+        </div>
+      </a>
+      <span class="tier-pill">Commercial Pro Member</span>
+    </div>
+  </header>
+
+  <section class="hero-special">
+    <div class="container">
+      <h1>Welcome Back, <span class="accent">Pro Member</span></h1>
+      <p class="hero-tagline">
+        Here's everything included with your Commercial Pro membership — real local deals, business resources, and group access, all in one place.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Your <span>Local Partner Deals</span></h2>
+      <p class="section-intro">Real, negotiated benefits — not just links to public discounts.</p>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <span class="status-tag tag-live">Live</span>
+          <div class="icon">🛞</div>
+          <h3>Columbus Mobile Tire</h3>
+          <p>Waived acquisition fee + expedited service for active members. Mobile install, they come to you.</p>
+          <a class="action" href="https://columbusmobiletire.com/" target="_blank" rel="noopener">Book a Tire Appointment →</a>
+        </div>
+        <div class="benefit-card">
+          <span class="status-tag tag-soon">Building</span>
+          <div class="icon">🩺</div>
+          <h3>Local Healthcare Access</h3>
+          <p>Working to unlock organized-group access to Direct Primary Care in Columbus — enrollment fee discounts once confirmed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight-section">
+    <div class="container">
+      <h2 class="section-title">Fuel, Travel <span>&amp; Everyday Savings</span></h2>
+      <p class="section-intro">Business-account access, organized so you don't have to hunt for it.</p>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <span class="status-tag tag-live">Live</span>
+          <div class="icon">⛽</div>
+          <h3>Fuel Savings</h3>
+          <p>Mudflap and Upside cash-back codes for everyday fuel purchases.</p>
+          <a class="action" href="benefits.html#travel">View Fuel Codes →</a>
+        </div>
+        <div class="benefit-card">
+          <span class="status-tag tag-live">Live</span>
+          <div class="icon">🏨🚗</div>
+          <h3>Hotel &amp; Rental Discounts</h3>
+          <p>Business-account rates with IHG, Best Western, Wyndham, Avis, Enterprise, and Hertz.</p>
+          <a class="action" href="benefits.html#travel">View Travel Codes →</a>
+        </div>
+        <div class="benefit-card">
+          <span class="status-tag tag-live">Live</span>
+          <div class="icon">💊</div>
+          <h3>Healthcare Resources</h3>
+          <p>Prescription, vision, dental, and telehealth resources for independent operators.</p>
+          <a class="action" href="healthcare.html">View Healthcare Resources →</a>
+        </div>
+        <div class="benefit-card">
+          <span class="status-tag tag-live">Live</span>
+          <div class="icon">📚</div>
+          <h3>Business Playbooks</h3>
+          <p>Entity formation, USDOT/MC authority, 1099 tax strategy, and legal/payroll tools.</p>
+          <a class="action" href="formation.html">Open Playbooks →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="partner-box">
+        <h3>🛡️ $10,000 Group AD&amp;D Protection</h3>
+        <p>Included with your active Pro membership dues. Master policy setup is currently in progress — this page will update the moment coverage is active.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight-section">
+    <div class="container">
+      <div class="residual-box">
+        <h3>💬 Member Community + Referral Residuals</h3>
+        <p>Join the private Discord to connect with other operators.</p>
+        <p>Refer a new Pro or Gig member and earn a recurring residual on their dues for as long as they stay active.</p>
+        <div style="margin-top: 16px;">
+          <a href="chapter.html" class="btn btn-primary">See Referral &amp; Chapter Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="footer-copy">smallbusinessfleetalliance.com · gwillis@sbfaohio.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>
