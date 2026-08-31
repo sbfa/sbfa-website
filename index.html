@@ -405,8 +405,9 @@
     }
 
     .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 16px;
     }
     .audience-card {
@@ -415,6 +416,8 @@
       border-radius: 12px;
       padding: 22px 18px;
       transition: border-color 0.2s;
+      flex: 1 1 240px;
+      max-width: 260px;
     }
     .audience-card:hover { border-color: var(--orange); }
     .audience-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
@@ -702,8 +705,13 @@
       <div class="audience-grid">
         <div class="audience-card">
           <div class="icon">🚚</div>
-          <h3>Delivery &amp; Transport</h3>
-          <p>Box truck, Sprinter, cargo van &amp; gig delivery drivers</p>
+          <h3>Commercial &amp; Fleet</h3>
+          <p>Box truck, Sprinter, cargo van &amp; small fleet operators</p>
+        </div>
+        <div class="audience-card">
+          <div class="icon">📦</div>
+          <h3>Gig Delivery Drivers</h3>
+          <p>Sedans, SUVs &amp; minivans running DoorDash, Uber Eats, Amazon Flex, Spark Driver, Instacart, Grubhub &amp; more</p>
         </div>
         <div class="audience-card">
           <div class="icon">🔧</div>
