@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Benefits by Tier | Small Business Fleet Alliance</title>
+  <meta name="description" content="See what's included with Gig Tier and Commercial Pro membership at Small Business Fleet Alliance — fuel and partner discounts, local partner deals, and Group AD&D protection.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ffffff'/%3E%3Cpath d='M4 11h12v9H4V11z' fill='%230b1220'/%3E%3Cpath d='M16 13h5l3 3v4h-8v-7z' fill='%230b1220'/%3E%3Ccircle cx='8' cy='21.5' r='2' fill='%23f97316'/%3E%3Ccircle cx='22' cy='21.5' r='2' fill='%23f97316'/%3E%3C/svg%3E">
+
+  <meta property="og:title" content="Member Benefits by Tier | Small Business Fleet Alliance">
+  <meta property="og:description" content="See what's included with Gig Tier and Commercial Pro membership before you join.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smallbusinessfleetalliance.com/benefits.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --bg-dark: #0b1220;
+      --bg-card: #121a2b;
+      --bg-section: #0f172a;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --orange-light: #fb923c;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --white: #ffffff;
+      --green: #10b981;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background: rgba(11, 18, 32, 0.98);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; color: inherit; }
+    .logo-icon {
+      width: 44px; height: 44px; background: var(--white); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 28px; height: 28px; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text strong { font-size: 1.15rem; letter-spacing: 0.3px; }
+    .logo-text span { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.4px; }
+    nav { display: flex; align-items: center; gap: 22px; }
+    nav a {
+      color: var(--text-muted); font-size: 0.92rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--orange); }
+    .nav-cta {
+      background: var(--orange); color: var(--white) !important;
+      padding: 9px 18px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
+    }
+    .nav-cta:hover { background: var(--orange-dark); color: var(--white) !important; }
+
+    .hero-special {
+      padding: 48px 0 40px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      padding: 6px 14px; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.4px;
+      margin-bottom: 18px; text-transform: uppercase;
+    }
+    .hero-special h1 {
+      font-size: clamp(1.9rem, 5.5vw, 2.9rem);
+      font-weight: 800; line-height: 1.15; margin-bottom: 14px;
+    }
+    .hero-special h1 .accent { color: var(--orange); }
+    .hero-tagline {
+      font-size: 1.08rem; color: var(--text-muted);
+      max-width: 640px; margin: 0 auto 8px;
+    }
+    .hero-note {
+      font-size: 0.85rem; color: #64748b; max-width: 640px; margin: 0 auto;
+    }
+
+    section { padding: 48px 0; }
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; margin-bottom: 12px;
+      color: var(--white); text-align: center;
+    }
+    .section-title span { color: var(--orange); }
+    .section-intro {
+      color: var(--text-muted); max-width: 600px; margin: 0 auto 32px;
+      text-align: center; font-size: 0.95rem;
+    }
+
+    .tier-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px; align-items: start;
+    }
+    .tier-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 28px 24px;
+    }
+    .tier-card.highlight { border-color: rgba(249, 115, 22, 0.55); }
+    .badge-inline {
+      display: inline-block; background: rgba(249,115,22,0.2); color: var(--orange-light);
+      font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px;
+      margin-bottom: 10px; text-transform: uppercase;
+    }
+    .tier-card h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 4px; }
+    .tier-card .price { font-size: 1.6rem; font-weight: 800; color: var(--orange); margin-bottom: 2px; }
+    .tier-card .price-sub { font-size: 0.82rem; color: var(--orange-light); font-weight: 600; margin-bottom: 18px; }
+    .tier-list { list-style: none; }
+    .tier-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.92rem; color: var(--text); margin-bottom: 14px; line-height: 1.5;
+    }
+    .tier-list li .bullet { color: var(--orange); font-weight: 700; flex-shrink: 0; }
+    .tier-list li .desc-muted { color: var(--text-muted); }
+    .tier-list li.included-note { color: var(--text-muted); font-style: italic; }
+
+    .disclaimer-text {
+      font-size: 0.78rem; color: #64748b; margin-top: 18px;
+      border-top: 1px dashed var(--border); padding-top: 14px; line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.98rem; padding: 13px 24px; border-radius: 8px;
+      transition: all 0.2s; border: none; cursor: pointer; text-decoration: none; min-width: 210px;
+    }
+    .btn-primary { background: var(--orange); color: var(--white); }
+    .btn-primary:hover { background: var(--orange-dark); }
+    .btn-secondary { background: transparent; color: var(--white); border: 2px solid #475569; }
+    .btn-secondary:hover { border-color: var(--orange); color: #fb923c; }
+
+    .cta-section { background: var(--bg-section); text-align: center; }
+    .cta-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-box h2 { font-size: clamp(1.3rem, 4vw, 1.7rem); font-weight: 800; margin-bottom: 10px; color: var(--white); }
+    .cta-box p { color: var(--text-muted); font-size: 0.98rem; max-width: 480px; margin: 0 auto 22px; line-height: 1.55; }
+
+    footer {
+      background: #070b14; padding: 36px 0 28px; border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center;
+    }
+    .footer-copy { color: var(--text-muted); font-size: 0.88rem; }
+    .footer-disclaimer {
+      color: #64748b; font-size: 0.78rem; line-height: 1.5; max-width: 720px; margin: 6px auto 0;
+    }
+
+    @media (max-width: 860px) { nav { display: none; } }
+    @media (max-width: 600px) {
+      .hero-special { padding: 36px 0 32px; }
+      .container { padding: 0 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8h11v8H3V8z" fill="#0b1220"/>
+            <path d="M14 10h4l3 3v3h-7v-6z" fill="#0b1220"/>
+            <circle cx="6.5" cy="17.5" r="1.8" fill="#f97316"/>
+            <circle cx="17.5" cy="17.5" r="1.8" fill="#f97316"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>Small Business Fleet Alliance</span>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="benefits.html" class="active">Benefits</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="partner.html">Partners</a>
+        <a href="chapter.html">Start a Chapter</a>
+      </nav>
+      <a href="join.html" class="nav-cta">Join Today</a>
+    </div>
+  </header>
+
+  <section class="hero-special">
+    <div class="container">
+      <div class="hero-badge">Membership Benefits</div>
+      <h1>
+        What You Get at Each <span class="accent">Membership Tier</span>
+      </h1>
+      <p class="hero-tagline">
+        A look at what's included with Gig Tier and Commercial Pro membership — so you know exactly what you're signing up for before you join.
+      </p>
+      <p class="hero-note">
+        Full discount codes and partner activation details are provided directly to active members after joining.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Compare <span>Tiers</span></h2>
+      <p class="section-intro">
+        Commercial Pro includes everything in Gig Tier, plus local partner deals and Group AD&amp;D protection.
+      </p>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <span class="badge-inline">Founding Annual</span>
+          <h3>Gig Tier</h3>
+          <div class="price">$60 <span style="font-size:0.9rem; font-weight:normal; color:var(--text-muted);">/ year</span></div>
+          <div class="price-sub">For sedans, SUVs, minivans &amp; gig delivery drivers</div>
+          <ul class="tier-list">
+            <li><span class="bullet">✓</span> <span>Exclusive corporate &amp; partner fuel discount codes</span></li>
+            <li><span class="bullet">✓</span> <span>Corporate partner discount codes for everyday tools &amp; gear</span></li>
+            <li><span class="bullet">✓</span> <span>Access to new corporate partner codes as they're added</span></li>
+            <li><span class="bullet">✓</span> <span>Access to the private members community</span></li>
+          </ul>
+        </div>
+
+        <div class="tier-card highlight">
+          <span class="badge-inline">Founding Special</span>
+          <h3>Commercial Pro</h3>
+          <div class="price">$150 <span style="font-size:0.9rem; font-weight:normal; color:var(--text-muted);">/ year</span></div>
+          <div class="price-sub">For box truck, Sprinter, cargo van &amp; small fleet operators</div>
+          <ul class="tier-list">
+            <li class="included-note"><span class="bullet">✓</span> <span>Everything included in Gig Tier, plus:</span></li>
+            <li><span class="bullet">✓</span> <span>Local partner deals — tire shop discounts</span></li>
+            <li><span class="bullet">✓</span> <span>Local partner deals — healthcare resources</span></li>
+            <li><span class="bullet">✓</span> <span class="desc-muted">Additional local partners are being added on an ongoing basis</span></li>
+            <li><span class="bullet">✓</span> <span>$10,000 Group AD&amp;D coverage*</span></li>
+          </ul>
+          <div class="disclaimer-text">
+            *Insurance Disclosure: The $10,000 Group AD&amp;D protection is available to Commercial Pro tier members only and is intended to be funded through active Commercial Pro membership dues. Master group policy application and administrative setup are currently in progress. Coverage details, eligibility, and effective dates will be confirmed once the policy is active. SBFA is not an insurance carrier or broker.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to Lock In Founding Rates?</h2>
+        <p>
+          The first 100 spots get introductory pricing that won't come back once they're filled.
+        </p>
+        <a href="join.html" class="btn btn-primary">Join as a Founding Member</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        smallbusinessfleetalliance.com · gwillis@sbfaohio.com
+      </div>
+      <p class="footer-disclaimer">
+        *Insurance Disclosure: The $10,000 Group AD&amp;D protection is available to Commercial Pro tier members only and is intended to be funded through active Commercial Pro membership dues. Master group policy application and administrative setup are currently in progress. Coverage details, eligibility, and effective dates will be confirmed once the policy is active. SBFA is not an insurance carrier or broker.
+      </p>
+      <div class="footer-copy" style="margin-top: 4px;">
+        © 2026 Small Business Fleet Alliance
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
