@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Memberstack -->
+  <script data-memberstack-app="app_cmthx1zse01t40rnh7x6rer8w" src="https://static.memberstack.com/scripts/v2/memberstack.js" type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preferred Partners | Small Business Fleet Alliance</title>
+  <meta name="description" content="Local businesses making things easier for SBFA members — small businesses helping small businesses.">
+
+  <!-- Favicon / Mobile Home Screen Icon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ffffff'/%3E%3Cpath d='M4 11h12v9H4V11z' fill='%230b1220'/%3E%3Cpath d='M16 13h5l3 3v4h-8v-7z' fill='%230b1220'/%3E%3Ccircle cx='8' cy='21.5' r='2' fill='%23f97316'/%3E%3Ccircle cx='22' cy='21.5' r='2' fill='%23f97316'/%3E%3C/svg%3E">
+
+  <!-- Social & Open Graph Metadata -->
+  <meta property="og:title" content="Preferred Partners | Small Business Fleet Alliance">
+  <meta property="og:description" content="Small businesses helping small businesses — meet our preferred local partners.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smallbusinessfleetalliance.com/preferred-partners.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --bg-dark: #0b1220;
+      --bg-card: #121a2b;
+      --bg-section: #0f172a;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --orange-light: #fb923c;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(11, 18, 32, 0.98);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .logo-text strong {
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      color: var(--white);
+    }
+
+    .logo-text span {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--orange);
+    }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange-dark);
+    }
+
+    /* Hero Section */
+    .hero-special {
+      padding: 40px 16px 50px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.15);
+      color: #fb923c;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(249, 115, 22, 0.4);
+    }
+
+    .hero-special h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin: 0 0 14px;
+      color: var(--white);
+    }
+
+    .hero-special h1 .accent {
+      color: var(--orange);
+    }
+
+    .hero-tagline {
+      font-size: clamp(0.98rem, 2.2vw, 1.15rem);
+      color: #94a3b8;
+      margin: 0 auto;
+      max-width: 680px;
+      line-height: 1.5;
+    }
+
+    .badge-inline {
+      display: inline-block;
+      background: rgba(249, 115, 22, 0.2);
+      color: var(--orange-light);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.98rem;
+      padding: 13px 24px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      min-width: 210px;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    /* Sections */
+    section {
+      padding: 55px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .section-intro {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    /* Preferred partner cards — copy/paste a .partner-card block inside
+       .partner-grid to add more partners; the grid handles the layout. */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .partner-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    }
+
+    .partner-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 20px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .partner-card:hover {
+      border-color: rgba(249, 115, 22, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .partner-logo {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .partner-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .partner-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .partner-perk-note {
+      font-size: 0.82rem;
+      color: var(--orange-light);
+      opacity: 0.9;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #1a2336 0%, #0f172a 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 26px;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #070b14;
+      padding: 36px 0 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .footer-logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--white);
+    }
+
+    .footer-logo span {
+      color: var(--orange);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange-light);
+    }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 820px) {
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8h11v8H3V8z" fill="#0b1220"/>
+            <path d="M14 10h4l3 3v3h-7v-6z" fill="#0b1220"/>
+            <circle cx="6.5" cy="17.5" r="1.8" fill="#f97316"/>
+            <circle cx="17.5" cy="17.5" r="1.8" fill="#f97316"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>SBFA</strong>
+          <span>Small Business Fleet Alliance</span>
+        </div>
+      </a>
+      <nav>
+        <a href="benefits.html">Benefits</a>
+        <a href="resources.html">Tools &amp; Resources</a>
+        <a href="healthcare.html">Healthcare</a>
+        <a href="travel.html">Travel Perks</a>
+        <a href="partner.html">Partners</a>
+        <a href="preferred-partners.html" class="active">Preferred Partners</a>
+        <a href="chapter.html">Start a Chapter</a>
+      </nav>
+      <a href="join.html" class="nav-cta">Join Today</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-special">
+    <div class="container">
+      <div class="hero-badge">Preferred Partners</div>
+      <h1>
+        Small businesses <span class="accent">helping small businesses.</span>
+      </h1>
+      <p class="hero-tagline">
+        That's the whole idea behind this page — real business owners choosing to make things easier for people just like them.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Meet Our <span>Preferred Partners</span></h2>
+      <p class="section-intro">
+        Local businesses that stepped up to make things a little easier for our members. The specifics of each member perk are shared directly with active members.
+      </p>
+
+      <div class="partner-grid">
+        <div class="partner-card">
+          <img src="assets/partners/columbus-mobile-tire-logo.png" alt="Columbus Mobile Tire LLC logo" class="partner-logo">
+          <span class="badge-inline">Mobile Tire Service</span>
+          <h3>Columbus Mobile Tire LLC</h3>
+          <p>On-site mobile tire sales, flat repair, mounting, and installation — serving the Greater Columbus, OH area.</p>
+          <p class="partner-perk-note">🔒 Member-exclusive perk — details shared with active members.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Own a Local Business?</h2>
+      <p>
+        If you'd like to be the next business on this page, we'd love to hear from you.
+      </p>
+      <a href="partner.html" class="btn btn-primary">Become a Partner</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">SBFA <span>Small Business Fleet Alliance</span></div>
+      <div class="footer-links">
+        <a href="benefits.html">Benefits</a>
+        <a href="resources.html">Tools &amp; Resources</a>
+        <a href="healthcare.html">Healthcare</a>
+        <a href="travel.html">Travel Perks</a>
+        <a href="partner.html">Partners</a>
+        <a href="preferred-partners.html">Preferred Partners</a>
+        <a href="chapter.html">Start a Chapter</a>
+        <a href="join.html">Join Today</a>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer-copy">smallbusinessfleetalliance.com · gwillis@sbfaohio.com</p>
+      <p class="footer-copy">© 2026 Small Business Fleet Alliance</p>
+    </div>
+  </footer>
+
+</body>
+</html>
