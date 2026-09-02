@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Member Benefits by Tier | Small Business Fleet Alliance</title>
-  <meta name="description" content="See what's included with Gig Tier and Commercial Pro membership at Small Business Fleet Alliance — fuel and partner discounts, local partner deals, and Group AD&D protection.">
+  <title>Preferred Partners | Small Business Fleet Alliance</title>
+  <meta name="description" content="Local businesses making things easier for SBFA members — small businesses helping small businesses.">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ffffff'/%3E%3Cpath d='M4 11h12v9H4V11z' fill='%230b1220'/%3E%3Cpath d='M16 13h5l3 3v4h-8v-7z' fill='%230b1220'/%3E%3Ccircle cx='8' cy='21.5' r='2' fill='%23f97316'/%3E%3Ccircle cx='22' cy='21.5' r='2' fill='%23f97316'/%3E%3C/svg%3E">
 
-  <meta property="og:title" content="Member Benefits by Tier | Small Business Fleet Alliance">
-  <meta property="og:description" content="See what's included with Gig Tier and Commercial Pro membership before you join.">
+  <meta property="og:title" content="Preferred Partners | Small Business Fleet Alliance">
+  <meta property="og:description" content="Small businesses helping small businesses — meet our preferred local partners.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://smallbusinessfleetalliance.com/benefits.html">
+  <meta property="og:url" content="https://smallbusinessfleetalliance.com/preferred-partners.html">
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
@@ -94,9 +94,6 @@
       font-size: 1.08rem; color: var(--text-muted);
       max-width: 640px; margin: 0 auto 8px;
     }
-    .hero-note {
-      font-size: 0.85rem; color: #64748b; max-width: 640px; margin: 0 auto;
-    }
 
     section { padding: 48px 0; }
     .section-title {
@@ -109,35 +106,30 @@
       text-align: center; font-size: 0.95rem;
     }
 
-    .tier-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px; align-items: start;
-    }
-    .tier-card {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-      padding: 28px 24px;
-    }
-    .tier-card.highlight { border-color: rgba(249, 115, 22, 0.55); }
     .badge-inline {
       display: inline-block; background: rgba(249,115,22,0.2); color: var(--orange-light);
       font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px;
       margin-bottom: 10px; text-transform: uppercase;
     }
-    .tier-card h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 4px; }
-    .tier-card .price { font-size: 1.6rem; font-weight: 800; color: var(--orange); margin-bottom: 2px; }
-    .tier-card .price-sub { font-size: 0.82rem; color: var(--orange-light); font-weight: 600; margin-bottom: 18px; }
-    .tier-list { list-style: none; }
-    .tier-list li {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 0.92rem; color: var(--text); margin-bottom: 14px; line-height: 1.5;
-    }
-    .tier-list li .bullet { color: var(--orange); font-weight: 700; flex-shrink: 0; }
-    .tier-list li .desc-muted { color: var(--text-muted); }
-    .tier-list li.included-note { color: var(--text-muted); font-style: italic; }
 
-    .disclaimer-text {
-      font-size: 0.78rem; color: #64748b; margin-top: 18px;
-      border-top: 1px dashed var(--border); padding-top: 14px; line-height: 1.5;
+    /* Preferred partner cards — copy/paste a .partner-card block inside
+       .partner-grid to add more partners; the grid handles the layout. */
+    .partner-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .partner-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 28px 24px;
+      transition: border-color 0.2s;
+    }
+    .partner-card:hover { border-color: rgba(249, 115, 22, 0.45); }
+    .partner-logo { max-width: 200px; width: 100%; height: auto; border-radius: 8px; margin-bottom: 16px; display: block; }
+    .partner-card h3 { color: var(--white); font-size: 1.2rem; margin-bottom: 8px; }
+    .partner-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; }
+    .partner-perk-note {
+      font-size: 0.82rem; color: var(--orange-light); opacity: 0.9;
+      margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--border);
     }
 
     .btn {
@@ -147,8 +139,6 @@
     }
     .btn-primary { background: var(--orange); color: var(--white); }
     .btn-primary:hover { background: var(--orange-dark); }
-    .btn-secondary { background: transparent; color: var(--white); border: 2px solid #475569; }
-    .btn-secondary:hover { border-color: var(--orange); color: #fb923c; }
 
     .cta-section { background: var(--bg-section); text-align: center; }
     .cta-box {
@@ -200,10 +190,10 @@
       </a>
       <nav>
         <a href="index.html#about">About</a>
-        <a href="benefits.html" class="active">Benefits</a>
+        <a href="benefits.html">Benefits</a>
         <a href="index.html#pricing">Pricing</a>
         <a href="partner.html">Partners</a>
-        <a href="preferred-partners.html">Preferred Partners</a>
+        <a href="preferred-partners.html" class="active">Preferred Partners</a>
         <a href="chapter.html">Start a Chapter</a>
       </nav>
       <a href="join.html" class="nav-cta">Join Today</a>
@@ -212,55 +202,30 @@
 
   <section class="hero-special">
     <div class="container">
-      <div class="hero-badge">Membership Benefits</div>
+      <div class="hero-badge">Preferred Partners</div>
       <h1>
-        What You Get at Each <span class="accent">Membership Tier</span>
+        Small businesses <span class="accent">helping small businesses.</span>
       </h1>
       <p class="hero-tagline">
-        A look at what's included with Gig Tier and Commercial Pro membership — so you know exactly what you're signing up for before you join.
-      </p>
-      <p class="hero-note">
-        Full discount codes and partner activation details are provided directly to active members after joining.
+        That's the whole idea behind this page — real business owners choosing to make things easier for people just like them.
       </p>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <h2 class="section-title">Compare <span>Tiers</span></h2>
+      <h2 class="section-title">Meet Our <span>Preferred Partners</span></h2>
       <p class="section-intro">
-        Commercial Pro includes everything in Gig Tier, plus local partner deals and Group AD&amp;D protection.
+        Local businesses that stepped up to make things a little easier for our members. The specifics of each member perk are shared directly with active members.
       </p>
 
-      <div class="tier-grid">
-        <div class="tier-card">
-          <span class="badge-inline">Founding Annual</span>
-          <h3>Gig Tier</h3>
-          <div class="price">$60 <span style="font-size:0.9rem; font-weight:normal; color:var(--text-muted);">/ year</span></div>
-          <div class="price-sub">For sedans, SUVs, minivans &amp; gig delivery drivers</div>
-          <ul class="tier-list">
-            <li><span class="bullet">✓</span> <span>Exclusive corporate &amp; partner fuel discount codes</span></li>
-            <li><span class="bullet">✓</span> <span>Corporate partner discount codes for everyday tools &amp; gear</span></li>
-            <li><span class="bullet">✓</span> <span>Access to new corporate partner codes as they're added</span></li>
-            <li><span class="bullet">✓</span> <span>Access to the private members community</span></li>
-          </ul>
-        </div>
-
-        <div class="tier-card highlight">
-          <span class="badge-inline">Founding Special</span>
-          <h3>Commercial Pro</h3>
-          <div class="price">$150 <span style="font-size:0.9rem; font-weight:normal; color:var(--text-muted);">/ year</span></div>
-          <div class="price-sub">For box truck, Sprinter, cargo van &amp; small fleet operators</div>
-          <ul class="tier-list">
-            <li class="included-note"><span class="bullet">✓</span> <span>Everything included in Gig Tier, plus:</span></li>
-            <li><span class="bullet">✓</span> <span>Local partner deals — tire shop discounts</span></li>
-            <li><span class="bullet">✓</span> <span>Local partner deals — healthcare resources</span></li>
-            <li><span class="bullet">✓</span> <span class="desc-muted">Additional local partners are being added on an ongoing basis</span></li>
-            <li><span class="bullet">✓</span> <span>$10,000 Group AD&amp;D coverage*</span></li>
-          </ul>
-          <div class="disclaimer-text">
-            *Insurance Disclosure: The $10,000 Group AD&amp;D protection is available to Commercial Pro tier members only and is intended to be funded through active Commercial Pro membership dues. Master group policy application and administrative setup are currently in progress. Coverage details, eligibility, and effective dates will be confirmed once the policy is active. SBFA is not an insurance carrier or broker.
-          </div>
+      <div class="partner-grid">
+        <div class="partner-card">
+          <img src="assets/partners/columbus-mobile-tire-logo.png" alt="Columbus Mobile Tire LLC logo" class="partner-logo">
+          <span class="badge-inline">Mobile Tire Service</span>
+          <h3>Columbus Mobile Tire LLC</h3>
+          <p>On-site mobile tire sales, flat repair, mounting, and installation — serving the Greater Columbus, OH area.</p>
+          <p class="partner-perk-note">🔒 Member-exclusive perk — details shared with active members.</p>
         </div>
       </div>
     </div>
@@ -269,11 +234,11 @@
   <section class="cta-section">
     <div class="container">
       <div class="cta-box">
-        <h2>Ready to Lock In Founding Rates?</h2>
+        <h2>Own a Local Business?</h2>
         <p>
-          The first 100 spots get introductory pricing that won't come back once they're filled.
+          If you'd like to be the next business on this page, we'd love to hear from you.
         </p>
-        <a href="join.html" class="btn btn-primary">Join as a Founding Member</a>
+        <a href="partner.html" class="btn btn-primary">Become a Partner</a>
       </div>
     </div>
   </section>
@@ -283,9 +248,6 @@
       <div class="footer-copy">
         smallbusinessfleetalliance.com · gwillis@sbfaohio.com
       </div>
-      <p class="footer-disclaimer">
-        *Insurance Disclosure: The $10,000 Group AD&amp;D protection is available to Commercial Pro tier members only and is intended to be funded through active Commercial Pro membership dues. Master group policy application and administrative setup are currently in progress. Coverage details, eligibility, and effective dates will be confirmed once the policy is active. SBFA is not an insurance carrier or broker.
-      </p>
       <div class="footer-copy" style="margin-top: 4px;">
         © 2026 Small Business Fleet Alliance
       </div>
