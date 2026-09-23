@@ -413,7 +413,7 @@
       <input type="hidden" name="_cc" id="cc-field" value="">
       <input type="hidden" name="_replyto" id="replyto-field" value="">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://smallbusinessfleetalliance.com/partner-agreement.html?submitted=1">
+      <input type="hidden" name="_next" id="next-field" value="https://smallbusinessfleetalliance.com/partner-agreement.html?submitted=1">
       <input type="hidden" name="Agreement Terms" id="terms-field" value="">
       <input type="file" name="attachment" id="signature-file" accept="image/png" hidden>
 
@@ -645,6 +645,11 @@
         var vendorEmail = document.getElementById('vendor-email').value.trim();
         var business = document.getElementById('business-name').value.trim();
         document.getElementById('cc-field').value = vendorEmail;
+        // Return to wherever this page is hosted (live site or a preview)
+        if (/^https?:$/.test(location.protocol)) {
+          document.getElementById('next-field').value =
+            location.origin + location.pathname + '?submitted=1';
+        }
         document.getElementById('replyto-field').value = vendorEmail;
         document.getElementById('subject-field').value =
           'SBFA Preferred Vendor Partner Agreement: ' + business;
