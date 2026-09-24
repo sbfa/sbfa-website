@@ -413,6 +413,8 @@
       <input type="hidden" name="_cc" id="cc-field" value="">
       <input type="hidden" name="_replyto" id="replyto-field" value="">
       <input type="hidden" name="_template" value="table">
+      <!-- Honeypot: hidden from people; bots that fill it in get rejected -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <input type="hidden" name="_next" id="next-field" value="https://smallbusinessfleetalliance.com/partner-agreement.html?submitted=1">
       <input type="hidden" name="Agreement Terms" id="terms-field" value="">
       <input type="file" name="attachment" id="signature-file" accept="image/png" hidden>
